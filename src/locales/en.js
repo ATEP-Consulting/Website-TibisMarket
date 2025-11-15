@@ -385,4 +385,12 @@ export const en = {
     },
     lastUpdate: "Last updated: November 2024",
   },
+
+  notFound: {
+    title: "Oops! Page not found",
+    message:
+      "The page you're looking for doesn't exist or has been moved. Don't worry, we'll help you find what you need.",
+    homeButton: "Back to Home",
+    productsButton: "View Products",
+  },
 };

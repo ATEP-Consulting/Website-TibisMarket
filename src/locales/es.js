@@ -386,4 +386,12 @@ export const es = {
     },
     lastUpdate: "Última actualización: Noviembre 2024",
   },
+
+  notFound: {
+    title: "¡Oops! Página no encontrada",
+    message:
+      "La página que estás buscando no existe o ha sido movida. No te preocupes, te ayudamos a encontrar lo que necesitas.",
+    homeButton: "Volver al Inicio",
+    productsButton: "Ver Productos",
+  },
 };
