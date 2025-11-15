@@ -244,7 +244,7 @@ export const en = {
       instagram: "https://instagram.com/tibismarket",
       facebook: "https://www.facebook.com/share/17dRWkPRFC/?mibextid=wwXIfr",
     },
-    shipping: "Shipping across USA 🇺🇸",
+    shipping: "Shipping across USA",
     cta: {
       title: "Ready to try our arepas?",
       subtitle: "Order now and bring the taste of the Andes to your table",
