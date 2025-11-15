@@ -10,14 +10,13 @@ const ProductCard = ({ product }) => {
   const [quantity, setQuantity] = useState(1);
 
   const handleAddToCart = () => {
-    // Añadir la cantidad especificada
     for (let i = 0; i < quantity; i++) {
       addToCart(product);
     }
     setAdded(true);
     setTimeout(() => {
       setAdded(false);
-      setQuantity(1); // Reset quantity después de añadir
+      setQuantity(1);
     }, 2000);
   };
 
@@ -29,7 +28,6 @@ const ProductCard = ({ product }) => {
     setQuantity((prev) => (prev > 1 ? prev - 1 : 1));
   };
 
-  // Importar la imagen dinámicamente
   const getImageUrl = (imageName) => {
     try {
       return new URL(`../assets/images/${imageName}`, import.meta.url).href;
@@ -40,13 +38,15 @@ const ProductCard = ({ product }) => {
 
   return (
     <div className="card group animate-fade-in">
-      <div className="relative overflow-hidden">
-        <img
-          src={getImageUrl(product.image)}
-          alt={product.name}
-          className="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      {/* Image Container - ARREGLADO */}
+      <div className="relative overflow-hidden bg-gradient-to-br from-secondary/30 to-white p-4 rounded-t-xl">
+        <div className="aspect-square w-full flex items-center justify-center">
+          <img
+            src={getImageUrl(product.image)}
+            alt={product.name}
+            className="w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-500"
+          />
+        </div>
       </div>
 
       <div className="p-6">
