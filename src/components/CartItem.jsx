@@ -7,14 +7,6 @@ const CartItem = ({ item }) => {
   const { updateQuantity, removeFromCart } = useCart();
   const { t } = useLanguage();
 
-  const getImageUrl = (imageName) => {
-    try {
-      return new URL(`../assets/images/${imageName}`, import.meta.url).href;
-    } catch {
-      return "";
-    }
-  };
-
   const subtotal = item.price * item.quantity;
 
   return (
@@ -22,9 +14,10 @@ const CartItem = ({ item }) => {
       <div className="flex flex-col sm:flex-row sm:items-center gap-4">
         {/* Product Image */}
         <img
-          src={getImageUrl(item.image)}
+          src={`/images/${item.image}`}
           alt={item.name}
           className="w-24 h-24 object-cover rounded-lg mx-auto sm:mx-0"
+          loading="lazy"
         />
 
         {/* Product Info */}
