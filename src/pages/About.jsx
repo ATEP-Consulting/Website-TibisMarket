@@ -16,20 +16,20 @@ const About = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative py-32 px-6 overflow-hidden bg-gradient-to-br from-dark/95 via-dark/90 to-primary/20">
+      <section className="elative py-32 px-6 overflow-hidden bg-gradient-to-br from-dark/95 via-dark/90 to-primary/20">
         <div className="absolute top-20 right-20 w-72 h-72 bg-primary/20 rounded-full blur-3xl" />
         <div className="absolute bottom-20 left-20 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
 
         <div className="max-w-5xl mx-auto text-center relative z-10">
           <div className="inline-block mb-6">
             <span className="bg-primary/20 text-primary px-6 py-3 rounded-full text-sm font-semibold border border-primary/30">
-              Mi Historia
+              {t.about.badge}
             </span>
           </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
             {t.about.hero.title}
           </h1>
-          <p className="text-2xl md:text-3xl text-primary font-light italic">
+          <p className="text-xl md:text-2xl text-gray-300 font-light italic">
             {t.about.hero.subtitle}
           </p>
         </div>
@@ -227,7 +227,7 @@ const About = () => {
               className="inline-flex items-center justify-center px-10 py-5 text-lg font-semibold text-white bg-primary rounded-xl shadow-2xl hover:shadow-primary/50 transition-all duration-300 hover:scale-105"
             >
               <span className="flex items-center gap-2">
-                Descubre Nuestros Productos
+                {t.about.closing.button}
                 <svg
                   className="w-5 h-5"
                   fill="none"

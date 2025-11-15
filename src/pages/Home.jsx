@@ -38,7 +38,7 @@ const Home = () => {
               <div className="space-y-8 animate-fade-in">
                 <div className="inline-block">
                   <span className="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold border border-primary/20">
-                    Desde 1943
+                    {t.home.hero.badge}
                   </span>
                 </div>
 
@@ -51,8 +51,7 @@ const Home = () => {
                 </p>
 
                 <p className="text-lg text-gray-400 leading-relaxed max-w-2xl">
-                  Arepas artesanales de trigo, hechas a mano en Miami con
-                  ingredientes nobles y el alma de tres generaciones.
+                  {t.home.hero.description}
                 </p>
 
                 {/* CTA Buttons */}
@@ -62,7 +61,7 @@ const Home = () => {
                     className="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-primary rounded-xl overflow-hidden shadow-2xl hover:shadow-primary/50 transition-all duration-300 hover:scale-105"
                   >
                     <span className="relative z-10 flex items-center gap-2">
-                      Ver Productos
+                      {t.home.hero.cta.products}
                       <svg
                         className="w-5 h-5 group-hover:translate-x-1 transition-transform"
                         fill="none"
@@ -83,7 +82,7 @@ const Home = () => {
                     to="/contact"
                     className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-white/10 backdrop-blur-sm rounded-xl border-2 border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105"
                   >
-                    Contáctanos
+                    {t.home.hero.cta.contact}
                   </Link>
                 </div>
 
@@ -97,7 +96,9 @@ const Home = () => {
                     >
                       <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                     </svg>
-                    <span className="text-sm">Hecho a Mano</span>
+                    <span className="text-sm">
+                      {t.home.hero.badges.handmade}
+                    </span>
                   </div>
                   <div className="flex items-center gap-2 text-gray-300">
                     <svg
@@ -111,7 +112,9 @@ const Home = () => {
                         clipRule="evenodd"
                       />
                     </svg>
-                    <span className="text-sm">100% Artesanal</span>
+                    <span className="text-sm">
+                      {t.home.hero.badges.artisan}
+                    </span>
                   </div>
                   <div className="flex items-center gap-2 text-gray-300">
                     <svg
@@ -122,7 +125,9 @@ const Home = () => {
                       <path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
                       <path d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1v-5a1 1 0 00-.293-.707l-2-2A1 1 0 0015 7h-1z" />
                     </svg>
-                    <span className="text-sm">Envíos a todo USA</span>
+                    <span className="text-sm">
+                      {t.home.hero.badges.shipping}
+                    </span>
                   </div>
                 </div>
               </div>
@@ -158,9 +163,11 @@ const Home = () => {
                         </svg>
                       </div>
                       <div>
-                        <p className="text-dark font-bold text-lg">81 años</p>
+                        <p className="text-dark font-bold text-lg">
+                          {t.home.hero.floatingCard.years}
+                        </p>
                         <p className="text-gray-600 text-sm">
-                          de tradición familiar
+                          {t.home.hero.floatingCard.tradition}
                         </p>
                       </div>
                     </div>

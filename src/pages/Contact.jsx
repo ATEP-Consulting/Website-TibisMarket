@@ -22,7 +22,7 @@ const Contact = () => {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
             {t.contact.title}
           </h1>
-          <p className="text-xl md:text-2xl text-gray-300 font-light">
+          <p className="text-xl md:text-2xl text-gray-300 font-light italic">
             {t.contact.subtitle}
           </p>
         </div>

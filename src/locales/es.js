@@ -13,6 +13,22 @@ export const es = {
     hero: {
       title: "Susurros de los Andes Venezolanos",
       subtitle: "Donde la tradición no muere… se transforma",
+      badge: "Desde 1943",
+      description:
+        "Arepas artesanales de trigo, hechas a mano en Miami con ingredientes nobles y el alma de tres generaciones.",
+      cta: {
+        products: "Ver Productos",
+        contact: "Contáctanos",
+      },
+      badges: {
+        handmade: "Hecho a Mano",
+        artisan: "100% Artesanal",
+        shipping: "Envíos a todo USA",
+      },
+      floatingCard: {
+        years: "81 años",
+        tradition: "de tradición familiar",
+      },
     },
     intro: {
       text: "Nací en Mucuchachí, estado Mérida – Venezuela, en 1943, cuando los vientos de la Sierra aún traían ecos de una guerra lejana y mi madre me arropaba con cuentos de niebla, trigo y esperanza. Este pueblo andino, fundado en 1770 en tierras ancestrales de los Timotes y Mucuchíes, me dio más que un lugar: me dio raíces.",
@@ -43,11 +59,19 @@ export const es = {
     },
   },
 
-  // Products
+  //PRODUCTS
   products: {
     title: "Nuestros Productos",
     subtitle: "Arepas artesanales hechas con amor",
+    badge: "Artesanal · Hecho a Mano",
+    intro:
+      "Cada producto está hecho con la receta ancestral de mi abuela, usando ingredientes nobles y el amor de tres generaciones.",
     addToCart: "Añadir al Carrito",
+    cta: {
+      title: "¿No encuentras lo que buscas?",
+      subtitle: "Contáctanos para pedidos especiales o personalizados",
+      button: "Contáctanos",
+    },
     productsList: [
       {
         id: 1,
@@ -95,41 +119,16 @@ export const es = {
         totalWeight: 2.4,
         weightUnit: "oz",
       },
-      // {
-      //   id: 5,
-      //   name: "Are-Chips Snack Pack",
-      //   description: "El snack perfecto para cualquier ocasión.",
-      //   price: 6.5,
-      //   image: "WhatsApp_Image_20251115_at_11_37_23_5.jpeg",
-      // },
-      // {
-      //   id: 6,
-      //   name: "Mini Arepas",
-      //   description: "Pequeñas delicias perfectas para compartir.",
-      //   price: 6.99,
-      //   image: "WhatsApp_Image_20251115_at_11_37_22.jpeg",
-      // },
-      // {
-      //   id: 7,
-      //   name: "Pack Familiar Clásico",
-      //   description:
-      //     "Una selección de nuestras mejores arepas para toda la familia.",
-      //   price: 15.99,
-      //   image: "WhatsApp_Image_20251115_at_11_37_24_3.jpeg",
-      // },
-      // {
-      //   id: 8,
-      //   name: "Pack Familiar Premium",
-      //   description: "La mejor variedad de productos Tibi's Market.",
-      //   price: 24.99,
-      //   image: "WhatsApp_Image_20251115_at_11_37_23_7.jpeg",
-      // },
     ],
   },
 
   // Cart
   cart: {
     title: "Carrito de Compras",
+    subtitle: "Revisa tu pedido y completa tus datos",
+    hero: {
+      tagline: "Tu pedido",
+    },
     empty: "Tu carrito está vacío",
     continueShopping: "Continuar Comprando",
     orderSummary: "Resumen del Pedido",
@@ -158,6 +157,7 @@ export const es = {
   about: {
     title: "Sobre Mí - María Tibisay Gómez",
     subtitle: "Guardiana de un legado ancestral",
+    badge: "Mi Historia",
     hero: {
       title: "Tibi's Market",
       subtitle: "Un legado que florece bajo el cielo de Miami",
@@ -214,6 +214,7 @@ export const es = {
       text1: "Porque emprender no es cuestión de edad. Es de corazón.",
       quote:
         "Si yo pude comenzar a los 81, tú también puedes. Solo necesitas una chispa, una raíz, y mucho amor.",
+      button: "Descubre Nuestros Productos",
     },
   },
 

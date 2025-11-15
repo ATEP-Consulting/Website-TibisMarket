@@ -13,6 +13,22 @@ export const en = {
     hero: {
       title: "Whispers from the Venezuelan Andes",
       subtitle: "Where tradition never dies… it transforms",
+      badge: "Since 1943",
+      description:
+        "Artisan wheat arepas, handmade in Miami with noble ingredients and the soul of three generations.",
+      cta: {
+        products: "View Products",
+        contact: "Contact Us",
+      },
+      badges: {
+        handmade: "Handmade",
+        artisan: "100% Artisan",
+        shipping: "Shipping across USA",
+      },
+      floatingCard: {
+        years: "81 years",
+        tradition: "of family tradition",
+      },
     },
     intro: {
       text: "I was born in Mucuchachí, Mérida state – Venezuela, in 1943, when the mountain winds still carried echoes of a distant war and my mother wrapped me in tales of mist, wheat, and hope. This Andean town, founded in 1770 on ancestral lands of the Timotes and Mucuchíes, gave me more than a place: it gave me roots.",
@@ -24,7 +40,7 @@ export const en = {
       text: "I was six years old when my grandmother taught me how to make it. It was 1949, wheat arrived in worn sacks from Timotes or Lagunillas, and we ground it with stones that still hold the echo of time.",
     },
     quote: {
-      text: "Mija, the arepa cannot be rushed. It is kneaded with the heart, flattened with patience, and browned until it sings.",
+      text: "My dear, the arepa cannot be rushed. It is kneaded with the heart, flattened with patience, and browned until it sings.",
     },
     legacy: {
       text: "That lesson never left me. Nor did the dream of sharing this legacy with the world.",
@@ -47,7 +63,15 @@ export const en = {
   products: {
     title: "Our Products",
     subtitle: "Artisan arepas made with love",
+    badge: "Artisan · Handmade",
+    intro:
+      "Each product is made with my grandmother's ancestral recipe, using noble ingredients and the love of three generations.",
     addToCart: "Add to Cart",
+    cta: {
+      title: "Can't find what you're looking for?",
+      subtitle: "Contact us for special or custom orders",
+      button: "Contact Us",
+    },
     productsList: [
       {
         id: 1,
@@ -75,7 +99,7 @@ export const en = {
         id: 3,
         name: "Mini Arepas",
         description:
-          "Designed for the little ones... and those who still believe in magic.",
+          "Designed for the little ones… or those who still believe in magic.",
         price: 10,
         image: "WhatsApp_Image_20251115_at_11_37_23_3.jpeg",
         units: 30,
@@ -95,41 +119,16 @@ export const en = {
         totalWeight: 2.4,
         weightUnit: "oz",
       },
-
-      // {
-      //   id: 5,
-      //   name: "Are-Chips Snack Pack",
-      //   description: "The perfect snack for any occasion.",
-      //   price: 6.5,
-      //   image: "WhatsApp_Image_20251115_at_11_37_23_5.jpeg",
-      // },
-      // {
-      //   id: 6,
-      //   name: "Mini Arepas",
-      //   description: "Small delights perfect for sharing.",
-      //   price: 6.99,
-      //   image: "WhatsApp_Image_20251115_at_11_37_22.jpeg",
-      // },
-      // {
-      //   id: 7,
-      //   name: "Classic Family Pack",
-      //   description: "A selection of our best arepas for the whole family.",
-      //   price: 15.99,
-      //   image: "WhatsApp_Image_20251115_at_11_37_24_3.jpeg",
-      // },
-      // {
-      //   id: 8,
-      //   name: "Premium Family Pack",
-      //   description: "The best variety of Tibi's Market products.",
-      //   price: 24.99,
-      //   image: "WhatsApp_Image_20251115_at_11_37_23_7.jpeg",
-      // },
     ],
   },
 
   // Cart
   cart: {
     title: "Shopping Cart",
+    subtitle: "Review your order and complete your information",
+    hero: {
+      tagline: "Your order",
+    },
     empty: "Your cart is empty",
     continueShopping: "Continue Shopping",
     orderSummary: "Order Summary",
@@ -158,6 +157,7 @@ export const en = {
   about: {
     title: "About Me - María Tibisay Gómez",
     subtitle: "Guardian of an ancestral legacy",
+    badge: "My History",
     hero: {
       title: "Tibi's Market",
       subtitle: "A legacy that blooms under the Miami sky",
@@ -213,6 +213,7 @@ export const en = {
       text1: "Because entrepreneurship is not about age. It's about heart.",
       quote:
         "If I could start at 81, you can too. You only need a spark, a root, and lots of love.",
+      button: "Discover Our Products",
     },
   },
 
