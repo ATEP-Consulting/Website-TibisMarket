@@ -139,7 +139,7 @@ const About = () => {
             <div className="relative">
               <div className="absolute -inset-4 bg-gradient-to-r from-primary/30 to-primary/10 rounded-3xl blur-2xl" />
               <img
-                src={importImage("WhatsApp_Image_20251115_at_11_37_23_3.jpeg")}
+                src={importImage("6.png")}
                 alt="Proceso Artesanal"
                 className="relative rounded-2xl shadow-2xl w-full aspect-square object-cover"
               />

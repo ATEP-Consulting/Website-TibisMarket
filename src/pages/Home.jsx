@@ -35,7 +35,7 @@ const Home = () => {
           <div className="max-w-7xl mx-auto px-6 py-20 w-full">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               {/* Left Content */}
-              <div className="space-y-8 animate-fade-in">
+              <div className="space-y-8 animate-fade-in pt-8 lg:pt-0">
                 <div className="inline-block">
                   <span className="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold border border-primary/20">
                     {t.home.hero.badge}
