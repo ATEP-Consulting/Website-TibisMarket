@@ -11,28 +11,35 @@ export const es = {
   // Home
   home: {
     hero: {
-      title: "La arepa de trigo, Susurros de los Andes Venezolanos",
+      title: "Susurros de los Andes Venezolanos",
       subtitle: "Donde la tradición no muere… se transforma",
     },
-    section1: {
-      title: "Una Historia de Tradición",
-      text: "Yo soy Tibisay Gómez. Nací en Mucuchachi (Venezuela) en 1943, cuando el viento de la sierra aún traía ecos de la guerra lejana y mi madre me arropaba con cuentos de niebla y trigo. Este pueblo, fundado en 1770 por David de la Peña en tierras que antes fueron de los timotes y los mucuchíes, es mi raíz, mi sangre, mi harina.",
+    intro: {
+      text: "Nací en Mucuchachí, estado Mérida – Venezuela, en 1943, cuando los vientos de la Sierra aún traían ecos de una guerra lejana y mi madre me arropaba con cuentos de niebla, trigo y esperanza. Este pueblo andino, fundado en 1770 en tierras ancestrales de los Timotes y Mucuchíes, me dio más que un lugar: me dio raíces.",
     },
-    section2: {
-      title: "Un Legado Familiar",
-      text: "La receta no es mía: la heredé de mi madre, Dominga, que a su vez la heredó de mi abuela Cantalicia; y esta, de una bisabuela sin nombre escrito en ningún libro, pero grabada en el alma andina. En los Andes de Mérida, donde el maíz se ahoga en el frío y la altura, el trigo llegó con los españoles en los años 1500, traído por frailes agustinos que sembraron doctrina y semillas en valles como el nuestro.",
+    identity: {
+      text: "Mi nombre es María Tibisay Gómez, hija de Dominga, nieta de Cantalicia, bisnieta de una mujer cuyo nombre no está escrito en ningún libro, pero que vive en cada arepa que mis manos amasan. En los Andes merideños, donde el maíz no prospera por el frío y la altura, el trigo encontró hogar, traído por frailes agustinos en el siglo XVI. Y con él, nació una nueva forma de alimentar el alma: la arepa de trigo.",
     },
-    section3: {
-      title: "El Arte de Amasar",
-      text: "Recuerdo el día que mi abuela me enseñó: yo, con 6 años, las piernas flacas como varas de sauce. Era 1948 y la posguerra había traído escasez. El trigo llegaba en sacos raídos desde las fincas de Timotes o Lagunillas, pero en Mucuchachi lo molíamos nosotras con piedras que aún guardan el eco de los timbales prehistóricos.",
+    learning: {
+      text: "Tenía seis años cuando mi abuela me enseñó a prepararla. Era 1949, el trigo llegaba en sacos gastados desde Timotes o Lagunillas, y lo molíamos en piedras que aún guardan el eco del tiempo.",
     },
-    section4: {
-      title: "Sabiduría Ancestral",
-      text: "«Mija —me decía Cantalicia, con sus manos arrugadas como mapas de la sierra—, la arepa no se apura: se amasa con el corazón, se aplana con paciencia y se dora hasta que cante».",
+    quote: {
+      text: "Mija, la arepa no se apura. Se amasa con el corazón, se aplana con paciencia y se dora hasta que cante.",
     },
-    section5: {
-      title: "Más que Comida",
-      text: "La arepa de trigo no es solo comida: es la voz de mis abuelas, es el frío que se combate con calor de leña, es el pan que une a un pueblo cuando faltan palabras. Venid, probad una. Partidla por la mitad como quien abre un libro antiguo, morded y escuchad: en cada miga hay un susurro de los Andes, un latido de Mucuchachi y el nombre de Tibisay Gómez, guardiana de un legado que no morirá mientras haya harina, agua y memoria.",
+    legacy: {
+      text: "Aquella lección nunca me abandonó. Y tampoco el sueño de compartir este legado con el mundo.",
+    },
+    meaning: {
+      text: "Porque la arepa de trigo no es solo comida: es la voz de mis abuelas, es el frío que se combate con calor de leña, es el pan que une a un pueblo cuando faltan palabras.",
+    },
+    tibisMarket: {
+      title: "Tradición que evoluciona: así nació Tibi's Market",
+      text1:
+        "A mis 81 años, lejos de los Andes y bajo el cielo de Miami, decidí emprender, para honrar. Así nació Tibi's Market, un tributo a mis raíces y a la cocina como lenguaje de amor, cultura y familia.",
+      text2:
+        "Junto a mi hija, transformamos nuestra receta familiar en un producto artesanal: arepas andinas de trigo, hechas a mano, con ingredientes nobles y el alma de tres generaciones.",
+      text3:
+        "Lo que comenzó como una nostalgia en la cocina se convirtió en un emprendimiento con propósito. Participamos en ferias, eventos locales, tiendas y tomamos pedidos directos con entrega en Miami y envíos a todo Estados Unidos.",
     },
   },
 
@@ -47,8 +54,7 @@ export const es = {
         name: "Arepas Tamaño Tradicional",
         description: "Perfecta para desayunos, cenas o compartir en familia.",
         price: 10,
-        weight: "",
-        image: "WhatsApp_Image_20251115_at_11_37_23_4.jpeg",
+        image: "arepa_tradicional.png",
         units: 4,
         weightPerUnit: 2.4,
         totalWeight: 9.6,
@@ -59,8 +65,7 @@ export const es = {
         name: "Arepas Tipo Bocado",
         description: "Ideal para fiestas, meriendas o picar entre amigos.",
         price: 10,
-        weight: "",
-        image: "WhatsApp Image 2025-11-15 at 11.37.23.jpeg",
+        image: "arepas-bocado.png",
         units: 14,
         weightPerUnit: 0.6,
         totalWeight: 8.9,
@@ -72,7 +77,6 @@ export const es = {
         description:
           "Pensadas para los más pequeños… y los que aún creen en la magia.",
         price: 10,
-        weight: "",
         image: "WhatsApp_Image_20251115_at_11_37_23_3.jpeg",
         units: 30,
         weightPerUnit: 0.3,
@@ -85,8 +89,7 @@ export const es = {
         description:
           "Crujientes, delgadas y doradas, con el sabor de siempre en un nuevo formato.",
         price: 5.5,
-        weight: "",
-        image: "WhatsApp Image 2025-11-15 at 15.39.41.jpeg",
+        image: "are-chips.png",
         units: null,
         weightPerUnit: null,
         totalWeight: 2.4,
@@ -153,18 +156,93 @@ export const es = {
 
   // About
   about: {
-    title: "Sobre Mí - Tibisay Gómez",
+    title: "Sobre Mí - María Tibisay Gómez",
     subtitle: "Guardiana de un legado ancestral",
+    hero: {
+      title: "Tibi's Market",
+      subtitle: "Un legado que florece bajo el cielo de Miami",
+    },
+    intro: {
+      text: "A veces, los grandes cambios nacen en los momentos más difíciles.",
+    },
+    section1: {
+      text: "Después de la pérdida de mi esposo, sentí que el silencio se había instalado en la casa, en la cocina, en el corazón. Pero fue en ese silencio donde algo comenzó a germinar. No una tristeza, sino un llamado. La necesidad de honrar mi historia y llenar de sentido los días que tenía por delante.",
+    },
+    section2: {
+      quote: "Mami, tus arepas son deliciosas. Todos las van a amar.",
+      text: "Y así nació Tibi's Market. Un proyecto hecho con harina, historia y amor.",
+    },
+    section3: {
+      text: "Juntas, mi hija y yo transformamos nuestra receta familiar en un emprendimiento con alma: arepas andinas de trigo, hechas a mano, con ingredientes nobles y el espíritu de tres generaciones.",
+    },
+    section4: {
+      text: "No sabíamos de negocios. Aprendimos desde cero. Cometimos errores, los reímos, los corregimos. Participamos en ferias locales, vendimos en tiendas, tomamos pedidos por WhatsApp, entregamos en Miami, hicimos envíos a todo Estados Unidos. Cada paso fue una victoria.",
+    },
+    section5: {
+      title:
+        "Y los clientes nos enseñaron que lo que vendemos va más allá de la comida.",
+      quote: "Me transportó a la cocina de mi abuela",
+      text: "Vendemos recuerdos. Vendemos hogar.",
+    },
+    products: {
+      title: "Hoy, Tibi's Market ofrece:",
+      list: [
+        {
+          name: "Arepas tradicionales",
+          description: "para desayunos o cenas con alma",
+        },
+        {
+          name: "Arepas tipo bocado",
+          description: "perfectas para compartir",
+        },
+        {
+          name: "Mini arepas",
+          description:
+            "pensadas para los más pequeños… o los que aún creen en la magia",
+        },
+        {
+          name: "Are-Chips",
+          description:
+            "crujientes, finas, modernas, pero con el sabor de siempre",
+        },
+      ],
+    },
+    section6: {
+      text: "Y seguimos soñando: expandirnos, entrar a restaurantes, llegar a más hogares venezolanos y latinos, ser embajadoras de una tradición que no se olvida.",
+    },
+    closing: {
+      text1: "Porque emprender no es cuestión de edad. Es de corazón.",
+      quote:
+        "Si yo pude comenzar a los 81, tú también puedes. Solo necesitas una chispa, una raíz, y mucho amor.",
+    },
   },
 
   // Contact
   contact: {
     title: "Contacto",
     subtitle: "Estamos aquí para ti",
+    hero: {
+      tagline: "Contáctanos",
+    },
+    intro: {
+      title: "Hablemos",
+      text: "Estamos aquí para responder tus preguntas, tomar tu pedido o simplemente compartir una historia sobre arepas.",
+    },
     phone: "Teléfono",
     email: "Email",
     location: "Ubicación",
     followUs: "Síguenos",
+    social: {
+      description:
+        "Síguenos en redes sociales para ver nuestras últimas novedades, recetas y eventos.",
+    },
+    shipping: "Envíos a todo USA 🇺🇸",
+    cta: {
+      title: "¿Listo para probar nuestras arepas?",
+      subtitle: "Haz tu pedido ahora y lleva el sabor de los Andes a tu mesa",
+      whatsapp: "Pedir por WhatsApp",
+      email: "Enviar Email",
+    },
   },
 
   // Footer

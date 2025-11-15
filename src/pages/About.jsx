@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { useLanguage } from "../context/LanguageContext";
 
 const importImage = (imageName) => {
@@ -14,155 +15,174 @@ const About = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero */}
-      <section className="bg-gradient-to-br from-primary/10 to-secondary py-20 px-4">
-        <div className="max-w-4xl mx-auto text-center animate-fade-in">
-          <h1 className="text-5xl md:text-6xl font-bold text-dark mb-6">
-            {t.about.title}
+      {/* Hero Section */}
+      <section className="relative py-32 px-6 overflow-hidden bg-gradient-to-br from-dark/95 via-dark/90 to-primary/20">
+        <div className="absolute top-20 right-20 w-72 h-72 bg-primary/20 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 left-20 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
+
+        <div className="max-w-5xl mx-auto text-center relative z-10">
+          <div className="inline-block mb-6">
+            <span className="bg-primary/20 text-primary px-6 py-3 rounded-full text-sm font-semibold border border-primary/30">
+              Mi Historia
+            </span>
+          </div>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">
+            {t.about.hero.title}
           </h1>
-          <p className="text-2xl text-gray-700">{t.about.subtitle}</p>
+          <p className="text-2xl md:text-3xl text-primary font-light italic">
+            {t.about.hero.subtitle}
+          </p>
         </div>
       </section>
 
-      {/* Main Content */}
-      <section className="py-20 px-4">
-        <div className="max-w-7xl mx-auto">
-          {/* Tibisay's Photo */}
-          <div className="mb-16 animate-scale-in">
-            <img
-              src={importImage("WhatsApp_Image_20251115_at_12_45_08.jpeg")}
-              alt="Tibisay Gómez"
-              className="rounded-2xl shadow-2xl w-full max-w-3xl mx-auto"
-            />
-          </div>
+      {/* Intro Section */}
+      <section className="py-20 md:py-32 px-6 bg-gradient-to-b from-white to-secondary/20">
+        <div className="max-w-4xl mx-auto text-center">
+          <p className="text-2xl md:text-3xl text-gray-700 font-light italic leading-relaxed">
+            {t.about.intro.text}
+          </p>
+        </div>
+      </section>
 
-          {/* Story Section 1 */}
-          <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
-            <div className="animate-fade-in">
-              <h2 className="text-3xl font-bold text-dark mb-6">
-                Una Historia de Tradición
-              </h2>
-              <p className="text-lg text-gray-700 leading-relaxed mb-4">
-                Yo soy Tibisay Gómez. Nací en Mucuchachi (Venezuela) en 1943,
-                cuando el viento de la sierra aún traía ecos de la guerra lejana
-                y mi madre me arropaba con cuentos de niebla y trigo.
-              </p>
-              <p className="text-lg text-gray-700 leading-relaxed">
-                Este pueblo, fundado en 1770 por David de la Peña en tierras que
-                antes fueron de los timotes y los mucuchíes, es mi raíz, mi
-                sangre, mi harina.
+      {/* Section 1 */}
+      <section className="py-20 md:py-32 px-6 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <div className="space-y-6">
+              <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
+                {t.about.section1.text}
               </p>
             </div>
-            <div className="animate-scale-in">
+
+            <div className="relative">
+              <div className="absolute -inset-4 bg-gradient-to-r from-primary/30 to-primary/10 rounded-3xl blur-2xl" />
+              <img
+                src={importImage("WhatsApp_Image_20251115_at_12_45_08.jpeg")}
+                alt="María Tibisay Gómez"
+                className="relative rounded-2xl shadow-2xl w-full aspect-square object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 2 - Quote & Birth of Tibi's */}
+      <section className="py-20 md:py-32 px-6 bg-gradient-to-br from-primary/5 to-secondary/30">
+        <div className="max-w-5xl mx-auto space-y-12">
+          <div className="bg-white/80 backdrop-blur-sm p-10 md:p-16 rounded-3xl shadow-2xl border border-primary/10">
+            <blockquote className="text-2xl md:text-3xl italic text-dark text-center leading-relaxed mb-6">
+              "{t.about.section2.quote}"
+            </blockquote>
+            <p className="text-center text-gray-600 font-semibold">— Mi hija</p>
+          </div>
+
+          <div className="text-center space-y-4">
+            <p className="text-2xl md:text-3xl font-bold text-dark">
+              {t.about.section2.text}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 3 */}
+      <section className="py-20 md:py-32 px-6 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <div className="order-2 md:order-1 relative">
+              <div className="absolute -inset-4 bg-gradient-to-l from-primary/30 to-primary/10 rounded-3xl blur-2xl" />
               <img
                 src={importImage("WhatsApp_Image_20251115_at_11_37_24_2.jpeg")}
                 alt="Arepas Tradicionales"
-                className="rounded-2xl shadow-xl w-full"
+                className="relative rounded-2xl shadow-2xl w-full aspect-square object-cover"
               />
             </div>
-          </div>
 
-          {/* Story Section 2 */}
-          <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
-            <div className="order-2 md:order-1 animate-scale-in">
-              <img
-                src={importImage("WhatsApp_Image_20251115_at_11_37_23_3.jpeg")}
-                alt="Proceso Artesanal"
-                className="rounded-2xl shadow-xl w-full"
-              />
-            </div>
-            <div className="order-1 md:order-2 animate-fade-in">
-              <h2 className="text-3xl font-bold text-dark mb-6">
-                Un Legado Familiar
-              </h2>
-              <p className="text-lg text-gray-700 leading-relaxed mb-4">
-                La receta no es mía: la heredé de mi madre, Dominga, que a su
-                vez la heredó de mi abuela Cantalicia; y esta, de una bisabuela
-                sin nombre escrito en ningún libro, pero grabada en el alma
-                andina.
-              </p>
-              <p className="text-lg text-gray-700 leading-relaxed">
-                En los Andes de Mérida, donde el maíz se ahoga en el frío y la
-                altura, el trigo llegó con los españoles en los años 1500,
-                traído por frailes agustinos que sembraron doctrina y semillas
-                en valles como el nuestro.
-              </p>
-            </div>
-          </div>
-
-          {/* Story Section 3 */}
-          <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
-            <div className="animate-fade-in">
-              <h2 className="text-3xl font-bold text-dark mb-6">
-                El Arte de Amasar
-              </h2>
-              <p className="text-lg text-gray-700 leading-relaxed mb-4">
-                Recuerdo el día que mi abuela me enseñó: yo, con 6 años, las
-                piernas flacas como varas de sauce. Era 1948 y la posguerra
-                había traído escasez.
-              </p>
-              <p className="text-lg text-gray-700 leading-relaxed">
-                El trigo llegaba en sacos raídos desde las fincas de Timotes o
-                Lagunillas, pero en Mucuchachi lo molíamos nosotras con piedras
-                que aún guardan el eco de los timbales prehistóricos.
-              </p>
-            </div>
-            <div className="animate-scale-in">
-              <img
-                src={importImage("WhatsApp_Image_20251115_at_11_37_22.jpeg")}
-                alt="Mini Arepas"
-                className="rounded-2xl shadow-xl w-full"
-              />
-            </div>
-          </div>
-
-          {/* Quote Section */}
-          <div className="bg-gradient-to-r from-primary/10 to-secondary rounded-2xl p-12 mb-20 animate-fade-in">
-            <blockquote className="text-center">
-              <p className="text-2xl md:text-3xl italic text-dark leading-relaxed mb-6">
-                "Mija, la arepa no se apura: se amasa con el corazón, se aplana
-                con paciencia y se dora hasta que cante"
-              </p>
-              <footer className="text-xl text-primary font-bold">
-                — Abuela Cantalicia
-              </footer>
-            </blockquote>
-          </div>
-
-          {/* Final Section */}
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="order-2 md:order-1 animate-scale-in">
-              <img
-                src={importImage("WhatsApp_Image_20251115_at_11_37_24_3.jpeg")}
-                alt="Pack Familiar"
-                className="rounded-2xl shadow-xl w-full"
-              />
-            </div>
-            <div className="order-1 md:order-2 animate-fade-in">
-              <h2 className="text-3xl font-bold text-dark mb-6">
-                Más que Comida
-              </h2>
-              <p className="text-lg text-gray-700 leading-relaxed mb-4">
-                La arepa de trigo no es solo comida: es la voz de mis abuelas,
-                es el frío que se combate con calor de leña, es el pan que une a
-                un pueblo cuando faltan palabras.
-              </p>
-              <p className="text-lg text-gray-700 leading-relaxed">
-                Venid, probad una. Partidla por la mitad como quien abre un
-                libro antiguo, morded y escuchad: en cada miga hay un susurro de
-                los Andes, un latido de Mucuchachi y el nombre de Tibisay Gómez,
-                guardiana de un legado que no morirá mientras haya harina, agua
-                y memoria.
+            <div className="order-1 md:order-2 space-y-6">
+              <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
+                {t.about.section3.text}
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Image Gallery */}
-      <section className="py-12 px-4 bg-secondary">
+      {/* Section 4 */}
+      <section className="py-20 md:py-32 px-6 bg-gradient-to-b from-secondary/20 to-white">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-lg md:text-xl text-gray-700 leading-relaxed text-center">
+            {t.about.section4.text}
+          </p>
+        </div>
+      </section>
+
+      {/* Section 5 - Customer Testimonial */}
+      <section className="py-20 md:py-32 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <div className="space-y-8">
+              <h3 className="text-3xl md:text-4xl font-bold text-dark leading-tight">
+                {t.about.section5.title}
+              </h3>
+
+              <div className="bg-gradient-to-br from-primary/10 to-secondary/30 p-8 rounded-2xl">
+                <blockquote className="text-xl md:text-2xl italic text-dark mb-4">
+                  "{t.about.section5.quote}"
+                </blockquote>
+                <p className="text-gray-600">— Un cliente</p>
+              </div>
+
+              <p className="text-2xl md:text-3xl font-bold text-primary">
+                {t.about.section5.text}
+              </p>
+            </div>
+
+            <div className="relative">
+              <div className="absolute -inset-4 bg-gradient-to-r from-primary/30 to-primary/10 rounded-3xl blur-2xl" />
+              <img
+                src={importImage("WhatsApp_Image_20251115_at_11_37_23_3.jpeg")}
+                alt="Proceso Artesanal"
+                className="relative rounded-2xl shadow-2xl w-full aspect-square object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Products Section */}
+      <section className="py-20 md:py-32 px-6 bg-gradient-to-br from-secondary/30 to-primary/5">
+        <div className="max-w-6xl mx-auto">
+          <h3 className="text-3xl md:text-4xl font-bold text-dark text-center mb-12">
+            {t.about.products.title}
+          </h3>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {t.about.products.list.map((product, idx) => (
+              <div
+                key={idx}
+                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
+              >
+                <h4 className="text-xl font-bold text-primary mb-3">
+                  {product.name}
+                </h4>
+                <p className="text-gray-700 leading-relaxed">
+                  {product.description}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-12 text-center">
+            <p className="text-lg md:text-xl text-gray-700 leading-relaxed max-w-4xl mx-auto">
+              {t.about.section6.text}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Gallery Section */}
+      <section className="py-16 md:py-24 px-6 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
             {[
               "WhatsApp_Image_20251115_at_11_37_23_7.jpeg",
               "WhatsApp_Image_20251115_at_11_37_23_6.jpeg",
@@ -171,15 +191,58 @@ const About = () => {
             ].map((img, idx) => (
               <div
                 key={idx}
-                className="overflow-hidden rounded-xl shadow-lg animate-fade-in"
+                className="relative overflow-hidden rounded-2xl shadow-lg group"
               >
                 <img
                   src={importImage(img)}
                   alt={`Galería ${idx + 1}`}
-                  className="w-full h-64 object-cover hover:scale-110 transition-transform duration-500"
+                  className="w-full aspect-square object-cover group-hover:scale-110 transition-transform duration-700"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Closing Section - CTA */}
+      <section className="py-20 md:py-32 px-6 bg-gradient-to-br from-dark via-dark/98 to-primary/20 text-white relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+
+        <div className="max-w-5xl mx-auto relative text-center space-y-10">
+          <p className="text-2xl md:text-3xl font-bold text-white">
+            {t.about.closing.text1}
+          </p>
+
+          <div className="bg-white/10 backdrop-blur-sm p-10 md:p-16 rounded-3xl border border-white/20">
+            <blockquote className="text-2xl md:text-3xl italic text-gray-200 leading-relaxed">
+              "{t.about.closing.quote}"
+            </blockquote>
+          </div>
+
+          <div className="pt-8">
+            <Link
+              to="/products"
+              className="inline-flex items-center justify-center px-10 py-5 text-lg font-semibold text-white bg-primary rounded-xl shadow-2xl hover:shadow-primary/50 transition-all duration-300 hover:scale-105"
+            >
+              <span className="flex items-center gap-2">
+                Descubre Nuestros Productos
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
+                </svg>
+              </span>
+            </Link>
           </div>
         </div>
       </section>
