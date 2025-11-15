@@ -132,6 +132,7 @@ const Contact = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 p-3 bg-white rounded-xl border-2 border-gray-100 hover:border-transparent hover:bg-gradient-to-br hover:from-purple-600 hover:to-pink-500 hover:text-white transition-all duration-300 group"
+                  aria-label="Síguenos en Instagram"
                 >
                   <FaInstagram className="text-xl" />
                   <span className="text-sm font-semibold">Instagram</span>
@@ -141,6 +142,7 @@ const Contact = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 p-3 bg-white rounded-xl border-2 border-gray-100 hover:border-transparent hover:bg-blue-600 hover:text-white transition-all duration-300 group"
+                  aria-label="Síguenos en Facebook"
                 >
                   <FaFacebook className="text-xl" />
                   <span className="text-sm font-semibold">Facebook</span>

@@ -37,6 +37,7 @@ const ProductCard = ({ product }) => {
             src={`/images/${product.image}`}
             alt={product.name}
             className="w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-500"
+            loading="lazy"
           />
         </div>
       </div>

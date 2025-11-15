@@ -24,6 +24,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-primary hover:text-orange-400 transition-colors"
+                aria-label="Síguenos en Instagram"
               >
                 <FaInstagram className="text-2xl" />
               </a>
@@ -32,6 +33,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-primary hover:text-orange-400 transition-colors"
+                aria-label="Síguenos en Facebook"
               >
                 <FaFacebook className="text-2xl" />
               </a>

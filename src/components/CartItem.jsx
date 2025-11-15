@@ -46,6 +46,7 @@ const CartItem = ({ item }) => {
           <button
             onClick={() => updateQuantity(item.id, item.quantity - 1)}
             className="bg-secondary text-dark p-2 rounded-lg hover:bg-gray-300 transition-colors"
+            aria-label="Disminuir cantidad"
           >
             <FaMinus />
           </button>
@@ -57,6 +58,7 @@ const CartItem = ({ item }) => {
           <button
             onClick={() => updateQuantity(item.id, item.quantity + 1)}
             className="bg-primary text-white p-2 rounded-lg hover:bg-orange-500 transition-colors"
+            aria-label="Aumentar cantidad"
           >
             <FaPlus />
           </button>
@@ -74,6 +76,7 @@ const CartItem = ({ item }) => {
           <button
             onClick={() => removeFromCart(item.id)}
             className="text-error hover:text-red-600 transition-colors p-2"
+            aria-label="Eliminar del carrito"
           >
             <FaTrash className="text-xl" />
           </button>

@@ -50,7 +50,7 @@ const About = () => {
               <div className="absolute -inset-4 bg-gradient-to-r from-primary/30 to-primary/10 rounded-3xl blur-2xl" />
               <img
                 src="images/tibisay.webp"
-                alt="María Tibisay Gómez"
+                alt="María Tibisay Gómez, fundadora de Tibi's Market"
                 className="relative rounded-2xl shadow-2xl w-full aspect-square object-cover"
               />
             </div>
