@@ -28,21 +28,13 @@ const ProductCard = ({ product }) => {
     setQuantity((prev) => (prev > 1 ? prev - 1 : 1));
   };
 
-  const getImageUrl = (imageName) => {
-    try {
-      return new URL(`../assets/images/${imageName}`, import.meta.url).href;
-    } catch {
-      return "";
-    }
-  };
-
   return (
     <div className="card group animate-fade-in">
       {/* Image Container - ARREGLADO */}
       <div className="relative overflow-hidden bg-gradient-to-br from-secondary/30 to-white p-4 rounded-t-xl">
         <div className="aspect-square w-full flex items-center justify-center">
           <img
-            src={getImageUrl(product.image)}
+            src={`/images/${product.image}`}
             alt={product.name}
             className="w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-500"
           />
@@ -102,7 +94,7 @@ const ProductCard = ({ product }) => {
           onClick={handleAddToCart}
           disabled={added}
           className={`w-full ${
-            added ? "bg-success" : "bg-primary hover:bg-orange-500"
+            added ? "bg-success" : "bg-primary hover:bg-orange-600"
           } text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center space-x-2 transform hover:scale-105 active:scale-95 disabled:transform-none disabled:cursor-not-allowed`}
         >
           {added ? (

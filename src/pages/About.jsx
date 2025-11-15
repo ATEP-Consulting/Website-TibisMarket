@@ -2,14 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "../context/LanguageContext";
 
-const importImage = (imageName) => {
-  try {
-    return new URL(`../assets/images/${imageName}`, import.meta.url).href;
-  } catch {
-    return "";
-  }
-};
-
 const About = () => {
   const { t } = useLanguage();
 
@@ -57,7 +49,7 @@ const About = () => {
             <div className="relative">
               <div className="absolute -inset-4 bg-gradient-to-r from-primary/30 to-primary/10 rounded-3xl blur-2xl" />
               <img
-                src={importImage("WhatsApp_Image_20251115_at_12_45_08.jpeg")}
+                src="images/tibisay.webp"
                 alt="María Tibisay Gómez"
                 className="relative rounded-2xl shadow-2xl w-full aspect-square object-cover"
               />
@@ -91,7 +83,7 @@ const About = () => {
             <div className="order-2 md:order-1 relative">
               <div className="absolute -inset-4 bg-gradient-to-l from-primary/30 to-primary/10 rounded-3xl blur-2xl" />
               <img
-                src={importImage("tibisay-nilyan.png")}
+                src="images/tibisay-nilyan.webp"
                 alt="Arepas Tradicionales"
                 className="relative rounded-2xl shadow-2xl w-full aspect-square object-cover"
               />
@@ -139,7 +131,7 @@ const About = () => {
             <div className="relative">
               <div className="absolute -inset-4 bg-gradient-to-r from-primary/30 to-primary/10 rounded-3xl blur-2xl" />
               <img
-                src={importImage("6.png")}
+                src="images/6.webp"
                 alt="Proceso Artesanal"
                 className="relative rounded-2xl shadow-2xl w-full aspect-square object-cover"
               />
@@ -180,23 +172,25 @@ const About = () => {
       </section>
 
       {/* Gallery Section */}
+      {/* Gallery Section */}
       <section className="py-16 md:py-24 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
             {[
-              "WhatsApp_Image_20251115_at_11_37_23_7.jpeg",
-              "WhatsApp_Image_20251115_at_11_37_23_6.jpeg",
-              "WhatsApp_Image_20251115_at_11_37_23_5.jpeg",
-              "WhatsApp_Image_20251115_at_11_37_22_1.jpeg",
+              "WhatsApp Image 2025-11-15 at 11.37.23 (7).webp",
+              "WhatsApp Image 2025-11-15 at 11.37.23 (6).webp",
+              "WhatsApp Image 2025-11-15 at 11.37.23 (5).webp",
+              "WhatsApp Image 2025-11-15 at 11.37.23 (1).webp",
             ].map((img, idx) => (
               <div
                 key={idx}
                 className="relative overflow-hidden rounded-2xl shadow-lg group"
               >
                 <img
-                  src={importImage(img)}
+                  src={`/images/${img}`}
                   alt={`Galería ${idx + 1}`}
                   className="w-full aspect-square object-cover group-hover:scale-110 transition-transform duration-700"
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>

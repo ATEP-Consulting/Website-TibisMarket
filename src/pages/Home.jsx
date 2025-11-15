@@ -2,14 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "../context/LanguageContext";
 
-const importImage = (imageName) => {
-  try {
-    return new URL(`../assets/images/${imageName}`, import.meta.url).href;
-  } catch {
-    return "";
-  }
-};
-
 const Home = () => {
   const { t } = useLanguage();
 
@@ -141,7 +133,7 @@ const Home = () => {
                   {/* Image container */}
                   <div className="relative bg-white/5 backdrop-blur-sm rounded-3xl p-2 border border-white/10">
                     <img
-                      src={importImage("tibisay.png")}
+                      src="images/tibisay.webp"
                       alt="María Tibisay Gómez"
                       className="w-full h-auto rounded-2xl shadow-2xl"
                     />
@@ -221,7 +213,7 @@ const Home = () => {
             <div className="relative">
               <div className="absolute -inset-4 bg-gradient-to-r from-primary/30 to-primary/10 rounded-3xl blur-2xl" />
               <img
-                src={importImage("WhatsApp_Image_20251115_at_11_37_24_2.jpeg")}
+                src="/images/WhatsApp Image 2025-11-15 at 11.37.24 (2).webp"
                 alt="Arepas Tradicionales"
                 className="relative rounded-2xl shadow-2xl w-full aspect-square object-cover"
               />
@@ -237,7 +229,7 @@ const Home = () => {
             <div className="order-2 md:order-1 relative">
               <div className="absolute -inset-4 bg-gradient-to-l from-primary/30 to-primary/10 rounded-3xl blur-2xl" />
               <img
-                src={importImage("WhatsApp_Image_20251115_at_11_37_22.jpeg")}
+                src="images/WhatsApp Image 2025-11-15 at 11.37.22.webp"
                 alt="Mini Arepas"
                 className="relative rounded-2xl shadow-2xl w-full aspect-square object-cover"
               />
@@ -283,17 +275,17 @@ const Home = () => {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
             {[
-              "WhatsApp_Image_20251115_at_11_37_23_3.jpeg",
-              "WhatsApp_Image_20251115_at_11_37_24.jpeg",
-              "WhatsApp_Image_20251115_at_11_37_22_1.jpeg",
-              "WhatsApp_Image_20251115_at_11_37_23_5.jpeg",
+              "WhatsApp Image 2025-11-15 at 11.37.23 (7).webp",
+              "WhatsApp Image 2025-11-15 at 11.37.23 (6).webp",
+              "WhatsApp Image 2025-11-15 at 11.37.23 (5).webp",
+              "WhatsApp Image 2025-11-15 at 11.37.23 (1).webp",
             ].map((img, idx) => (
               <div
                 key={idx}
                 className="relative overflow-hidden rounded-2xl shadow-lg group"
               >
                 <img
-                  src={importImage(img)}
+                  src={`/images/${img}`}
                   alt={`Producto ${idx + 1}`}
                   className="w-full aspect-square object-cover group-hover:scale-110 transition-transform duration-700"
                 />
@@ -314,7 +306,7 @@ const Home = () => {
             <div className="relative">
               <div className="absolute -inset-4 bg-primary/30 rounded-3xl blur-2xl" />
               <img
-                src={importImage("WhatsApp_Image_20251115_at_11_37_24_3.jpeg")}
+                src="images/WhatsApp Image 2025-11-15 at 11.37.24 (3).webp"
                 alt="Tibi's Market"
                 className="relative rounded-2xl shadow-2xl w-full aspect-square object-cover"
               />
