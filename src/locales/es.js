@@ -188,22 +188,22 @@ export const es = {
       title: "Hoy, Tibi's Market ofrece:",
       list: [
         {
-          name: "Arepas tradicionales",
-          description: "para desayunos o cenas con alma",
+          name: "Arepas Tradicionales",
+          description: "Para desayunos o cenas con alma",
         },
         {
-          name: "Arepas tipo bocado",
-          description: "perfectas para compartir",
+          name: "Arepas Tipo Bocado",
+          description: "Perfectas para compartir",
         },
         {
-          name: "Mini arepas",
+          name: "Mini Arepas",
           description:
-            "pensadas para los más pequeños… o los que aún creen en la magia",
+            "Pensadas para los más pequeños… o los que aún creen en la magia",
         },
         {
           name: "Are-Chips",
           description:
-            "crujientes, finas, modernas, pero con el sabor de siempre",
+            "Crujientes, finas, modernas, pero con el sabor de siempre",
         },
       ],
     },

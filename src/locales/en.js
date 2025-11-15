@@ -187,22 +187,22 @@ export const en = {
       title: "Today, Tibi's Market offers:",
       list: [
         {
-          name: "Traditional arepas",
-          description: "for soulful breakfasts or dinners",
+          name: "Traditional Arepas",
+          description: "For soulful breakfasts or dinners",
         },
         {
-          name: "Bite-sized arepas",
-          description: "perfect for sharing",
+          name: "Bite-Sized Arepas",
+          description: "Perfect for sharing",
         },
         {
-          name: "Mini arepas",
+          name: "Mini Arepas",
           description:
-            "designed for the little ones… or those who still believe in magic",
+            "Designed for the little ones… or those who still believe in magic",
         },
         {
           name: "Are-Chips",
           description:
-            "crispy, thin, modern, but with the same traditional flavor",
+            "Crispy, thin, modern, but with the same traditional flavor",
         },
       ],
     },
