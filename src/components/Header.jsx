@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { HiMenu, HiX } from "react-icons/hi";
 import { FaShoppingCart } from "react-icons/fa";
@@ -8,14 +8,47 @@ import logo from "../assets/images/WhatsApp_Image_20251115_at_11_37_24_1.jpeg";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
   const { language, t, toggleLanguage } = useLanguage();
   const { totalItems } = useCart();
   const location = useLocation();
 
   const isActive = (path) => location.pathname === path;
 
+  // Control de scroll para mostrar/ocultar header
+  useEffect(() => {
+    const controlNavbar = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY < lastScrollY || currentScrollY < 10) {
+        // Scrolling up o en el top
+        setIsVisible(true);
+      } else if (currentScrollY > lastScrollY && currentScrollY > 80) {
+        // Scrolling down y pasó de 80px
+        setIsVisible(false);
+        setIsMenuOpen(false); // Cerrar menu mobile si está abierto
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    // Solo aplicar el comportamiento de scroll si el menú NO está abierto
+    if (!isMenuOpen) {
+      window.addEventListener("scroll", controlNavbar);
+    }
+
+    return () => {
+      window.removeEventListener("scroll", controlNavbar);
+    };
+  }, [lastScrollY, isMenuOpen]); // ← AÑADIDO isMenuOpen como dependencia
+
   return (
-    <header className="bg-white shadow-lg sticky top-0 z-50">
+    <header
+      className={`bg-white shadow-lg fixed top-0 left-0 right-0 z-50 transition-transform duration-300 ${
+        isVisible ? "translate-y-0" : "-translate-y-full"
+      }`}
+    >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
