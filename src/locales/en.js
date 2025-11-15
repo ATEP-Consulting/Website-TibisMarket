@@ -257,13 +257,13 @@ export const en = {
   footer: {
     about: "About Us",
     aboutText:
-      "Artisan arepas since 1943, made with love and family tradition.",
+      "Handmade artisan wheat arepas, made with love and family tradition since 1943.",
     quickLinks: "Quick Links",
-    legal: "Legal",
-    privacy: "Privacy Policy",
-    cookies: "Cookie Policy",
-    terms: "Legal Notice",
     rights: "All rights reserved.",
+    madeBy: "Developed by",
+    privacy: "Privacy Policy",
+    cookies: "Cookies",
+    terms: "Legal Notice",
   },
 
   // Legal pages

@@ -258,13 +258,13 @@ export const es = {
   footer: {
     about: "Sobre Nosotros",
     aboutText:
-      "Arepas artesanales desde 1943, elaboradas con amor y tradición familiar.",
+      "Arepas artesanales de trigo, hechas a mano con amor y tradición familiar desde 1943.",
     quickLinks: "Enlaces Rápidos",
-    legal: "Legal",
-    privacy: "Política de Privacidad",
-    cookies: "Política de Cookies",
-    terms: "Aviso Legal",
     rights: "Todos los derechos reservados.",
+    madeBy: "Desarrollado por",
+    privacy: "Política de Privacidad",
+    cookies: "Cookies",
+    terms: "Aviso Legal",
   },
 
   // Legal pages

@@ -103,11 +103,24 @@ const Footer = () => {
 
         {/* Legal Links */}
         <div className="border-t border-gray-700 mt-8 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 text-sm">
-              © {currentYear} Tibi's Market. {t.footer.rights}
-            </p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <div className="text-center md:text-left">
+              <p className="text-gray-400 text-sm">
+                © {currentYear} Tibi's Market. {t.footer.rights}
+              </p>
+              <p className="text-gray-500 text-xs mt-1">
+                {t.footer.madeBy}{" "}
+                <a
+                  href="https://www.atepconsulting.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:text-orange-400 transition-colors font-semibold"
+                >
+                  ATEP Consulting
+                </a>
+              </p>
+            </div>
+            <div className="flex space-x-6">
               <Link
                 to="/privacy"
                 className="text-gray-400 hover:text-primary text-sm transition-colors"
