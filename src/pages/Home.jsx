@@ -141,7 +141,7 @@ const Home = () => {
                   {/* Image container */}
                   <div className="relative bg-white/5 backdrop-blur-sm rounded-3xl p-2 border border-white/10">
                     <img
-                      src={importImage("tibisay-nilyan.png")}
+                      src={importImage("tibisay.png")}
                       alt="María Tibisay Gómez"
                       className="w-full h-auto rounded-2xl shadow-2xl"
                     />

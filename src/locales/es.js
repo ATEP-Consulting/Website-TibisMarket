@@ -26,7 +26,7 @@ export const es = {
         shipping: "Envíos a todo USA",
       },
       floatingCard: {
-        years: "81 años",
+        years: "+200 años",
         tradition: "de tradición familiar",
       },
     },

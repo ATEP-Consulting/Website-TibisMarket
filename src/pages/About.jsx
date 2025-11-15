@@ -91,7 +91,7 @@ const About = () => {
             <div className="order-2 md:order-1 relative">
               <div className="absolute -inset-4 bg-gradient-to-l from-primary/30 to-primary/10 rounded-3xl blur-2xl" />
               <img
-                src={importImage("WhatsApp_Image_20251115_at_11_37_24_2.jpeg")}
+                src={importImage("tibisay-nilyan.png")}
                 alt="Arepas Tradicionales"
                 className="relative rounded-2xl shadow-2xl w-full aspect-square object-cover"
               />
