@@ -74,7 +74,7 @@ const Header = () => {
             {/* Cart Icon with Badge */}
             <Link
               to="/cart"
-              className="relative text-primary hover:text-orange-600 transition-colors"
+              className="relative text-primary hover:text-orange-500 transition-colors"
             >
               <FaShoppingCart className="text-2xl" />
               {totalItems > 0 && (

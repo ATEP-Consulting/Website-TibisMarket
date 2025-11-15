@@ -102,7 +102,7 @@ const ProductCard = ({ product }) => {
           onClick={handleAddToCart}
           disabled={added}
           className={`w-full ${
-            added ? "bg-success" : "bg-primary hover:bg-orange-600"
+            added ? "bg-success" : "bg-primary hover:bg-orange-500"
           } text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center space-x-2 transform hover:scale-105 active:scale-95 disabled:transform-none disabled:cursor-not-allowed`}
         >
           {added ? (

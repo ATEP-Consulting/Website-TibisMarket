@@ -391,7 +391,7 @@ const Cart = () => {
                 <div className="mt-8 pt-6 border-t border-gray-200 space-y-4">
                   <button
                     onClick={handleSendViaWhatsApp}
-                    className="w-full bg-success hover:bg-green-600 text-white px-6 py-4 rounded-xl font-bold text-lg transition-all duration-300 transform hover:scale-105 active:scale-95 flex items-center justify-center gap-3 shadow-lg"
+                    className="w-full bg-success hover:bg-green-500 text-white px-6 py-4 rounded-xl font-bold text-lg transition-all duration-300 transform hover:scale-105 active:scale-95 flex items-center justify-center gap-3 shadow-lg"
                   >
                     <FaWhatsapp className="text-2xl" />
                     <span>{t.cart.sendViaWhatsApp}</span>
@@ -399,7 +399,7 @@ const Cart = () => {
 
                   <button
                     onClick={handleSendViaEmail}
-                    className="w-full bg-primary hover:bg-orange-600 text-white px-6 py-4 rounded-xl font-bold text-lg transition-all duration-300 transform hover:scale-105 active:scale-95 flex items-center justify-center gap-3 shadow-lg"
+                    className="w-full bg-primary hover:bg-orange-500 text-white px-6 py-4 rounded-xl font-bold text-lg transition-all duration-300 transform hover:scale-105 active:scale-95 flex items-center justify-center gap-3 shadow-lg"
                   >
                     <MdEmail className="text-2xl" />
                     <span>{t.cart.sendViaEmail}</span>

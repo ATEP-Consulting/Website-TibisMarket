@@ -63,7 +63,7 @@ const CartItem = ({ item }) => {
 
           <button
             onClick={() => updateQuantity(item.id, item.quantity + 1)}
-            className="bg-primary text-white p-2 rounded-lg hover:bg-orange-600 transition-colors"
+            className="bg-primary text-white p-2 rounded-lg hover:bg-orange-500 transition-colors"
           >
             <FaPlus />
           </button>
