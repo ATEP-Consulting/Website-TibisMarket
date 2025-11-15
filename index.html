@@ -6,6 +6,7 @@
     <!-- Favicon -->
     <link rel="icon" type="image/jpeg" href="/logo-icon.jpg" />
     <link rel="apple-touch-icon" href="/logo-icon.jpg" />
+    <link rel="manifest" href="/manifest.json" />
 
     <!-- Viewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,9 +18,10 @@
     />
     <meta
       name="keywords"
-      content="arepas, arepas de trigo, arepas andinas, comida venezolana, Miami, artesanal, Tibi's Market, arepas tradicionales"
+      content="arepas, arepas de trigo, arepas andinas, comida venezolana, Miami, artesanal, Tibi's Market, arepas tradicionales, food delivery Miami"
     />
     <meta name="author" content="Tibi's Market" />
+    <meta name="robots" content="index, follow" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -68,6 +70,33 @@
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://www.tibismarket.com/" />
+
+    <!-- Structured Data - JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FoodEstablishment",
+        "name": "Tibi's Market",
+        "description": "Arepas artesanales de trigo hechas a mano con amor y tradición familiar",
+        "url": "https://www.tibismarket.com",
+        "logo": "https://www.tibismarket.com/logo-icon.jpg",
+        "image": "https://www.tibismarket.com/og-image.jpg",
+        "telephone": "+1-305-898-3610",
+        "email": "tibismarket@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Miami",
+          "addressRegion": "FL",
+          "addressCountry": "US"
+        },
+        "servesCuisine": "Venezuelan",
+        "priceRange": "$$",
+        "sameAs": [
+          "https://instagram.com/tibismarket",
+          "https://www.facebook.com/share/17dRWkPRFC/?mibextid=wwXIfr"
+        ]
+      }
+    </script>
 
     <title>Tibi's Market - Arepas Artesanales de Trigo | Miami</title>
   </head>

@@ -1,0 +1,16 @@
+{
+  "name": "Tibi's Market",
+  "short_name": "Tibi's",
+  "description": "Arepas artesanales de trigo hechas a mano",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ff914d",
+  "icons": [
+    {
+      "src": "/logo-icon.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}
