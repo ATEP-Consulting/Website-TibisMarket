@@ -11,7 +11,7 @@ const Home = () => {
       {/* Hero Section - Profesional y Moderno */}
       <section className="relative min-h-screen w-full overflow-hidden">
         {/* Background con overlay mejorado */}
-        <div className="absolute inset-0 bg-gradient-to-br from-dark via-dark/95 to-primary/20">
+        <div className="absolute inset-0 bg-gradient-to-br from-dark/95 via-dark/90 to-primary/20">
           <div className="absolute inset-0 opacity-20"></div>
         </div>
 
