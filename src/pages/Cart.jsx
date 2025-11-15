@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaWhatsapp, FaTrash } from "react-icons/fa";
-import { MdEmail, MdPerson, MdPhone } from "react-icons/md";
+import { MdEmail, MdPerson, MdPhone, MdLocationOn } from "react-icons/md";
 import { useCart } from "../context/CartContext";
 import { useLanguage } from "../context/LanguageContext";
 import CartItem from "../components/CartItem";
@@ -15,6 +15,7 @@ const Cart = () => {
     lastName: "",
     phone: "",
     email: "",
+    address: "",
   });
 
   const [errors, setErrors] = useState({});
@@ -58,6 +59,10 @@ const Cart = () => {
       newErrors.email = t.cart.invalidEmail;
     }
 
+    if (!customerData.address.trim()) {
+      newErrors.address = t.cart.fillAllFields;
+    }
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -77,7 +82,8 @@ const Cart = () => {
     message += "DATOS DEL CLIENTE:\n";
     message += `Nombre: ${customerData.firstName} ${customerData.lastName}\n`;
     message += `Teléfono: ${customerData.phone}\n`;
-    message += `Email: ${customerData.email}\n\n`;
+    message += `Email: ${customerData.email}\n`;
+    message += `Dirección de Envío: ${customerData.address}\n\n`;
     message += "¡Gracias!";
 
     return message;
@@ -94,7 +100,7 @@ const Cart = () => {
     }
 
     const message = formatOrderMessage();
-    const phoneNumber = "+34647748705"; // WhatsApp number
+    const phoneNumber = "13051234567"; // WhatsApp number
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
 
@@ -267,10 +273,31 @@ const Cart = () => {
                     className={`input-field ${
                       errors.email ? "border-error" : ""
                     }`}
-                    placeholder="pteijeirolopez@gmail.com"
+                    placeholder="ejemplo@email.com"
                   />
                   {errors.email && (
                     <p className="text-error text-sm mt-1">{errors.email}</p>
+                  )}
+                </div>
+
+                {/* Address */}
+                <div>
+                  <label className="block text-sm font-semibold text-dark mb-2">
+                    <MdLocationOn className="inline mr-2 text-primary" />
+                    {t.cart.address}
+                  </label>
+                  <textarea
+                    name="address"
+                    value={customerData.address}
+                    onChange={handleInputChange}
+                    className={`input-field ${
+                      errors.address ? "border-error" : ""
+                    }`}
+                    placeholder={t.cart.addressPlaceholder}
+                    rows="3"
+                  />
+                  {errors.address && (
+                    <p className="text-error text-sm mt-1">{errors.address}</p>
                   )}
                 </div>
               </div>

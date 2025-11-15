@@ -53,6 +53,26 @@ const ProductCard = ({ product }) => {
         <h3 className="text-xl font-bold text-dark mb-2">{product.name}</h3>
         <p className="text-gray-600 mb-4 line-clamp-2">{product.description}</p>
 
+        <div className="text-sm text-gray-500 mb-4">
+          {product.units ? (
+            <>
+              <p>
+                {product.units} units ({product.weightPerUnit}
+                {product.weightUnit} each)
+              </p>
+              <p className="font-semibold">
+                Total: {product.totalWeight}
+                {product.weightUnit}
+              </p>
+            </>
+          ) : (
+            <p className="font-semibold">
+              {product.totalWeight}
+              {product.weightUnit} Pack
+            </p>
+          )}
+        </div>
+
         <div className="flex items-center justify-between mb-4">
           <span className="text-3xl font-bold text-primary">
             ${product.price.toFixed(2)}
