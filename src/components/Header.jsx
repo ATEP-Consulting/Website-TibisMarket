@@ -4,7 +4,7 @@ import { HiMenu, HiX } from "react-icons/hi";
 import { FaShoppingCart } from "react-icons/fa";
 import { useLanguage } from "../context/LanguageContext";
 import { useCart } from "../context/CartContext";
-import logo from "../assets/images/WhatsApp_Image_20251115_at_11_37_24_1.jpeg";
+import logo from "/public/images/WhatsApp_Image_20251115_at_11_37_24_1.jpeg";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
