@@ -13,56 +13,45 @@ const Privacy = () => {
 
         <div className="prose prose-lg max-w-none animate-slide-up">
           <p className="text-gray-700 leading-relaxed mb-6">
-            En Tibi's Market, nos comprometemos a proteger su privacidad y la
-            seguridad de su información personal. Esta política de privacidad
-            explica cómo recopilamos, usamos y protegemos sus datos.
+            {t.privacy.intro}
           </p>
 
           <h2 className="text-2xl font-bold text-dark mt-8 mb-4">
-            Información que Recopilamos
+            {t.privacy.sections.collection.title}
           </h2>
           <p className="text-gray-700 leading-relaxed mb-6">
-            Recopilamos información que usted nos proporciona directamente al
-            realizar un pedido, incluyendo su nombre, número de teléfono y
-            dirección de correo electrónico.
+            {t.privacy.sections.collection.content}
           </p>
 
           <h2 className="text-2xl font-bold text-dark mt-8 mb-4">
-            Uso de la Información
+            {t.privacy.sections.usage.title}
           </h2>
           <p className="text-gray-700 leading-relaxed mb-6">
-            Utilizamos su información únicamente para procesar sus pedidos y
-            comunicarnos con usted acerca de su compra. No compartimos su
-            información con terceros.
+            {t.privacy.sections.usage.content}
           </p>
 
           <h2 className="text-2xl font-bold text-dark mt-8 mb-4">
-            Seguridad de los Datos
+            {t.privacy.sections.security.title}
           </h2>
           <p className="text-gray-700 leading-relaxed mb-6">
-            Implementamos medidas de seguridad apropiadas para proteger su
-            información personal contra acceso no autorizado, alteración,
-            divulgación o destrucción.
+            {t.privacy.sections.security.content}
           </p>
 
           <h2 className="text-2xl font-bold text-dark mt-8 mb-4">
-            Sus Derechos
+            {t.privacy.sections.rights.title}
           </h2>
           <p className="text-gray-700 leading-relaxed mb-6">
-            Usted tiene derecho a acceder, corregir o eliminar su información
-            personal en cualquier momento. Para ejercer estos derechos,
-            contáctenos a través de nuestros canales de comunicación.
+            {t.privacy.sections.rights.content}
           </p>
 
-          <h2 className="text-2xl font-bold text-dark mt-8 mb-4">Contacto</h2>
+          <h2 className="text-2xl font-bold text-dark mt-8 mb-4">
+            {t.privacy.sections.contact.title}
+          </h2>
           <p className="text-gray-700 leading-relaxed mb-6">
-            Si tiene preguntas sobre esta política de privacidad, puede
-            contactarnos en tibismarket@gmail.com o al +1 (305) 898-3610.
+            {t.privacy.sections.contact.content}
           </p>
 
-          <p className="text-gray-600 text-sm mt-8">
-            Última actualización: Noviembre 2024
-          </p>
+          <p className="text-gray-600 text-sm mt-8">{t.privacy.lastUpdate}</p>
         </div>
       </div>
     </div>

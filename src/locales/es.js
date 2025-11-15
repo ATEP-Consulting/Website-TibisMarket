@@ -260,16 +260,122 @@ export const es = {
   },
 
   // Legal pages
+  // Legal pages
   privacy: {
     title: "Política de Privacidad",
-    content: "En Tibi's Market, nos comprometemos a proteger su privacidad...",
+    intro:
+      "En Tibi's Market, nos comprometemos a proteger su privacidad y la seguridad de su información personal. Esta política de privacidad explica cómo recopilamos, usamos y protegemos sus datos.",
+    sections: {
+      collection: {
+        title: "Información que Recopilamos",
+        content:
+          "Recopilamos información que usted nos proporciona directamente al realizar un pedido, incluyendo su nombre, número de teléfono y dirección de correo electrónico.",
+      },
+      usage: {
+        title: "Uso de la Información",
+        content:
+          "Utilizamos su información únicamente para procesar sus pedidos y comunicarnos con usted acerca de su compra. No compartimos su información con terceros.",
+      },
+      security: {
+        title: "Seguridad de los Datos",
+        content:
+          "Implementamos medidas de seguridad apropiadas para proteger su información personal contra acceso no autorizado, alteración, divulgación o destrucción.",
+      },
+      rights: {
+        title: "Sus Derechos",
+        content:
+          "Usted tiene derecho a acceder, corregir o eliminar su información personal en cualquier momento. Para ejercer estos derechos, contáctenos a través de nuestros canales de comunicación.",
+      },
+      contact: {
+        title: "Contacto",
+        content:
+          "Si tiene preguntas sobre esta política de privacidad, puede contactarnos en tibismarket@gmail.com o al +1 (305) 898-3610.",
+      },
+    },
+    lastUpdate: "Última actualización: Noviembre 2024",
   },
+
   cookies: {
     title: "Política de Cookies",
-    content: "Este sitio web utiliza cookies para mejorar su experiencia...",
+    intro:
+      "Este sitio web utiliza cookies para mejorar su experiencia de navegación. Al utilizar nuestro sitio web, acepta el uso de cookies de acuerdo con esta política.",
+    sections: {
+      what: {
+        title: "¿Qué son las Cookies?",
+        content:
+          "Las cookies son pequeños archivos de texto que se almacenan en su dispositivo cuando visita un sitio web. Ayudan al sitio web a recordar información sobre su visita.",
+      },
+      types: {
+        title: "Tipos de Cookies que Utilizamos",
+        essential: {
+          title: "Cookies Esenciales:",
+          content: "Necesarias para el funcionamiento básico del sitio web.",
+        },
+        functional: {
+          title: "Cookies de Funcionalidad:",
+          content:
+            "Permiten recordar sus preferencias, como el idioma seleccionado.",
+        },
+      },
+      management: {
+        title: "Gestión de Cookies",
+        content:
+          "Puede controlar y/o eliminar las cookies según desee. Puede eliminar todas las cookies que ya están en su computadora y puede configurar la mayoría de los navegadores para evitar que se coloquen.",
+      },
+      moreInfo: {
+        title: "Más Información",
+        content:
+          "Si tiene preguntas sobre nuestra política de cookies, contáctenos en tibismarket@gmail.com o al +1 (305) 898-3610.",
+      },
+    },
+    lastUpdate: "Última actualización: Noviembre 2024",
   },
+
   terms: {
     title: "Aviso Legal",
-    content: "Información legal sobre Tibi's Market...",
+    intro:
+      "Bienvenido a Tibi's Market. Al acceder y utilizar este sitio web, usted acepta cumplir con los siguientes términos y condiciones.",
+    sections: {
+      company: {
+        title: "Información de la Empresa",
+        name: "Nombre comercial:",
+        nameValue: "Tibi's Market",
+        email: "Email:",
+        emailValue: "tibismarket@gmail.com",
+        phone: "Teléfono:",
+        phoneValue: "+1 (305) 898-3610",
+      },
+      usage: {
+        title: "Uso del Sitio Web",
+        content:
+          "Este sitio web se proporciona únicamente con fines informativos y de comercio electrónico. Nos reservamos el derecho de modificar o descontinuar cualquier aspecto del sitio en cualquier momento.",
+      },
+      products: {
+        title: "Productos y Precios",
+        content:
+          "Hacemos todo lo posible para asegurar que la información sobre productos y precios sea precisa. Sin embargo, nos reservamos el derecho de corregir cualquier error y de cambiar los precios en cualquier momento.",
+      },
+      orders: {
+        title: "Pedidos",
+        content:
+          "Todos los pedidos están sujetos a disponibilidad y confirmación. Nos reservamos el derecho de rechazar cualquier pedido por cualquier motivo.",
+      },
+      intellectual: {
+        title: "Propiedad Intelectual",
+        content:
+          "Todo el contenido de este sitio web, incluyendo texto, gráficos, logotipos e imágenes, es propiedad de Tibi's Market y está protegido por las leyes de derechos de autor.",
+      },
+      liability: {
+        title: "Limitación de Responsabilidad",
+        content:
+          "Tibi's Market no será responsable de ningún daño directo, indirecto, incidental o consecuente que surja del uso o la imposibilidad de usar este sitio web.",
+      },
+      contact: {
+        title: "Contacto",
+        content:
+          "Para cualquier pregunta sobre estos términos legales, contáctenos en tibismarket@gmail.com o al +1 (305) 898-3610.",
+      },
+    },
+    lastUpdate: "Última actualización: Noviembre 2024",
   },
 };

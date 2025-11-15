@@ -12,77 +12,67 @@ const Terms = () => {
         </h1>
 
         <div className="prose prose-lg max-w-none animate-slide-up">
-          <p className="text-gray-700 leading-relaxed mb-6">
-            Bienvenido a Tibi's Market. Al acceder y utilizar este sitio web,
-            usted acepta cumplir con los siguientes términos y condiciones.
-          </p>
+          <p className="text-gray-700 leading-relaxed mb-6">{t.terms.intro}</p>
 
           <h2 className="text-2xl font-bold text-dark mt-8 mb-4">
-            Información de la Empresa
+            {t.terms.sections.company.title}
           </h2>
           <p className="text-gray-700 leading-relaxed mb-4">
-            <strong>Nombre comercial:</strong> Tibi's Market
+            <strong>{t.terms.sections.company.name}</strong>{" "}
+            {t.terms.sections.company.nameValue}
           </p>
           <p className="text-gray-700 leading-relaxed mb-4">
-            <strong>Email:</strong> tibismarket@gmail.com
+            <strong>{t.terms.sections.company.email}</strong>{" "}
+            {t.terms.sections.company.emailValue}
           </p>
           <p className="text-gray-700 leading-relaxed mb-6">
-            <strong>Teléfono:</strong> +1 (305) 898-3610
+            <strong>{t.terms.sections.company.phone}</strong>{" "}
+            {t.terms.sections.company.phoneValue}
           </p>
 
           <h2 className="text-2xl font-bold text-dark mt-8 mb-4">
-            Uso del Sitio Web
+            {t.terms.sections.usage.title}
           </h2>
           <p className="text-gray-700 leading-relaxed mb-6">
-            Este sitio web se proporciona únicamente con fines informativos y de
-            comercio electrónico. Nos reservamos el derecho de modificar o
-            descontinuar cualquier aspecto del sitio en cualquier momento.
+            {t.terms.sections.usage.content}
           </p>
 
           <h2 className="text-2xl font-bold text-dark mt-8 mb-4">
-            Productos y Precios
+            {t.terms.sections.products.title}
           </h2>
           <p className="text-gray-700 leading-relaxed mb-6">
-            Hacemos todo lo posible para asegurar que la información sobre
-            productos y precios sea precisa. Sin embargo, nos reservamos el
-            derecho de corregir cualquier error y de cambiar los precios en
-            cualquier momento.
-          </p>
-
-          <h2 className="text-2xl font-bold text-dark mt-8 mb-4">Pedidos</h2>
-          <p className="text-gray-700 leading-relaxed mb-6">
-            Todos los pedidos están sujetos a disponibilidad y confirmación. Nos
-            reservamos el derecho de rechazar cualquier pedido por cualquier
-            motivo.
+            {t.terms.sections.products.content}
           </p>
 
           <h2 className="text-2xl font-bold text-dark mt-8 mb-4">
-            Propiedad Intelectual
+            {t.terms.sections.orders.title}
           </h2>
           <p className="text-gray-700 leading-relaxed mb-6">
-            Todo el contenido de este sitio web, incluyendo texto, gráficos,
-            logotipos e imágenes, es propiedad de Tibi's Market y está protegido
-            por las leyes de derechos de autor.
+            {t.terms.sections.orders.content}
           </p>
 
           <h2 className="text-2xl font-bold text-dark mt-8 mb-4">
-            Limitación de Responsabilidad
+            {t.terms.sections.intellectual.title}
           </h2>
           <p className="text-gray-700 leading-relaxed mb-6">
-            Tibi's Market no será responsable de ningún daño directo, indirecto,
-            incidental o consecuente que surja del uso o la imposibilidad de
-            usar este sitio web.
+            {t.terms.sections.intellectual.content}
           </p>
 
-          <h2 className="text-2xl font-bold text-dark mt-8 mb-4">Contacto</h2>
+          <h2 className="text-2xl font-bold text-dark mt-8 mb-4">
+            {t.terms.sections.liability.title}
+          </h2>
           <p className="text-gray-700 leading-relaxed mb-6">
-            Para cualquier pregunta sobre estos términos legales, contáctenos en
-            tibismarket@gmail.com o al +1 (305) 898-3610.
+            {t.terms.sections.liability.content}
           </p>
 
-          <p className="text-gray-600 text-sm mt-8">
-            Última actualización: Noviembre 2024
+          <h2 className="text-2xl font-bold text-dark mt-8 mb-4">
+            {t.terms.sections.contact.title}
+          </h2>
+          <p className="text-gray-700 leading-relaxed mb-6">
+            {t.terms.sections.contact.content}
           </p>
+
+          <p className="text-gray-600 text-sm mt-8">{t.terms.lastUpdate}</p>
         </div>
       </div>
     </div>

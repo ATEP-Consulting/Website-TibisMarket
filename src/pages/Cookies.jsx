@@ -13,52 +13,43 @@ const Cookies = () => {
 
         <div className="prose prose-lg max-w-none animate-slide-up">
           <p className="text-gray-700 leading-relaxed mb-6">
-            Este sitio web utiliza cookies para mejorar su experiencia de
-            navegación. Al utilizar nuestro sitio web, acepta el uso de cookies
-            de acuerdo con esta política.
+            {t.cookies.intro}
           </p>
 
           <h2 className="text-2xl font-bold text-dark mt-8 mb-4">
-            ¿Qué son las Cookies?
+            {t.cookies.sections.what.title}
           </h2>
           <p className="text-gray-700 leading-relaxed mb-6">
-            Las cookies son pequeños archivos de texto que se almacenan en su
-            dispositivo cuando visita un sitio web. Ayudan al sitio web a
-            recordar información sobre su visita.
+            {t.cookies.sections.what.content}
           </p>
 
           <h2 className="text-2xl font-bold text-dark mt-8 mb-4">
-            Tipos de Cookies que Utilizamos
+            {t.cookies.sections.types.title}
           </h2>
           <p className="text-gray-700 leading-relaxed mb-4">
-            <strong>Cookies Esenciales:</strong> Necesarias para el
-            funcionamiento básico del sitio web.
+            <strong>{t.cookies.sections.types.essential.title}</strong>{" "}
+            {t.cookies.sections.types.essential.content}
           </p>
           <p className="text-gray-700 leading-relaxed mb-6">
-            <strong>Cookies de Funcionalidad:</strong> Permiten recordar sus
-            preferencias, como el idioma seleccionado.
+            <strong>{t.cookies.sections.types.functional.title}</strong>{" "}
+            {t.cookies.sections.types.functional.content}
           </p>
 
           <h2 className="text-2xl font-bold text-dark mt-8 mb-4">
-            Gestión de Cookies
+            {t.cookies.sections.management.title}
           </h2>
           <p className="text-gray-700 leading-relaxed mb-6">
-            Puede controlar y/o eliminar las cookies según desee. Puede eliminar
-            todas las cookies que ya están en su computadora y puede configurar
-            la mayoría de los navegadores para evitar que se coloquen.
+            {t.cookies.sections.management.content}
           </p>
 
           <h2 className="text-2xl font-bold text-dark mt-8 mb-4">
-            Más Información
+            {t.cookies.sections.moreInfo.title}
           </h2>
           <p className="text-gray-700 leading-relaxed mb-6">
-            Si tiene preguntas sobre nuestra política de cookies, contáctenos en
-            tibismarket@gmail.com o al +1 (305) 898-3610.
+            {t.cookies.sections.moreInfo.content}
           </p>
 
-          <p className="text-gray-600 text-sm mt-8">
-            Última actualización: Noviembre 2024
-          </p>
+          <p className="text-gray-600 text-sm mt-8">{t.cookies.lastUpdate}</p>
         </div>
       </div>
     </div>
