@@ -2,6 +2,7 @@ import React from "react";
 import { FaPhone, FaInstagram, FaFacebook, FaWhatsapp } from "react-icons/fa";
 import { MdEmail, MdLocationOn } from "react-icons/md";
 import { useLanguage } from "../context/LanguageContext";
+import { MdAccessTime } from "react-icons/md";
 
 const Contact = () => {
   const { t } = useLanguage();
@@ -30,156 +31,120 @@ const Contact = () => {
 
       {/* Contact Content */}
       <section className="py-20 md:py-32 px-6 bg-gradient-to-b from-white to-secondary/20">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
-            {/* Left - Contact Info */}
-            <div className="space-y-8">
-              <div>
-                <h2 className="text-3xl md:text-4xl font-bold text-dark mb-6">
-                  {t.contact.intro.title}
-                </h2>
-                <p className="text-lg text-gray-600 leading-relaxed">
-                  {t.contact.intro.text}
-                </p>
+        <div className="max-w-6xl mx-auto">
+          {/* Contact Methods - 3 Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            {/* Phone Card */}
+            <div className="group text-center p-8 rounded-2xl bg-gradient-to-br from-white to-secondary/30 border-2 border-gray-100 hover:border-primary/30 transition-all duration-300 hover:shadow-xl">
+              <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                <FaPhone className="text-3xl text-primary" />
               </div>
+              <h3 className="text-lg font-bold text-dark mb-2">
+                {t.contact.phone}
+              </h3>
+              <p className="text-sm text-gray-500 mb-3">
+                {t.contact.phoneDesc}
+              </p>
+              <a
+                href="tel:+13058983610"
+                className="inline-block text-primary font-semibold hover:text-orange-600 transition-colors"
+              >
+                {t.contact.phoneNumber}
+              </a>
+              <div className="mt-4 h-1 w-0 bg-gradient-to-r from-primary to-orange-600 rounded-full mx-auto group-hover:w-20 transition-all duration-300"></div>
+            </div>
 
-              {/* Contact Methods */}
-              <div className="space-y-6">
-                {/* Phone */}
-                <div className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-primary/20">
-                  <div className="flex items-start gap-4">
-                    <div className="bg-primary/10 p-4 rounded-xl group-hover:bg-primary/20 transition-colors">
-                      <FaPhone className="text-2xl text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-dark text-lg mb-2">
-                        {t.contact.phone}
-                      </h3>
-                      <a
-                        href="tel:+13058983610"
-                        className="text-gray-600 hover:text-primary transition-colors text-lg"
-                      >
-                        +1 (305) 898-3610
-                      </a>
-                    </div>
-                  </div>
-                </div>
+            {/* WhatsApp Card */}
+            <div className="group text-center p-8 rounded-2xl bg-gradient-to-br from-white to-secondary/30 border-2 border-gray-100 hover:border-success/30 transition-all duration-300 hover:shadow-xl">
+              <div className="w-16 h-16 bg-gradient-to-br from-success/20 to-success/10 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                <FaWhatsapp className="text-3xl text-success" />
+              </div>
+              <h3 className="text-lg font-bold text-dark mb-2">WhatsApp</h3>
+              <p className="text-sm text-gray-500 mb-3">
+                {t.contact.whatsappDesc}
+              </p>
+              <a
+                href="https://wa.me/13058983610"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block text-success font-semibold hover:text-green-700 transition-colors"
+              >
+                {t.contact.phoneNumber}
+              </a>
+              <div className="mt-4 h-1 w-0 bg-gradient-to-r from-success to-green-600 rounded-full mx-auto group-hover:w-20 transition-all duration-300"></div>
+            </div>
 
-                {/* WhatsApp */}
-                <div className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-success/20">
-                  <div className="flex items-start gap-4">
-                    <div className="bg-success/10 p-4 rounded-xl group-hover:bg-success/20 transition-colors">
-                      <FaWhatsapp className="text-2xl text-success" />
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-dark text-lg mb-2">
-                        WhatsApp
-                      </h3>
-                      <a
-                        href="https://wa.me/13058983610"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-gray-600 hover:text-success transition-colors text-lg"
-                      >
-                        +1 (305) 898-3610
-                      </a>
-                    </div>
-                  </div>
-                </div>
+            {/* Email Card */}
+            <div className="group text-center p-8 rounded-2xl bg-gradient-to-br from-white to-secondary/30 border-2 border-gray-100 hover:border-primary/30 transition-all duration-300 hover:shadow-xl">
+              <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                <MdEmail className="text-3xl text-primary" />
+              </div>
+              <h3 className="text-lg font-bold text-dark mb-2">
+                {t.contact.email}
+              </h3>
+              <p className="text-sm text-gray-500 mb-3">
+                {t.contact.emailDesc}
+              </p>
+              <a
+                href="mailto:tibismarket@gmail.com"
+                className="inline-block text-primary font-semibold hover:text-orange-600 transition-colors break-all px-2"
+              >
+                {t.contact.emailAddress}
+              </a>
+              <div className="mt-4 h-1 w-0 bg-gradient-to-r from-primary to-orange-600 rounded-full mx-auto group-hover:w-20 transition-all duration-300"></div>
+            </div>
+          </div>
 
-                {/* Email */}
-                <div className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-primary/20">
-                  <div className="flex items-start gap-4">
-                    <div className="bg-primary/10 p-4 rounded-xl group-hover:bg-primary/20 transition-colors">
-                      <MdEmail className="text-2xl text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-dark text-lg mb-2">
-                        {t.contact.email}
-                      </h3>
-                      <a
-                        href="mailto:tibismarket@gmail.com"
-                        className="text-gray-600 hover:text-primary transition-colors text-lg"
-                      >
-                        tibismarket@gmail.com
-                      </a>
-                    </div>
-                  </div>
+          {/* Bottom Grid - 2 Info Cards */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Location Card */}
+            <div className="bg-gradient-to-br from-secondary/50 to-white rounded-2xl border-2 border-gray-100 p-8">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                  <MdLocationOn className="text-2xl text-primary" />
                 </div>
-
-                {/* Location */}
-                <div className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-primary/20">
-                  <div className="flex items-start gap-4">
-                    <div className="bg-primary/10 p-4 rounded-xl group-hover:bg-primary/20 transition-colors">
-                      <MdLocationOn className="text-2xl text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-dark text-lg mb-2">
-                        {t.contact.location}
-                      </h3>
-                      <p className="text-gray-600 text-lg">Miami, Florida</p>
-                      <p className="text-gray-500">Estados Unidos</p>
-                    </div>
-                  </div>
-                </div>
+                <h3 className="text-lg font-bold text-dark">
+                  {t.contact.location}
+                </h3>
+              </div>
+              <p className="text-gray-700 text-lg font-semibold mb-1">
+                {t.contact.city}
+              </p>
+              <p className="text-gray-600 mb-4">{t.contact.country}</p>
+              <div className="bg-primary/10 px-4 py-2 rounded-lg inline-block">
+                <p className="text-primary font-semibold text-sm">
+                  {t.contact.shipping}
+                </p>
               </div>
             </div>
 
-            {/* Right - Social & CTA */}
-            <div className="space-y-8">
-              {/* Social Media Card */}
-              <div className="bg-gradient-to-br from-primary/10 via-secondary/50 to-primary/5 rounded-3xl p-10 shadow-xl relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-40 h-40 bg-primary/10 rounded-full blur-3xl" />
-                <div className="relative z-10">
-                  <h3 className="text-2xl md:text-3xl font-bold text-dark mb-4">
-                    {t.contact.followUs}
-                  </h3>
-                  <p className="text-gray-700 mb-8 text-lg">
-                    {t.contact.social.description}
-                  </p>
-
-                  <div className="flex gap-4">
-                    <a
-                      href="https://instagram.com/tibismarket"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1 bg-gradient-to-br from-purple-600 to-pink-500 text-white p-6 rounded-2xl hover:scale-105 transition-transform shadow-lg flex flex-col items-center gap-3"
-                    >
-                      <FaInstagram className="text-4xl" />
-                      <span className="font-semibold">Instagram</span>
-                    </a>
-                    <a
-                      href="https://facebook.com/tibismarket"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1 bg-blue-600 text-white p-6 rounded-2xl hover:scale-105 transition-transform shadow-lg flex flex-col items-center gap-3"
-                    >
-                      <FaFacebook className="text-4xl" />
-                      <span className="font-semibold">Facebook</span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              {/* Location Visual Card */}
-              <div className="bg-white rounded-3xl p-10 shadow-xl">
-                <div className="bg-gradient-to-br from-primary/20 via-secondary/30 to-primary/10 rounded-2xl h-80 flex items-center justify-center relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-                  <div className="text-center relative z-10">
-                    <div className="bg-white/90 backdrop-blur-sm rounded-full p-8 inline-block mb-6 shadow-xl">
-                      <MdLocationOn className="text-6xl text-primary" />
-                    </div>
-                    <p className="text-3xl font-bold text-dark mb-2">
-                      Miami, Florida
-                    </p>
-                    <p className="text-xl text-gray-600">Estados Unidos</p>
-                    <div className="mt-6 inline-block bg-primary/10 px-6 py-2 rounded-full">
-                      <p className="text-primary font-semibold">
-                        {t.contact.shipping}
-                      </p>
-                    </div>
-                  </div>
-                </div>
+            {/* Social Media Card */}
+            <div className="bg-gradient-to-br from-secondary/50 to-white rounded-2xl border-2 border-gray-100 p-8">
+              <h3 className="text-lg font-bold text-dark mb-4">
+                {t.contact.followUs}
+              </h3>
+              <p className="text-gray-600 text-sm mb-6">
+                {t.contact.social.description}
+              </p>
+              <div className="grid grid-cols-2 gap-3">
+                <a
+                  href={t.contact.social.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 p-3 bg-white rounded-xl border-2 border-gray-100 hover:border-transparent hover:bg-gradient-to-br hover:from-purple-600 hover:to-pink-500 hover:text-white transition-all duration-300 group"
+                >
+                  <FaInstagram className="text-xl" />
+                  <span className="text-sm font-semibold">Instagram</span>
+                </a>
+                <a
+                  href={t.contact.social.facebook}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 p-3 bg-white rounded-xl border-2 border-gray-100 hover:border-transparent hover:bg-blue-600 hover:text-white transition-all duration-300 group"
+                >
+                  <FaFacebook className="text-xl" />
+                  <span className="text-sm font-semibold">Facebook</span>
+                </a>
               </div>
             </div>
           </div>

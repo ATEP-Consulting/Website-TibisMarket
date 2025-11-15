@@ -28,7 +28,7 @@ const Footer = () => {
                 <FaInstagram className="text-2xl" />
               </a>
               <a
-                href="https://facebook.com/tibismarket"
+                href="https://www.facebook.com/share/17dRWkPRFC/?mibextid=wwXIfr"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-primary hover:text-orange-400 transition-colors"
