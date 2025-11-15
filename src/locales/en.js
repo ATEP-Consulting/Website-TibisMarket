@@ -236,7 +236,7 @@ export const en = {
       description:
         "Follow us on social media to see our latest news, recipes, and events.",
     },
-    shipping: "Shipping across USA 🇺🇸",
+    shipping: "Shipping across USA",
     cta: {
       title: "Ready to try our arepas?",
       subtitle: "Order now and bring the taste of the Andes to your table",

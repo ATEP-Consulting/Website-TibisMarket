@@ -18,21 +18,25 @@ Página web profesional para Tibi's Market, un negocio de arepas de trigo artesa
 ## 📦 Instalación
 
 1. **Navegar a la carpeta del proyecto:**
+
 ```bash
 cd tibis-market
 ```
 
 2. **Instalar dependencias:**
+
 ```bash
 npm install
 ```
 
 3. **Ejecutar en modo desarrollo:**
+
 ```bash
 npm run dev
 ```
 
 4. **Abrir en el navegador:**
+
 ```
 http://localhost:5173
 ```
@@ -40,11 +44,14 @@ http://localhost:5173
 ## 🛒 Funcionalidad del Carrito
 
 ### Añadir Productos
+
 - Los usuarios pueden añadir productos desde la página de Productos
 - Badge en el header muestra la cantidad total de items
 
 ### Página del Carrito (`/cart`)
+
 1. **Resumen del Pedido:**
+
    - Lista de productos con imagen, nombre, precio unitario
    - Controles para modificar cantidad (+/-)
    - Botón para eliminar productos
@@ -52,6 +59,7 @@ http://localhost:5173
    - **TOTAL GENERAL** destacado
 
 2. **Formulario de Datos del Cliente:**
+
    - Nombre completo
    - Apellidos
    - Número de teléfono
@@ -64,9 +72,9 @@ http://localhost:5173
 
 ## 📱 Contacto
 
-- **Teléfono:** +1 (305) 123-4567
-- **WhatsApp:** +1 (305) 123-4567
-- **Email:** info@tibismarket.com
+- **Teléfono:** +1 (305) 898-3610
+- **WhatsApp:** +1 (305) 898-3610
+- **Email:** tibismarket@gmail.com
 - **Ubicación:** Miami, Florida
 
 ## 🔧 Scripts Disponibles

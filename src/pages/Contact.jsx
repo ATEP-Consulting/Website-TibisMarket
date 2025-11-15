@@ -56,10 +56,10 @@ const Contact = () => {
                         {t.contact.phone}
                       </h3>
                       <a
-                        href="tel:+13051234567"
+                        href="tel:+13058983610"
                         className="text-gray-600 hover:text-primary transition-colors text-lg"
                       >
-                        +1 (305) 123-4567
+                        +1 (305) 898-3610
                       </a>
                     </div>
                   </div>
@@ -76,12 +76,12 @@ const Contact = () => {
                         WhatsApp
                       </h3>
                       <a
-                        href="https://wa.me/13051234567"
+                        href="https://wa.me/13058983610"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-gray-600 hover:text-success transition-colors text-lg"
                       >
-                        +1 (305) 123-4567
+                        +1 (305) 898-3610
                       </a>
                     </div>
                   </div>
@@ -98,10 +98,10 @@ const Contact = () => {
                         {t.contact.email}
                       </h3>
                       <a
-                        href="mailto:info@tibismarket.com"
+                        href="mailto:tibismarket@gmail.com"
                         className="text-gray-600 hover:text-primary transition-colors text-lg"
                       >
-                        info@tibismarket.com
+                        tibismarket@gmail.com
                       </a>
                     </div>
                   </div>
@@ -199,7 +199,7 @@ const Contact = () => {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
             <a
-              href="https://wa.me/13051234567"
+              href="https://wa.me/13058983610"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-10 py-5 text-lg font-semibold text-white bg-success rounded-xl shadow-2xl hover:shadow-success/50 transition-all duration-300 hover:scale-105"
@@ -208,7 +208,7 @@ const Contact = () => {
               {t.contact.cta.whatsapp}
             </a>
             <a
-              href="mailto:info@tibismarket.com"
+              href="mailto:tibismarket@gmail.com"
               className="inline-flex items-center justify-center px-10 py-5 text-lg font-semibold text-white bg-white/10 backdrop-blur-sm rounded-xl border-2 border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105"
             >
               <MdEmail className="mr-3 text-2xl" />

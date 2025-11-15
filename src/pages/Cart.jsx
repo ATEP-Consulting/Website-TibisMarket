@@ -99,7 +99,7 @@ const Cart = () => {
     }
 
     const message = formatOrderMessage();
-    const phoneNumber = "13051234567";
+    const phoneNumber = "13058983610";
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
 
@@ -121,7 +121,7 @@ const Cart = () => {
     const message = formatOrderMessage();
     const subject = encodeURIComponent("Nuevo Pedido - Tibi's Market");
     const body = encodeURIComponent(message);
-    const mailtoUrl = `mailto:info@tibismarket.com?subject=${subject}&body=${body}`;
+    const mailtoUrl = `mailto:tibismarket@gmail.com?subject=${subject}&body=${body}`;
 
     window.location.href = mailtoUrl;
     setShowSuccess(true);
@@ -335,7 +335,7 @@ const Cart = () => {
                       className={`input-field ${
                         errors.phone ? "border-error" : ""
                       }`}
-                      placeholder="+1 (305) 123-4567"
+                      placeholder="+1 (305) 898-3610"
                     />
                     {errors.phone && (
                       <p className="text-error text-sm mt-1">{errors.phone}</p>
@@ -356,7 +356,7 @@ const Cart = () => {
                       className={`input-field ${
                         errors.email ? "border-error" : ""
                       }`}
-                      placeholder="ejemplo@email.com"
+                      placeholder="tibismarket@gmail.com"
                     />
                     {errors.email && (
                       <p className="text-error text-sm mt-1">{errors.email}</p>

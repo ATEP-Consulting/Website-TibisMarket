@@ -237,7 +237,7 @@ export const es = {
       description:
         "Síguenos en redes sociales para ver nuestras últimas novedades, recetas y eventos.",
     },
-    shipping: "Envíos a todo USA 🇺🇸",
+    shipping: "Envíos a todo USA",
     cta: {
       title: "¿Listo para probar nuestras arepas?",
       subtitle: "Haz tu pedido ahora y lleva el sabor de los Andes a tu mesa",
