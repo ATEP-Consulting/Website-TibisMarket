@@ -1,6 +1,5 @@
-# https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Allow: /
 
-# Sitemaps
 Sitemap: https://www.tibismarket.com/sitemap.xml
+Host: https://www.tibismarket.com
