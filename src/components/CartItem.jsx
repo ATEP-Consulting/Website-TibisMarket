@@ -23,22 +23,32 @@ const CartItem = ({ item }) => {
         {/* Product Info */}
         <div className="flex-1 text-center sm:text-left">
           <h3 className="text-lg font-bold text-dark">{item.name}</h3>
+
+          {/* Mostrar variante si existe */}
+          {item.variantSize && (
+            <p className="text-sm text-primary font-medium">
+              {item.variantSize} - {item.variantServings}
+            </p>
+          )}
+
           <p className="text-gray-600 text-sm">${item.price.toFixed(2)} c/u</p>
 
-          {/* Weight Info */}
-          <div className="text-xs text-gray-500 mt-1">
-            {item.units ? (
-              <span>
-                {item.units} units · {item.totalWeight}
-                {item.weightUnit}
-              </span>
-            ) : (
-              <span>
-                {item.totalWeight}
-                {item.weightUnit}
-              </span>
-            )}
-          </div>
+          {/* Weight Info para productos sin variantes */}
+          {!item.variantSize && (
+            <div className="text-xs text-gray-500 mt-1">
+              {item.units ? (
+                <span>
+                  {item.units} units · {item.totalWeight}
+                  {item.weightUnit}
+                </span>
+              ) : item.totalWeight ? (
+                <span>
+                  {item.totalWeight}
+                  {item.weightUnit}
+                </span>
+              ) : null}
+            </div>
+          )}
         </div>
 
         {/* Quantity Controls */}

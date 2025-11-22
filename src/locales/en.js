@@ -72,6 +72,9 @@ export const en = {
       subtitle: "Contact us for special or custom orders",
       button: "Contact Us",
     },
+    selectSize: "Select size",
+    serving: "serving",
+    servings: "servings",
     productsList: [
       {
         id: 1,
@@ -118,6 +121,32 @@ export const en = {
         weightPerUnit: null,
         totalWeight: 2.4,
         weightUnit: "oz",
+      },
+      {
+        id: 5,
+        name: "Shredded Beef",
+        description:
+          "Delicious traditional Venezuelan shredded beef, perfect for filling your arepas.",
+        image: "Carne-Mechada.webp",
+        hasVariants: true,
+        variants: [
+          { size: "4 oz", servings: "1 serving", price: 8 },
+          { size: "12 oz", servings: "2-3 servings", price: 18 },
+          { size: "24 oz", servings: "4-6 servings", price: 35 },
+        ],
+      },
+      {
+        id: 6,
+        name: "Cheese Spread",
+        description:
+          "Smooth and creamy, the perfect complement to your Andean arepas.",
+        image: "Crema-de-Queso.webp",
+        hasVariants: true,
+        variants: [
+          { size: "4 oz", servings: "1 serving", price: 6 },
+          { size: "12 oz", servings: "2-3 servings", price: 12 },
+          { size: "24 oz", servings: "4-6 servings", price: 24 },
+        ],
       },
     ],
   },

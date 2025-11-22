@@ -72,6 +72,9 @@ export const es = {
       subtitle: "Contáctanos para pedidos especiales o personalizados",
       button: "Contáctanos",
     },
+    selectSize: "Selecciona tamaño",
+    serving: "porción",
+    servings: "porciones",
     productsList: [
       {
         id: 1,
@@ -118,6 +121,32 @@ export const es = {
         weightPerUnit: null,
         totalWeight: 2.4,
         weightUnit: "oz",
+      },
+      {
+        id: 5,
+        name: "Carne Mechada",
+        description:
+          "Deliciosa carne mechada tradicional venezolana, perfecta para rellenar tus arepas.",
+        image: "Carne-Mechada.webp",
+        hasVariants: true,
+        variants: [
+          { size: "4 oz", servings: "1 porción", price: 8 },
+          { size: "12 oz", servings: "2-3 porciones", price: 18 },
+          { size: "24 oz", servings: "4-6 porciones", price: 35 },
+        ],
+      },
+      {
+        id: 6,
+        name: "Crema de Queso",
+        description:
+          "Suave y cremosa, el complemento perfecto para tus arepas andinas.",
+        image: "Crema-de-Queso.webp",
+        hasVariants: true,
+        variants: [
+          { size: "4 oz", servings: "1 porción", price: 6 },
+          { size: "12 oz", servings: "2-3 porciones", price: 12 },
+          { size: "24 oz", servings: "4-6 porciones", price: 24 },
+        ],
       },
     ],
   },

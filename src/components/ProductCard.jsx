@@ -8,10 +8,32 @@ const ProductCard = ({ product }) => {
   const { t } = useLanguage();
   const [added, setAdded] = useState(false);
   const [quantity, setQuantity] = useState(1);
+  const [selectedVariant, setSelectedVariant] = useState(0);
+
+  // Determinar precio actual (variante o precio fijo)
+  const currentPrice = product.hasVariants
+    ? product.variants[selectedVariant].price
+    : product.price;
+
+  // Crear objeto para añadir al carrito
+  const getCartItem = () => {
+    if (product.hasVariants) {
+      const variant = product.variants[selectedVariant];
+      return {
+        ...product,
+        id: `${product.id}-${selectedVariant}`, // ID único por variante
+        variantSize: variant.size,
+        variantServings: variant.servings,
+        price: variant.price,
+      };
+    }
+    return product;
+  };
 
   const handleAddToCart = () => {
+    const cartItem = getCartItem();
     for (let i = 0; i < quantity; i++) {
-      addToCart(product);
+      addToCart(cartItem);
     }
     setAdded(true);
     setTimeout(() => {
@@ -30,7 +52,7 @@ const ProductCard = ({ product }) => {
 
   return (
     <div className="card group animate-fade-in">
-      {/* Image Container - ARREGLADO */}
+      {/* Image Container */}
       <div className="relative overflow-hidden bg-gradient-to-br from-secondary/30 to-white p-4 rounded-t-xl">
         <div className="aspect-square w-full flex items-center justify-center">
           <img
@@ -46,29 +68,65 @@ const ProductCard = ({ product }) => {
         <h3 className="text-xl font-bold text-dark mb-2">{product.name}</h3>
         <p className="text-gray-600 mb-4 line-clamp-2">{product.description}</p>
 
-        <div className="text-sm text-gray-500 mb-4">
-          {product.units ? (
-            <>
-              <p>
-                {product.units} units ({product.weightPerUnit}
-                {product.weightUnit} each)
-              </p>
+        {/* Info de peso/unidades para productos SIN variantes */}
+        {!product.hasVariants && (
+          <div className="text-sm text-gray-500 mb-4">
+            {product.units ? (
+              <>
+                <p>
+                  {product.units} units ({product.weightPerUnit}
+                  {product.weightUnit} each)
+                </p>
+                <p className="font-semibold">
+                  Total: {product.totalWeight}
+                  {product.weightUnit}
+                </p>
+              </>
+            ) : (
               <p className="font-semibold">
-                Total: {product.totalWeight}
-                {product.weightUnit}
+                {product.totalWeight}
+                {product.weightUnit} Pack
               </p>
-            </>
-          ) : (
-            <p className="font-semibold">
-              {product.totalWeight}
-              {product.weightUnit} Pack
+            )}
+          </div>
+        )}
+
+        {/* Selector de variantes para productos CON variantes */}
+        {product.hasVariants && (
+          <div className="mb-4">
+            <p className="text-sm text-gray-500 mb-2 font-medium">
+              {t.products.selectSize}:
             </p>
-          )}
-        </div>
+            <div className="grid grid-cols-3 gap-2">
+              {product.variants.map((variant, index) => (
+                <button
+                  key={index}
+                  onClick={() => setSelectedVariant(index)}
+                  disabled={added}
+                  className={`p-2 rounded-lg border-2 transition-all duration-200 text-center ${
+                    selectedVariant === index
+                      ? "border-primary bg-primary/10 text-primary"
+                      : "border-gray-200 hover:border-primary/50 text-gray-600"
+                  } ${added ? "opacity-50 cursor-not-allowed" : ""}`}
+                >
+                  <span className="block text-sm font-bold">
+                    {variant.size}
+                  </span>
+                  <span className="block text-xs text-gray-500">
+                    {variant.servings}
+                  </span>
+                  <span className="block text-sm font-bold text-primary mt-1">
+                    ${variant.price}
+                  </span>
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
 
         <div className="flex items-center justify-between mb-4">
           <span className="text-3xl font-bold text-primary">
-            ${product.price.toFixed(2)}
+            ${currentPrice.toFixed(2)}
           </span>
 
           {/* Quantity Selector */}
