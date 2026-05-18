@@ -78,9 +78,9 @@ export const es = {
       label: "Años de receta",
       sublabel: "Tradición familiar",
     },
-    stat1: { num: "1943", label: "Año de nacimiento" },
-    stat2: { num: "3", label: "Generaciones" },
-    stat3: { num: "81", label: "Años de manos sabias" },
+    stat1: { num: "100%", label: "Artesanal" },
+    stat2: { num: "0", label: "Conservantes" },
+    stat3: { num: "3", label: "Generaciones" },
     stat4: { num: "USA", label: "Envíos a todo" },
     marquee:
       "Hecho a mano · 100% Artesanal · Envíos a todo USA · Receta de +200 años · Trigo andino · Tres generaciones",

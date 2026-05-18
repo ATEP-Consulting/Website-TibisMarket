@@ -77,9 +77,9 @@ export const en = {
       label: "Years of heritage",
       sublabel: "Family tradition",
     },
-    stat1: { num: "1943", label: "Year of birth" },
-    stat2: { num: "3", label: "Generations" },
-    stat3: { num: "81", label: "Years of wise hands" },
+    stat1: { num: "100%", label: "Artisan" },
+    stat2: { num: "0", label: "Preservatives" },
+    stat3: { num: "3", label: "Generations" },
     stat4: { num: "USA", label: "Shipping across" },
     marquee:
       "Handmade · 100% Artisan · Shipping across USA · Recipe of +200 years · Andean wheat · Three generations",
