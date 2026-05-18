@@ -38,6 +38,18 @@ export const T = {
     es: "Tienda online · Envío a todo Estados Unidos",
     en: "Online store · Shipping across the US",
   },
+  fabPedir: {
+    es: "Hacer pedido",
+    en: "Order now",
+  },
+  fabAriaLabel: {
+    es: "Hacer pedido en la tienda online",
+    en: "Order on the online store",
+  },
+  irAInicio: {
+    es: "Ir a la página principal de Tibi's Market",
+    en: "Go to Tibi's Market homepage",
+  },
   pediWa: {
     es: "Pedir por WhatsApp",
     en: "Order via WhatsApp",

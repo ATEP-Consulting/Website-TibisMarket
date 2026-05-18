@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { useLanguage } from "../../context/LanguageContext";
 import { T } from "../../data/nutricionStrings";
 import { CONTACT } from "../../data/productos";
@@ -22,24 +21,6 @@ const InstagramIcon = () => (
   </svg>
 );
 
-const BagIcon = () => (
-  <svg
-    width="18"
-    height="18"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    aria-hidden
-  >
-    <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
-    <line x1="3" y1="6" x2="21" y2="6" />
-    <path d="M16 10a4 4 0 0 1-8 0" />
-  </svg>
-);
-
 const WhatsAppIcon = () => (
   <svg
     width="18"
@@ -57,6 +38,9 @@ const ConversionCTAs = ({ producto }) => {
   const { language } = useLanguage();
   const t = (obj) => obj[language];
 
+  // Web-order CTA lives in the floating button (always visible). This bottom
+  // block handles the conversation channels: WhatsApp (special orders / wholesale)
+  // + Instagram (community).
   const waMessage =
     language === "es"
       ? `¡Hola Tibi's! Me encantó la ${producto.nombre.es}. Quisiera información sobre pedidos.`
@@ -66,57 +50,6 @@ const ConversionCTAs = ({ producto }) => {
 
   return (
     <section style={{ padding: "0 24px 24px" }}>
-      {/* PRIMARY: web order — direct path to /products with cart. */}
-      <Link
-        to="/products"
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          padding: 18,
-          borderRadius: 4,
-          textDecoration: "none",
-          marginBottom: 10,
-          background: "#353a40",
-          color: "#faf6f0",
-          transition: "background .25s ease, transform .15s ease",
-          boxShadow: "0 12px 30px -10px rgba(53,58,64,0.45)",
-        }}
-        onMouseEnter={(e) => {
-          e.currentTarget.style.background = "#ff914d";
-          e.currentTarget.style.transform = "translateY(-1px)";
-        }}
-        onMouseLeave={(e) => {
-          e.currentTarget.style.background = "#353a40";
-          e.currentTarget.style.transform = "translateY(0)";
-        }}
-      >
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: 10,
-            fontSize: 16,
-            fontWeight: 600,
-            letterSpacing: 0.2,
-          }}
-        >
-          <BagIcon />
-          {t(T.pedirOnline)}
-        </div>
-        <div
-          style={{
-            fontSize: 11,
-            opacity: 0.78,
-            marginTop: 6,
-            letterSpacing: "0.03em",
-          }}
-        >
-          {t(T.pedirOnlineSub)}
-        </div>
-      </Link>
-
-      {/* SECONDARY: WhatsApp — still visible for special orders / wholesale. */}
       <a
         href={waUrl}
         target="_blank"
@@ -125,7 +58,7 @@ const ConversionCTAs = ({ producto }) => {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          padding: 14,
+          padding: 16,
           borderRadius: 4,
           textDecoration: "none",
           marginBottom: 10,
@@ -148,7 +81,7 @@ const ConversionCTAs = ({ producto }) => {
             display: "flex",
             alignItems: "center",
             gap: 10,
-            fontSize: 14,
+            fontSize: 15,
             fontWeight: 600,
             letterSpacing: 0.2,
           }}
@@ -158,17 +91,16 @@ const ConversionCTAs = ({ producto }) => {
         </div>
         <div
           style={{
-            fontSize: 10.5,
-            marginTop: 4,
+            fontSize: 11,
+            marginTop: 5,
             letterSpacing: "0.03em",
-            opacity: 0.75,
+            opacity: 0.78,
           }}
         >
           {t(T.pediWaSub)}
         </div>
       </a>
 
-      {/* TERTIARY: Instagram — top-of-mind / community. */}
       <a
         href={igUrl}
         target="_blank"

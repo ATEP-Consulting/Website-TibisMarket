@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
 import LanguageToggle from "./LanguageToggle";
+import FloatingOrderButton from "./FloatingOrderButton";
 import { useLanguage } from "../../context/LanguageContext";
 import { T } from "../../data/nutricionStrings";
 
@@ -46,32 +47,62 @@ const NutritionLayout = () => {
       >
         <header
           style={{
-            padding: "20px 24px",
+            padding: "16px 24px",
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
+            gap: 12,
           }}
         >
           <Link
             to="/"
-            aria-label="Tibi's Market"
+            aria-label={t(T.irAInicio)}
             style={{
-              fontFamily: "var(--font-display)",
-              fontSize: 24,
-              fontWeight: 600,
-              letterSpacing: "-0.02em",
-              color: "#353a40",
+              display: "flex",
+              alignItems: "center",
+              gap: 10,
               textDecoration: "none",
-              lineHeight: 1,
+              color: "inherit",
+              minWidth: 0,
             }}
           >
-            Tibi's
-            <span style={{ color: "#ff914d" }}>.</span>
+            <img
+              src="/images/logo.jpeg"
+              alt=""
+              width="40"
+              height="40"
+              decoding="async"
+              style={{
+                width: 40,
+                height: 40,
+                borderRadius: "50%",
+                objectFit: "cover",
+                boxShadow: "0 4px 14px rgba(255,145,77,0.25)",
+                border: "2px solid rgba(255,145,77,0.3)",
+                flexShrink: 0,
+              }}
+            />
+            <span
+              style={{
+                fontFamily: "var(--font-display)",
+                fontSize: 20,
+                fontWeight: 600,
+                color: "#353a40",
+                letterSpacing: "-0.5px",
+                lineHeight: 1.1,
+                whiteSpace: "nowrap",
+                overflow: "hidden",
+                textOverflow: "ellipsis",
+              }}
+            >
+              Tibi's Market
+            </span>
           </Link>
           <LanguageToggle />
         </header>
 
-        <main>
+        {/* Extra bottom padding ensures the fixed FAB never overlaps content. */}
+        <main style={{ paddingBottom: 96 }}>
           <Outlet />
         </main>
 
@@ -91,7 +122,7 @@ const NutritionLayout = () => {
               fontFamily: "var(--font-display)",
               fontSize: 13,
               fontStyle: "italic",
-              color: "#8a7560",
+              color: "#5a5248",
               margin: 0,
               lineHeight: 1.5,
             }}
@@ -100,6 +131,8 @@ const NutritionLayout = () => {
           </p>
         </footer>
       </div>
+
+      <FloatingOrderButton />
     </div>
   );
 };
