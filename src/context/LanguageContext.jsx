@@ -5,13 +5,28 @@ import { en } from "../locales/en";
 const LanguageContext = createContext();
 const STORAGE_KEY = "tibis_lang";
 
+const detectBrowserLang = () => {
+  if (typeof navigator === "undefined") return "es";
+  const candidates = [
+    ...(Array.isArray(navigator.languages) ? navigator.languages : []),
+    navigator.language,
+  ].filter(Boolean);
+  for (const tag of candidates) {
+    if (typeof tag === "string" && tag.toLowerCase().startsWith("es")) {
+      return "es";
+    }
+  }
+  return "en";
+};
+
 const readStoredLang = () => {
   try {
     const stored = localStorage.getItem(STORAGE_KEY);
-    return stored === "en" || stored === "es" ? stored : "es";
+    if (stored === "en" || stored === "es") return stored;
   } catch {
-    return "es";
+    // fall through
   }
+  return detectBrowserLang();
 };
 
 export const useLanguage = () => {

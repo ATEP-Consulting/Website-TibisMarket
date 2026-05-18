@@ -1,14 +1,21 @@
 import React, { lazy, Suspense } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Outlet,
+} from "react-router-dom";
 import { LanguageProvider } from "./context/LanguageContext";
 import { CartProvider } from "./context/CartContext";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
-import CartDrawer from "./components/CartDrawer";
-import Home from "./pages/Home";
 import { Analytics } from "@vercel/analytics/react";
 
+// Lazy-load the main-site shell (Header/Footer/CartDrawer) and Home so the
+// /n/:slug route — which QR scanners land on — pays only for the nutrition bundle.
+const Header = lazy(() => import("./components/Header"));
+const Footer = lazy(() => import("./components/Footer"));
+const CartDrawer = lazy(() => import("./components/CartDrawer"));
+const Home = lazy(() => import("./pages/Home"));
 const Products = lazy(() => import("./pages/Products"));
 const About = lazy(() => import("./pages/About"));
 const Contact = lazy(() => import("./pages/Contact"));
@@ -16,6 +23,11 @@ const Privacy = lazy(() => import("./pages/Privacy"));
 const Cookies = lazy(() => import("./pages/Cookies"));
 const Terms = lazy(() => import("./pages/Terms"));
 const NotFound = lazy(() => import("./pages/NotFound"));
+const Nutrition = lazy(() => import("./pages/Nutrition"));
+const NutritionIndex = lazy(() => import("./pages/NutritionIndex"));
+const NutritionLayoutShell = lazy(
+  () => import("./components/nutricion/NutritionLayout"),
+);
 
 const RouteFallback = () => (
   <div
@@ -27,6 +39,25 @@ const RouteFallback = () => (
   />
 );
 
+const MainLayout = () => (
+  <Suspense fallback={<RouteFallback />}>
+    <div className="flex flex-col min-h-screen">
+      <Header />
+      <main className="flex-grow">
+        <Outlet />
+      </main>
+      <Footer />
+    </div>
+    <CartDrawer />
+  </Suspense>
+);
+
+const NutritionRoute = () => (
+  <Suspense fallback={<RouteFallback />}>
+    <NutritionLayoutShell />
+  </Suspense>
+);
+
 function App() {
   return (
     <LanguageProvider>
@@ -34,25 +65,22 @@ function App() {
         <Router>
           <Analytics />
           <ScrollToTop />
-          <div className="flex flex-col min-h-screen">
-            <Header />
-            <main className="flex-grow">
-              <Suspense fallback={<RouteFallback />}>
-                <Routes>
-                  <Route path="/" element={<Home />} />
-                  <Route path="/products" element={<Products />} />
-                  <Route path="/about" element={<About />} />
-                  <Route path="/contact" element={<Contact />} />
-                  <Route path="/privacy" element={<Privacy />} />
-                  <Route path="/cookies" element={<Cookies />} />
-                  <Route path="/terms" element={<Terms />} />
-                  <Route path="*" element={<NotFound />} />
-                </Routes>
-              </Suspense>
-            </main>
-            <Footer />
-          </div>
-          <CartDrawer />
+          <Routes>
+            <Route element={<MainLayout />}>
+              <Route path="/" element={<Home />} />
+              <Route path="/products" element={<Products />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/privacy" element={<Privacy />} />
+              <Route path="/cookies" element={<Cookies />} />
+              <Route path="/terms" element={<Terms />} />
+              <Route path="*" element={<NotFound />} />
+            </Route>
+            <Route element={<NutritionRoute />}>
+              <Route path="/n/:slug" element={<Nutrition />} />
+              <Route path="/nutricion" element={<NutritionIndex />} />
+            </Route>
+          </Routes>
         </Router>
       </CartProvider>
     </LanguageProvider>
