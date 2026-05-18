@@ -1,246 +1,370 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "../context/LanguageContext";
+import Seo from "../components/Seo";
+import Reveal from "../components/Reveal";
 
 const About = () => {
   const { t } = useLanguage();
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <section className="relative py-32 px-6 overflow-hidden bg-gradient-to-br from-dark/95 via-dark/90 to-primary/20">
-        <div className="absolute top-20 right-20 w-72 h-72 bg-primary/20 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 left-20 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
+    <>
+      <Seo page="about" path="/about" />
+      <section
+        className="page-pad relative overflow-hidden"
+        style={{
+          background: "linear-gradient(180deg, #faf6f0 0%, #f3ece1 100%)",
+          padding: "180px 28px 100px",
+        }}
+      >
+        <div
+          aria-hidden
+          style={{
+            position: "absolute",
+            top: -120,
+            right: -120,
+            width: 480,
+            height: 480,
+            borderRadius: "50%",
+            background:
+              "radial-gradient(circle, rgba(255,145,77,.18), transparent 70%)",
+          }}
+        />
+        <div
+          style={{
+            maxWidth: 1100,
+            margin: "0 auto",
+            position: "relative",
+            textAlign: "center",
+          }}
+        >
+          <Reveal>
+            <div
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 12,
+                marginBottom: 24,
+              }}
+            >
+              <span style={{ width: 32, height: 1, background: "#ff914d" }} />
+              <span
+                style={{
+                  fontFamily: "var(--font-sans)",
+                  fontSize: 11,
+                  letterSpacing: 3,
+                  textTransform: "uppercase",
+                  color: "#8a7560",
+                }}
+              >
+                {t.about.kicker}
+              </span>
+              <span style={{ width: 32, height: 1, background: "#ff914d" }} />
+            </div>
+          </Reveal>
+          <Reveal delay={150}>
+            <h1
+              style={{
+                fontFamily: "var(--font-display)",
+                fontWeight: 500,
+                fontSize: "clamp(52px, 7vw, 104px)",
+                lineHeight: 1,
+                color: "#353a40",
+                letterSpacing: "-2.5px",
+                margin: 0,
+              }}
+            >
+              {t.about.hero.title}
+            </h1>
+          </Reveal>
+          <Reveal delay={300}>
+            <p
+              style={{
+                fontFamily: "var(--font-display)",
+                fontStyle: "italic",
+                fontSize: "clamp(20px, 2vw, 28px)",
+                color: "#5a5248",
+                marginTop: 24,
+              }}
+            >
+              {t.about.hero.subtitle}
+            </p>
+          </Reveal>
+        </div>
+      </section>
 
-        <div className="max-w-5xl mx-auto text-center relative z-10">
-          <div className="inline-block mb-6">
-            <span className="bg-primary/20 text-primary px-6 py-3 rounded-full text-sm font-semibold border border-primary/30">
-              {t.about.badge}
+      <section
+        className="page-pad"
+        style={{ background: "#faf6f0", padding: "100px 28px" }}
+      >
+        <div style={{ maxWidth: 880, margin: "0 auto", textAlign: "center" }}>
+          <Reveal>
+            <p
+              style={{
+                fontFamily: "var(--font-display)",
+                fontStyle: "italic",
+                fontSize: "clamp(28px, 3vw, 44px)",
+                lineHeight: 1.35,
+                color: "#353a40",
+                margin: 0,
+              }}
+            >
+              {t.about.intro.text}
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
+      <section
+        className="page-pad"
+        style={{ background: "#f3ece1", padding: "100px 28px" }}
+      >
+        <div style={{ maxWidth: 880, margin: "0 auto" }}>
+          <Reveal>
+            <p
+              style={{
+                fontFamily: "var(--font-sans)",
+                fontSize: 17,
+                lineHeight: 1.85,
+                color: "#5a5248",
+                margin: 0,
+              }}
+            >
+              {t.about.section1.text}
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
+      <section
+        className="page-pad"
+        style={{ background: "#faf6f0", padding: "100px 28px" }}
+      >
+        <div style={{ maxWidth: 880, margin: "0 auto", textAlign: "center" }}>
+          <Reveal>
+            <span
+              style={{
+                fontFamily: "var(--font-display)",
+                fontSize: 120,
+                lineHeight: 0.8,
+                color: "#ff914d",
+                fontStyle: "italic",
+                display: "block",
+                marginBottom: -30,
+              }}
+            >
+              “
             </span>
-          </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
-            {t.about.hero.title}
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-300 font-light italic">
-            {t.about.hero.subtitle}
-          </p>
-        </div>
-      </section>
-
-      {/* Intro Section */}
-      <section className="py-20 md:py-32 px-6 bg-gradient-to-b from-white to-secondary/20">
-        <div className="max-w-4xl mx-auto text-center">
-          <p className="text-2xl md:text-3xl text-gray-700 font-light italic leading-relaxed">
-            {t.about.intro.text}
-          </p>
-        </div>
-      </section>
-
-      {/* Section 1 */}
-      <section className="py-20 md:py-32 px-6 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <div className="space-y-6">
-              <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
-                {t.about.section1.text}
-              </p>
-            </div>
-
-            <div className="relative">
-              <div className="absolute -inset-4 bg-gradient-to-r from-primary/30 to-primary/10 rounded-3xl blur-2xl" />
-              <img
-                src="images/tibisay.webp"
-                alt="María Tibisay Gómez, fundadora de Tibi's Market"
-                className="relative rounded-2xl shadow-2xl w-full aspect-square object-cover"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 2 - Quote & Birth of Tibi's */}
-      <section className="py-20 md:py-32 px-6 bg-gradient-to-br from-primary/5 to-secondary/30">
-        <div className="max-w-5xl mx-auto space-y-12">
-          <div className="bg-white/80 backdrop-blur-sm p-10 md:p-16 rounded-3xl shadow-2xl border border-primary/10">
-            <blockquote className="text-2xl md:text-3xl italic text-dark text-center leading-relaxed mb-6">
-              "{t.about.section2.quote}"
+          </Reveal>
+          <Reveal delay={120}>
+            <blockquote
+              style={{
+                fontFamily: "var(--font-display)",
+                fontStyle: "italic",
+                fontSize: "clamp(28px, 3.4vw, 44px)",
+                lineHeight: 1.3,
+                color: "#353a40",
+                margin: 0,
+                letterSpacing: "-0.5px",
+              }}
+            >
+              {t.about.section2.quote}
             </blockquote>
-            <p className="text-center text-gray-600 font-semibold">— Mi hija</p>
-          </div>
-
-          <div className="text-center space-y-4">
-            <p className="text-2xl md:text-3xl font-bold text-dark">
+          </Reveal>
+          <Reveal delay={280}>
+            <p
+              style={{
+                fontFamily: "var(--font-sans)",
+                fontSize: 17,
+                lineHeight: 1.7,
+                color: "#5a5248",
+                marginTop: 28,
+              }}
+            >
               {t.about.section2.text}
             </p>
-          </div>
+          </Reveal>
         </div>
       </section>
 
-      {/* Section 3 */}
-      <section className="py-20 md:py-32 px-6 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <div className="order-2 md:order-1 relative">
-              <div className="absolute -inset-4 bg-gradient-to-l from-primary/30 to-primary/10 rounded-3xl blur-2xl" />
-              <img
-                src="images/tibisay-nilyan.webp"
-                alt="Arepas Tradicionales"
-                className="relative rounded-2xl shadow-2xl w-full aspect-square object-cover"
-              />
-            </div>
-
-            <div className="order-1 md:order-2 space-y-6">
-              <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
-                {t.about.section3.text}
-              </p>
-            </div>
-          </div>
+      <section
+        className="page-pad"
+        style={{ background: "#f3ece1", padding: "100px 28px" }}
+      >
+        <div style={{ maxWidth: 880, margin: "0 auto" }}>
+          <Reveal>
+            <p
+              style={{
+                fontFamily: "var(--font-sans)",
+                fontSize: 17,
+                lineHeight: 1.85,
+                color: "#5a5248",
+                margin: 0,
+              }}
+            >
+              {t.about.section3.text}
+            </p>
+          </Reveal>
+          <Reveal delay={150}>
+            <p
+              style={{
+                fontFamily: "var(--font-sans)",
+                fontSize: 17,
+                lineHeight: 1.85,
+                color: "#5a5248",
+                marginTop: 24,
+              }}
+            >
+              {t.about.section4.text}
+            </p>
+          </Reveal>
         </div>
       </section>
 
-      {/* Section 4 */}
-      <section className="py-20 md:py-32 px-6 bg-gradient-to-b from-secondary/20 to-white">
-        <div className="max-w-5xl mx-auto">
-          <p className="text-lg md:text-xl text-gray-700 leading-relaxed text-center">
-            {t.about.section4.text}
-          </p>
+      <section
+        className="page-pad"
+        style={{ background: "#faf6f0", padding: "100px 28px" }}
+      >
+        <div style={{ maxWidth: 980, margin: "0 auto", textAlign: "center" }}>
+          <Reveal>
+            <h3
+              style={{
+                fontFamily: "var(--font-display)",
+                fontWeight: 500,
+                fontSize: "clamp(32px, 3.6vw, 48px)",
+                lineHeight: 1.15,
+                color: "#353a40",
+                letterSpacing: "-1px",
+                margin: 0,
+              }}
+            >
+              {t.about.section5.title}
+            </h3>
+          </Reveal>
+          <Reveal delay={150}>
+            <p
+              style={{
+                fontFamily: "var(--font-display)",
+                fontStyle: "italic",
+                fontSize: "clamp(22px, 2.4vw, 32px)",
+                color: "#ff914d",
+                marginTop: 32,
+              }}
+            >
+              “{t.about.section5.quote}”
+            </p>
+          </Reveal>
+          <Reveal delay={300}>
+            <p
+              style={{
+                fontFamily: "var(--font-sans)",
+                fontSize: 18,
+                lineHeight: 1.7,
+                color: "#5a5248",
+                marginTop: 24,
+                fontWeight: 500,
+              }}
+            >
+              {t.about.section5.text}
+            </p>
+          </Reveal>
         </div>
       </section>
 
-      {/* Section 5 - Customer Testimonial */}
-      <section className="py-20 md:py-32 px-6 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <div className="space-y-8">
-              <h3 className="text-3xl md:text-4xl font-bold text-dark leading-tight">
-                {t.about.section5.title}
-              </h3>
-
-              <div className="bg-gradient-to-br from-primary/10 to-secondary/30 p-8 rounded-2xl">
-                <blockquote className="text-xl md:text-2xl italic text-dark mb-4">
-                  "{t.about.section5.quote}"
-                </blockquote>
-                <p className="text-gray-600">— Un cliente</p>
-              </div>
-
-              <p className="text-2xl md:text-3xl font-bold text-primary">
-                {t.about.section5.text}
-              </p>
-            </div>
-
-            <div className="relative">
-              <div className="absolute -inset-4 bg-gradient-to-r from-primary/30 to-primary/10 rounded-3xl blur-2xl" />
-              <img
-                src="images/6.webp"
-                alt="Proceso Artesanal"
-                className="relative rounded-2xl shadow-2xl w-full aspect-square object-cover"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Products Section */}
-      <section className="py-20 md:py-32 px-6 bg-gradient-to-br from-secondary/30 to-primary/5">
-        <div className="max-w-6xl mx-auto">
-          <h3 className="text-3xl md:text-4xl font-bold text-dark text-center mb-12">
-            {t.about.products.title}
-          </h3>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            {t.about.products.list.map((product, idx) => (
-              <div
-                key={idx}
-                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
-              >
-                <h4 className="text-xl font-bold text-primary mb-3">
-                  {product.name}
-                </h4>
-                <p className="text-gray-700 leading-relaxed">
-                  {product.description}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-12 text-center">
-            <p className="text-lg md:text-xl text-gray-700 leading-relaxed max-w-4xl mx-auto">
+      <section
+        className="page-pad"
+        style={{ background: "#f3ece1", padding: "100px 28px" }}
+      >
+        <div style={{ maxWidth: 880, margin: "0 auto", textAlign: "center" }}>
+          <Reveal>
+            <p
+              style={{
+                fontFamily: "var(--font-sans)",
+                fontSize: 17,
+                lineHeight: 1.85,
+                color: "#5a5248",
+                margin: 0,
+              }}
+            >
               {t.about.section6.text}
             </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Gallery Section */}
-      {/* Gallery Section */}
-      <section className="py-16 md:py-24 px-6 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-            {[
-              "WhatsApp Image 2025-11-15 at 11.37.23 (7).webp",
-              "WhatsApp Image 2025-11-15 at 11.37.23 (6).webp",
-              "WhatsApp Image 2025-11-15 at 11.37.23 (5).webp",
-              "WhatsApp Image 2025-11-15 at 11.37.23 (1).webp",
-            ].map((img, idx) => (
-              <div
-                key={idx}
-                className="relative overflow-hidden rounded-2xl shadow-lg group"
-              >
-                <img
-                  src={`/images/${img}`}
-                  alt={`Galería ${idx + 1}`}
-                  className="w-full aspect-square object-cover group-hover:scale-110 transition-transform duration-700"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Closing Section - CTA */}
-      <section className="py-20 md:py-32 px-6 bg-gradient-to-br from-dark via-dark/98 to-primary/20 text-white relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-
-        <div className="max-w-5xl mx-auto relative text-center space-y-10">
-          <p className="text-2xl md:text-3xl font-bold text-white">
-            {t.about.closing.text1}
-          </p>
-
-          <div className="bg-white/10 backdrop-blur-sm p-10 md:p-16 rounded-3xl border border-white/20">
-            <blockquote className="text-2xl md:text-3xl italic text-gray-200 leading-relaxed">
-              "{t.about.closing.quote}"
+          </Reveal>
+          <Reveal delay={150}>
+            <p
+              style={{
+                fontFamily: "var(--font-display)",
+                fontStyle: "italic",
+                fontSize: "clamp(28px, 3vw, 40px)",
+                lineHeight: 1.35,
+                color: "#353a40",
+                marginTop: 48,
+              }}
+            >
+              {t.about.closing.text1}
+            </p>
+          </Reveal>
+          <Reveal delay={300}>
+            <blockquote
+              style={{
+                fontFamily: "var(--font-display)",
+                fontStyle: "italic",
+                fontSize: "clamp(22px, 2.4vw, 32px)",
+                color: "#ff914d",
+                margin: "24px auto 0",
+                maxWidth: 720,
+                lineHeight: 1.4,
+              }}
+            >
+              “{t.about.closing.quote}”
             </blockquote>
-          </div>
-
-          <div className="pt-8">
+          </Reveal>
+          <Reveal delay={450}>
             <Link
               to="/products"
-              className="inline-flex items-center justify-center px-10 py-5 text-lg font-semibold text-white bg-primary rounded-xl shadow-2xl hover:shadow-primary/50 transition-all duration-300 hover:scale-105"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 12,
+                marginTop: 40,
+                background: "#353a40",
+                color: "#faf6f0",
+                padding: "16px 28px",
+                borderRadius: 999,
+                fontFamily: "var(--font-sans)",
+                fontSize: 14,
+                fontWeight: 500,
+                letterSpacing: 0.3,
+                textDecoration: "none",
+                transition: "all .3s ease",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = "#ff914d";
+                e.currentTarget.style.transform = "translateY(-2px)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = "#353a40";
+                e.currentTarget.style.transform = "translateY(0)";
+              }}
             >
-              <span className="flex items-center gap-2">
-                {t.about.closing.button}
-                <svg
-                  className="w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M17 8l4 4m0 0l-4 4m4-4H3"
-                  />
-                </svg>
-              </span>
+              {t.about.closing.button}
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
             </Link>
-          </div>
+          </Reveal>
         </div>
       </section>
-    </div>
+    </>
   );
 };
 

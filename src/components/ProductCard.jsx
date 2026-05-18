@@ -1,173 +1,380 @@
-import React, { useState } from "react";
-import { FaShoppingCart, FaCheck, FaPlus, FaMinus } from "react-icons/fa";
+import React, { useRef, useState } from "react";
 import { useCart } from "../context/CartContext";
 import { useLanguage } from "../context/LanguageContext";
+import { useReveal } from "../hooks/useReveal";
 
-const ProductCard = ({ product }) => {
-  const { addToCart } = useCart();
+const ProductCard = ({ product, index = 0 }) => {
+  const { addToCart, openDrawer } = useCart();
   const { t } = useLanguage();
-  const [added, setAdded] = useState(false);
-  const [quantity, setQuantity] = useState(1);
-  const [selectedVariant, setSelectedVariant] = useState(0);
+  const ref = useRef(null);
+  const shown = useReveal(ref);
 
-  // Determinar precio actual (variante o precio fijo)
-  const currentPrice = product.hasVariants
-    ? product.variants[selectedVariant].price
+  const [variantIdx, setVariantIdx] = useState(0);
+  const [qty, setQty] = useState(1);
+  const [adding, setAdding] = useState(false);
+
+  const hasVariants = !!product.hasVariants;
+  const currentPrice = hasVariants
+    ? product.variants[variantIdx].price
     : product.price;
 
-  // Crear objeto para añadir al carrito
-  const getCartItem = () => {
-    if (product.hasVariants) {
-      const variant = product.variants[selectedVariant];
-      return {
-        ...product,
-        id: `${product.id}-${selectedVariant}`, // ID único por variante
-        variantSize: variant.size,
-        variantServings: variant.servings,
-        price: variant.price,
-      };
+  const buildMeta = () => {
+    if (hasVariants) {
+      const v = product.variants[variantIdx];
+      return `${v.size} · ${v.servings}`;
     }
-    return product;
+    if (product.units && product.weightPerUnit) {
+      return `${product.units} ${t.products.units} · ${product.totalWeight} ${product.weightUnit}`;
+    }
+    if (product.totalWeight) {
+      return `${product.totalWeight} ${product.weightUnit}`;
+    }
+    return "";
   };
 
-  const handleAddToCart = () => {
-    const cartItem = getCartItem();
-    for (let i = 0; i < quantity; i++) {
-      addToCart(cartItem);
-    }
-    setAdded(true);
+  const totalDisplay = (currentPrice * qty).toFixed(2);
+
+  const handleAdd = () => {
+    if (adding) return;
+    const item = hasVariants
+      ? {
+          key: `${product.id}-${product.variants[variantIdx].size}`,
+          name: product.name,
+          image: product.image,
+          price: product.variants[variantIdx].price,
+          variantSize: product.variants[variantIdx].size,
+          variantServings: product.variants[variantIdx].servings,
+        }
+      : {
+          key: `${product.id}`,
+          name: product.name,
+          image: product.image,
+          price: product.price,
+        };
+
+    addToCart(item, qty);
+    setAdding(true);
     setTimeout(() => {
-      setAdded(false);
-      setQuantity(1);
-    }, 2000);
-  };
-
-  const incrementQuantity = () => {
-    setQuantity((prev) => prev + 1);
-  };
-
-  const decrementQuantity = () => {
-    setQuantity((prev) => (prev > 1 ? prev - 1 : 1));
+      setAdding(false);
+      setQty(1);
+      openDrawer();
+    }, 900);
   };
 
   return (
-    <div className="card group animate-fade-in">
-      {/* Image Container */}
-      <div className="relative overflow-hidden bg-gradient-to-br from-secondary/30 to-white p-4 rounded-t-xl">
-        <div className="aspect-square w-full flex items-center justify-center">
-          <img
-            src={`/images/${product.image}`}
-            alt={product.name}
-            className="w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-500"
-            loading="lazy"
-          />
+    <div
+      ref={ref}
+      className="product-card"
+      style={{
+        background: "#faf6f0",
+        borderRadius: 6,
+        overflow: "hidden",
+        boxShadow: "0 1px 0 rgba(53,58,64,.04)",
+        opacity: shown ? 1 : 0,
+        transform: shown ? "translateY(0)" : "translateY(30px)",
+        transition: `opacity .9s ease ${index * 80}ms, transform .9s cubic-bezier(.22,.61,.36,1) ${index * 80}ms, box-shadow .35s ease`,
+        display: "flex",
+        flexDirection: "column",
+      }}
+    >
+      <div
+        style={{
+          position: "relative",
+          aspectRatio: "1/1",
+          overflow: "hidden",
+        }}
+      >
+        <img
+          src={`/images/${product.image}`}
+          alt={`${product.name} — ${product.description}`}
+          className="product-image"
+          width="600"
+          height="600"
+          loading="lazy"
+          decoding="async"
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            transition: "transform .9s cubic-bezier(.22,.61,.36,1)",
+          }}
+        />
+        <div
+          style={{
+            position: "absolute",
+            top: 14,
+            left: 14,
+            background: "#faf6f0",
+            padding: "6px 12px",
+            fontFamily: "var(--font-sans)",
+            fontSize: 10,
+            letterSpacing: 2,
+            textTransform: "uppercase",
+            color: "#353a40",
+            borderRadius: 2,
+          }}
+        >
+          {String(index + 1).padStart(2, "0")}
+        </div>
+        <div
+          style={{
+            position: "absolute",
+            top: 14,
+            right: 14,
+            background: "#ff914d",
+            color: "#fff",
+            padding: "8px 14px",
+            fontFamily: "var(--font-display)",
+            fontSize: 22,
+            fontWeight: 500,
+            borderRadius: 2,
+            transition: "all .3s ease",
+          }}
+        >
+          ${currentPrice}
         </div>
       </div>
 
-      <div className="p-6">
-        <h3 className="text-xl font-bold text-dark mb-2">{product.name}</h3>
-        <p className="text-gray-600 mb-4 line-clamp-2">{product.description}</p>
+      <div
+        style={{
+          padding: "26px 24px 28px",
+          display: "flex",
+          flexDirection: "column",
+          flexGrow: 1,
+        }}
+      >
+        <h3
+          style={{
+            fontFamily: "var(--font-display)",
+            fontSize: 28,
+            fontWeight: 500,
+            color: "#353a40",
+            margin: 0,
+            letterSpacing: "-0.5px",
+            lineHeight: 1.15,
+          }}
+        >
+          {product.name}
+        </h3>
+        <p
+          style={{
+            fontFamily: "var(--font-sans)",
+            fontSize: 14,
+            lineHeight: 1.6,
+            color: "#5a5248",
+            margin: "10px 0 0",
+          }}
+        >
+          {product.description}
+        </p>
+        <div
+          style={{
+            fontFamily: "var(--font-sans)",
+            fontSize: 11,
+            letterSpacing: 2,
+            textTransform: "uppercase",
+            color: "#8a7560",
+            marginTop: 16,
+            minHeight: 14,
+          }}
+        >
+          {buildMeta()}
+        </div>
 
-        {/* Info de peso/unidades para productos SIN variantes */}
-        {!product.hasVariants && (
-          <div className="text-sm text-gray-500 mb-4">
-            {product.units ? (
-              <>
-                <p>
-                  {product.units} units ({product.weightPerUnit}
-                  {product.weightUnit} each)
-                </p>
-                <p className="font-semibold">
-                  Total: {product.totalWeight}
-                  {product.weightUnit}
-                </p>
-              </>
-            ) : (
-              <p className="font-semibold">
-                {product.totalWeight}
-                {product.weightUnit} Pack
-              </p>
-            )}
-          </div>
-        )}
-
-        {/* Selector de variantes para productos CON variantes */}
-        {product.hasVariants && (
-          <div className="mb-4">
-            <p className="text-sm text-gray-500 mb-2 font-medium">
-              {t.products.selectSize}:
-            </p>
-            <div className="grid grid-cols-3 gap-2">
-              {product.variants.map((variant, index) => (
+        {hasVariants && (
+          <div style={{ marginTop: 18 }}>
+            <div
+              style={{
+                fontFamily: "var(--font-sans)",
+                fontSize: 10,
+                letterSpacing: 2,
+                textTransform: "uppercase",
+                color: "#8a7560",
+                marginBottom: 8,
+              }}
+            >
+              {t.products.size}
+            </div>
+            <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
+              {product.variants.map((v, i) => (
                 <button
-                  key={index}
-                  onClick={() => setSelectedVariant(index)}
-                  disabled={added}
-                  className={`p-2 rounded-lg border-2 transition-all duration-200 text-center ${
-                    selectedVariant === index
-                      ? "border-primary bg-primary/10 text-primary"
-                      : "border-gray-200 hover:border-primary/50 text-gray-600"
-                  } ${added ? "opacity-50 cursor-not-allowed" : ""}`}
+                  key={i}
+                  onClick={() => setVariantIdx(i)}
+                  style={{
+                    padding: "8px 12px",
+                    background: variantIdx === i ? "#353a40" : "transparent",
+                    color: variantIdx === i ? "#faf6f0" : "#353a40",
+                    border: `1px solid ${variantIdx === i ? "#353a40" : "rgba(53,58,64,.2)"}`,
+                    borderRadius: 2,
+                    cursor: "pointer",
+                    fontFamily: "var(--font-sans)",
+                    fontSize: 12,
+                    fontWeight: 500,
+                    letterSpacing: 0.3,
+                    transition: "all .2s ease",
+                  }}
                 >
-                  <span className="block text-sm font-bold">
-                    {variant.size}
-                  </span>
-                  <span className="block text-xs text-gray-500">
-                    {variant.servings}
-                  </span>
-                  <span className="block text-sm font-bold text-primary mt-1">
-                    ${variant.price}
-                  </span>
+                  {v.size}
                 </button>
               ))}
             </div>
           </div>
         )}
 
-        <div className="flex items-center justify-between mb-4">
-          <span className="text-3xl font-bold text-primary">
-            ${currentPrice.toFixed(2)}
-          </span>
+        <div style={{ flexGrow: 1, minHeight: 8 }} />
 
-          {/* Quantity Selector */}
-          <div className="flex items-center bg-gray-100 rounded-lg">
+        <div
+          className="product-action-row"
+          style={{
+            marginTop: 18,
+            display: "flex",
+            gap: 10,
+            alignItems: "stretch",
+          }}
+        >
+          <div
+            className="qty-stepper"
+            style={{
+              display: "flex",
+              alignItems: "center",
+              border: "1px solid rgba(53,58,64,.18)",
+              borderRadius: 2,
+              overflow: "hidden",
+              background: "#fff",
+            }}
+          >
             <button
-              onClick={decrementQuantity}
-              className="p-2 text-gray-600 hover:text-primary transition-colors"
-              disabled={added}
+              onClick={() => setQty(Math.max(1, qty - 1))}
+              aria-label="−"
+              style={{
+                width: 36,
+                height: "100%",
+                background: "transparent",
+                border: "none",
+                cursor: "pointer",
+                color: "#353a40",
+                fontSize: 18,
+                lineHeight: 1,
+                padding: 0,
+                transition: "background .2s ease",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = "rgba(53,58,64,.06)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = "transparent";
+              }}
             >
-              <FaMinus />
+              −
             </button>
-            <span className="px-4 font-bold text-lg text-dark">{quantity}</span>
-            <button
-              onClick={incrementQuantity}
-              className="p-2 text-gray-600 hover:text-primary transition-colors"
-              disabled={added}
+            <span
+              style={{
+                minWidth: 32,
+                textAlign: "center",
+                fontFamily: "var(--font-sans)",
+                fontSize: 14,
+                fontWeight: 600,
+                color: "#353a40",
+                padding: "0 4px",
+              }}
             >
-              <FaPlus />
+              {qty}
+            </span>
+            <button
+              onClick={() => setQty(Math.min(99, qty + 1))}
+              aria-label="+"
+              style={{
+                width: 36,
+                height: "100%",
+                background: "transparent",
+                border: "none",
+                cursor: "pointer",
+                color: "#353a40",
+                fontSize: 18,
+                lineHeight: 1,
+                padding: 0,
+                transition: "background .2s ease",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = "rgba(53,58,64,.06)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = "transparent";
+              }}
+            >
+              +
             </button>
           </div>
-        </div>
 
-        <button
-          onClick={handleAddToCart}
-          disabled={added}
-          className={`w-full ${
-            added ? "bg-success" : "bg-primary hover:bg-orange-600"
-          } text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center space-x-2 transform hover:scale-105 active:scale-95 disabled:transform-none disabled:cursor-not-allowed`}
-        >
-          {added ? (
-            <>
-              <FaCheck />
-              <span>¡Añadido!</span>
-            </>
-          ) : (
-            <>
-              <FaShoppingCart />
-              <span>{t.products.addToCart}</span>
-            </>
-          )}
-        </button>
+          <button
+            onClick={handleAdd}
+            style={{
+              flex: 1,
+              padding: "13px 18px",
+              background: adding ? "#10b981" : "#353a40",
+              color: "#faf6f0",
+              border: "none",
+              borderRadius: 2,
+              fontFamily: "var(--font-sans)",
+              fontSize: 13,
+              fontWeight: 500,
+              letterSpacing: 0.5,
+              cursor: "pointer",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              gap: 12,
+              transition: "all .3s ease",
+            }}
+            onMouseEnter={(e) => {
+              if (!adding) e.currentTarget.style.background = "#ff914d";
+            }}
+            onMouseLeave={(e) => {
+              if (!adding) e.currentTarget.style.background = "#353a40";
+            }}
+          >
+            <span style={{ display: "flex", alignItems: "center", gap: 8 }}>
+              {adding ? (
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+              ) : (
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <line x1="12" y1="5" x2="12" y2="19" />
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                </svg>
+              )}
+              {adding ? t.common.addedToCart : t.products.addToCart}
+            </span>
+            <span
+              style={{
+                fontFamily: "var(--font-display)",
+                fontSize: 18,
+                fontStyle: "italic",
+              }}
+            >
+              ${totalDisplay}
+            </span>
+          </button>
+        </div>
       </div>
     </div>
   );

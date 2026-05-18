@@ -1,67 +1,77 @@
-import React, { createContext, useState, useContext, useEffect } from 'react';
+import React, { createContext, useState, useContext, useEffect } from "react";
 
 const CartContext = createContext();
+const STORAGE_KEY = "tibis_cart";
+
+const readStorage = () => {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (!raw) return [];
+    const parsed = JSON.parse(raw);
+    return Array.isArray(parsed) ? parsed : [];
+  } catch {
+    return [];
+  }
+};
 
 export const useCart = () => {
   const context = useContext(CartContext);
   if (!context) {
-    throw new Error('useCart must be used within a CartProvider');
+    throw new Error("useCart must be used within a CartProvider");
   }
   return context;
 };
 
 export const CartProvider = ({ children }) => {
-  const [cart, setCart] = useState([]);
-  
-  // Añadir producto al carrito
-  const addToCart = (product) => {
-    setCart(prevCart => {
-      const existingItem = prevCart.find(item => item.id === product.id);
-      
-      if (existingItem) {
-        return prevCart.map(item =>
-          item.id === product.id
-            ? { ...item, quantity: item.quantity + 1 }
-            : item
-        );
+  const [cart, setCart] = useState(readStorage);
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
+    } catch {
+      // ignore storage failures
+    }
+  }, [cart]);
+
+  const addToCart = (product, quantity = 1) => {
+    setCart((prev) => {
+      const key = product.key;
+      const idx = prev.findIndex((it) => it.key === key);
+      if (idx >= 0) {
+        const copy = [...prev];
+        copy[idx] = { ...copy[idx], quantity: copy[idx].quantity + quantity };
+        return copy;
       }
-      
-      return [...prevCart, { ...product, quantity: 1 }];
+      return [...prev, { ...product, quantity }];
     });
   };
-  
-  // Eliminar producto del carrito
-  const removeFromCart = (productId) => {
-    setCart(prevCart => prevCart.filter(item => item.id !== productId));
+
+  const removeFromCart = (key) => {
+    setCart((prev) => prev.filter((it) => it.key !== key));
   };
-  
-  // Actualizar cantidad de un producto
-  const updateQuantity = (productId, quantity) => {
+
+  const updateQuantity = (key, quantity) => {
     if (quantity <= 0) {
-      removeFromCart(productId);
+      removeFromCart(key);
       return;
     }
-    
-    setCart(prevCart =>
-      prevCart.map(item =>
-        item.id === productId
-          ? { ...item, quantity }
-          : item
-      )
+    setCart((prev) =>
+      prev.map((it) => (it.key === key ? { ...it, quantity } : it))
     );
   };
-  
-  // Vaciar carrito
-  const clearCart = () => {
-    setCart([]);
-  };
-  
-  // Calcular total de items
+
+  const clearCart = () => setCart([]);
+
+  const openDrawer = () => setIsDrawerOpen(true);
+  const closeDrawer = () => setIsDrawerOpen(false);
+
   const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-  
-  // Calcular precio total
-  const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-  
+  const totalPrice = cart.reduce(
+    (sum, item) => sum + item.price * item.quantity,
+    0
+  );
+
   return (
     <CartContext.Provider
       value={{
@@ -72,6 +82,9 @@ export const CartProvider = ({ children }) => {
         clearCart,
         totalItems,
         totalPrice,
+        isDrawerOpen,
+        openDrawer,
+        closeDrawer,
       }}
     >
       {children}

@@ -1,80 +1,155 @@
 export const es = {
-  // Header
+  // SEO metadata per route
+  seo: {
+    home: {
+      title: "Tibi's Market — Arepas Artesanales de Trigo | Miami",
+      description:
+        "Arepas andinas de trigo hechas a mano en Miami. Receta familiar de más de 200 años, tradición venezolana desde 1943. Envíos a todo Estados Unidos.",
+    },
+    products: {
+      title: "Productos — Arepas, Are-Chips y Rellenos | Tibi's Market",
+      description:
+        "Arepas tradicionales, mini, bocado, are-chips, carne mechada y crema de queso. Artesanal, hecho a mano en Miami. Envíos a todo USA.",
+    },
+    about: {
+      title: "Sobre Mí — Historia de Tibi's Market | María Tibisay Gómez",
+      description:
+        "El legado de María Tibisay Gómez: de Mucuchachí, Mérida a Miami. Tres generaciones de mujeres detrás de la arepa de trigo más auténtica.",
+    },
+    contact: {
+      title: "Contacto — Pedidos y Envíos | Tibi's Market Miami",
+      description:
+        "Haz tu pedido por WhatsApp o email. Entregamos en Miami y enviamos a todo Estados Unidos. Disponibles 24/7 para responderte.",
+    },
+    privacy: {
+      title: "Política de Privacidad | Tibi's Market",
+      description:
+        "Cómo recopilamos, usamos y protegemos tus datos personales en Tibi's Market.",
+    },
+    cookies: {
+      title: "Política de Cookies | Tibi's Market",
+      description:
+        "Información sobre el uso de cookies y cómo gestionarlas en tibismarket.com.",
+    },
+    terms: {
+      title: "Aviso Legal | Tibi's Market",
+      description:
+        "Términos y condiciones de uso del sitio web de Tibi's Market.",
+    },
+    notFound: {
+      title: "Página no encontrada | Tibi's Market",
+      description:
+        "La página que buscas no existe. Vuelve al inicio o descubre nuestras arepas artesanales.",
+    },
+  },
+
+  // Header / nav
   nav: {
     home: "Inicio",
+    story: "Historia",
     products: "Productos",
     about: "Sobre Mí",
     contact: "Contacto",
     cart: "Carrito",
   },
 
-  // Home
-  home: {
-    hero: {
-      title: "Susurros de los Andes Venezolanos",
-      subtitle: "Donde la tradición no muere… se transforma",
-      badge: "Desde 1943",
-      description:
-        "Arepas artesanales de trigo, hechas a mano en Miami con ingredientes nobles y el alma de tres generaciones.",
-      cta: {
-        products: "Ver Productos",
-        contact: "Contáctanos",
-      },
-      badges: {
-        handmade: "Hecho a Mano",
-        artisan: "100% Artesanal",
-        shipping: "Envíos a todo USA",
-      },
-      floatingCard: {
-        years: "+200 años",
-        tradition: "de tradición familiar",
-      },
-    },
-    intro: {
-      text: "Nací en Mucuchachí, estado Mérida – Venezuela, en 1943, cuando los vientos de la Sierra aún traían ecos de una guerra lejana y mi madre me arropaba con cuentos de niebla, trigo y esperanza. Este pueblo andino, fundado en 1770 en tierras ancestrales de los Timotes y Mucuchíes, me dio más que un lugar: me dio raíces.",
-    },
-    identity: {
-      text: "Mi nombre es María Tibisay Gómez, hija de Dominga, nieta de Cantalicia, bisnieta de una mujer cuyo nombre no está escrito en ningún libro, pero que vive en cada arepa que mis manos amasan. En los Andes merideños, donde el maíz no prospera por el frío y la altura, el trigo encontró hogar, traído por frailes agustinos en el siglo XVI. Y con él, nació una nueva forma de alimentar el alma: la arepa de trigo.",
-    },
-    learning: {
-      text: "Tenía seis años cuando mi abuela me enseñó a prepararla. Era 1949, el trigo llegaba en sacos gastados desde Timotes o Lagunillas, y lo molíamos en piedras que aún guardan el eco del tiempo.",
-    },
-    quote: {
-      text: "Mija, la arepa no se apura. Se amasa con el corazón, se aplana con paciencia y se dora hasta que cante.",
-    },
-    legacy: {
-      text: "Aquella lección nunca me abandonó. Y tampoco el sueño de compartir este legado con el mundo.",
-    },
-    meaning: {
-      text: "Porque la arepa de trigo no es solo comida: es la voz de mis abuelas, es el frío que se combate con calor de leña, es el pan que une a un pueblo cuando faltan palabras.",
-    },
-    tibisMarket: {
-      title: "Tradición que evoluciona: así nació Tibi's Market",
-      text1:
-        "A mis 81 años, lejos de los Andes y bajo el cielo de Miami, decidí emprender, para honrar. Así nació Tibi's Market, un tributo a mis raíces y a la cocina como lenguaje de amor, cultura y familia.",
-      text2:
-        "Junto a mi hija, transformamos nuestra receta familiar en un producto artesanal: arepas andinas de trigo, hechas a mano, con ingredientes nobles y el alma de tres generaciones.",
-      text3:
-        "Lo que comenzó como una nostalgia en la cocina se convirtió en un emprendimiento con propósito. Participamos en ferias, eventos locales, tiendas y tomamos pedidos directos con entrega en Miami y envíos a todo Estados Unidos.",
-    },
+  // Common
+  common: {
+    addedToCart: "Añadido al carrito",
+    since: "Donde la tradición no muere… se transforma",
   },
 
-  //PRODUCTS
+  // Hero (editorial)
+  hero: {
+    eyebrow: "Mucuchachí · Mérida · 1943",
+    title1: "Susurros",
+    title2: "de los Andes",
+    title3: "Venezolanos",
+    subtitle: "Donde la tradición no muere… se transforma.",
+    description:
+      "Arepas artesanales de trigo, hechas a mano en Miami con ingredientes nobles y el alma de tres generaciones.",
+    ctaProducts: "Ver Productos",
+    ctaStory: "Nuestra Historia",
+    shippingTag: "Envíos en USA",
+    portraitLabel: "Mucuchachí — Mérida — Venezuela",
+    scrollLabel: "Scroll",
+    heritage: {
+      num: "+200",
+      label: "Años de receta",
+      sublabel: "Tradición familiar",
+    },
+    stat1: { num: "1943", label: "Año de nacimiento" },
+    stat2: { num: "3", label: "Generaciones" },
+    stat3: { num: "81", label: "Años de manos sabias" },
+    stat4: { num: "USA", label: "Envíos a todo" },
+    marquee:
+      "Hecho a mano · 100% Artesanal · Envíos a todo USA · Receta de +200 años · Trigo andino · Tres generaciones",
+  },
+
+  // Chapter I — Intro
+  intro: {
+    kicker: "Capítulo I",
+    title: "Una niña, una sierra, un trigo.",
+    body: "Nací en Mucuchachí, estado Mérida – Venezuela, en 1943, cuando los vientos de la Sierra aún traían ecos de una guerra lejana y mi madre me arropaba con cuentos de niebla, trigo y esperanza. Este pueblo andino, fundado en 1770 en tierras ancestrales de los Timotes y Mucuchíes, me dio más que un lugar: me dio raíces.",
+    plateLabel: "Plato 01 · Tradicional",
+  },
+
+  // Chapter II — Identity
+  identity: {
+    kicker: "Capítulo II",
+    title: "María Tibisay Gómez",
+    subtitle: "Hija de Dominga. Nieta de Cantalicia.",
+    body: "Mi nombre es María Tibisay Gómez, hija de Dominga, nieta de Cantalicia, bisnieta de una mujer cuyo nombre no está escrito en ningún libro, pero que vive en cada arepa que mis manos amasan. En los Andes merideños, donde el maíz no prospera por el frío y la altura, el trigo encontró hogar, traído por frailes agustinos en el siglo XVI. Y con él, nació una nueva forma de alimentar el alma: la arepa de trigo.",
+    label: "Madre & Hija",
+  },
+
+  // Chapter III — Learning
+  learning: {
+    kicker: "Capítulo III",
+    title: "Tenía seis años.",
+    body: "Tenía seis años cuando mi abuela me enseñó a prepararla. Era 1949, el trigo llegaba en sacos gastados desde Timotes o Lagunillas, y lo molíamos en piedras que aún guardan el eco del tiempo.",
+  },
+
+  // Quote
+  quote: {
+    text: "Mija, la arepa no se apura. Se amasa con el corazón, se aplana con paciencia y se dora hasta que cante.",
+    author: "Abuela Cantalicia",
+  },
+
+  // Legacy
+  legacy: {
+    line1: "Aquella lección nunca me abandonó.",
+    line2: "Y tampoco el sueño de compartir este legado con el mundo.",
+    body: "Porque la arepa de trigo no es solo comida: es la voz de mis abuelas, es el frío que se combate con calor de leña, es el pan que une a un pueblo cuando faltan palabras.",
+  },
+
+  // Gallery
+  gallery: {
+    kicker: "Galería",
+    title: "Lo que las manos cuentan.",
+  },
+
+  // Products
   products: {
+    kicker: "La Mesa",
     title: "Nuestros Productos",
     subtitle: "Arepas artesanales hechas con amor",
     badge: "Artesanal · Hecho a Mano",
     intro:
       "Cada producto está hecho con la receta ancestral de mi abuela, usando ingredientes nobles y el amor de tres generaciones.",
     addToCart: "Añadir al Carrito",
+    from: "Desde",
+    quantity: "Cantidad",
+    size: "Tamaño",
+    selectSize: "Selecciona tamaño",
+    serving: "porción",
+    servings: "porciones",
+    units: "unidades",
     cta: {
       title: "¿No encuentras lo que buscas?",
       subtitle: "Contáctanos para pedidos especiales o personalizados",
       button: "Contáctanos",
     },
-    selectSize: "Selecciona tamaño",
-    serving: "porción",
-    servings: "porciones",
     productsList: [
       {
         id: 1,
@@ -104,7 +179,7 @@ export const es = {
         description:
           "Pensadas para los más pequeños… y los que aún creen en la magia.",
         price: 10,
-        image: "WhatsApp Image 2025-11-15 at 11.37.23 (3).webp",
+        image: "mini-arepas.webp",
         units: 30,
         weightPerUnit: 0.3,
         totalWeight: 8.8,
@@ -151,27 +226,49 @@ export const es = {
     ],
   },
 
-  // Cart
+  // Market / Chapter IV
+  market: {
+    kicker: "Capítulo IV",
+    title: "Tradición que evoluciona",
+    subtitle: "Así nació Tibi's Market.",
+    p1: "A mis 81 años, lejos de los Andes y bajo el cielo de Miami, decidí emprender, para honrar. Así nació Tibi's Market, un tributo a mis raíces y a la cocina como lenguaje de amor, cultura y familia.",
+    p2: "Junto a mi hija, transformamos nuestra receta familiar en un producto artesanal: arepas andinas de trigo, hechas a mano, con ingredientes nobles y el alma de tres generaciones.",
+    p3: "Lo que comenzó como una nostalgia en la cocina se convirtió en un emprendimiento con propósito. Participamos en ferias, eventos locales y tiendas, y tomamos pedidos directos con entrega en Miami y envíos a todo Estados Unidos.",
+    cta: "Descubre la mesa",
+    label: "Feria local · Miami",
+  },
+
+  // Final CTA + contact
+  cta: {
+    kicker: "Hagamos mesa",
+    title: "¿Listo para probar nuestras arepas?",
+    subtitle: "Haz tu pedido y lleva el sabor de los Andes a tu casa.",
+    whatsapp: "Pedir por WhatsApp",
+    email: "Escríbenos",
+  },
+
+  // Cart (editorial drawer)
   cart: {
-    title: "Carrito de Compras",
+    title: "Tu Pedido",
     subtitle: "Revisa tu pedido y completa tus datos",
-    hero: {
-      tagline: "Tu pedido",
-    },
+    hero: { tagline: "Tu pedido" },
     empty: "Tu carrito está vacío",
-    continueShopping: "Continuar Comprando",
+    emptyDesc: "Explora nuestros productos artesanales y añade tus favoritos",
+    continueShopping: "Seguir Comprando",
     orderSummary: "Resumen del Pedido",
-    quantity: "Cantidad",
-    subtotal: "Subtotal",
-    total: "TOTAL",
+    itemsLabel: "Productos",
+    clear: "Vaciar",
     clearCart: "Vaciar Carrito",
+    total: "Total",
+    subtotal: "Subtotal",
+    quantity: "Cantidad",
     customerData: "Datos del Cliente",
     firstName: "Nombre",
     lastName: "Apellidos",
     phone: "Teléfono",
     email: "Correo Electrónico",
     address: "Dirección de Envío",
-    addressPlaceholder: "Calle, número, piso, ciudad, código postal",
+    addressPlaceholder: "Calle, número, ciudad, código postal",
     sendOrder: "Enviar Pedido",
     sendViaWhatsApp: "Enviar por WhatsApp",
     sendViaEmail: "Enviar por Email",
@@ -180,13 +277,22 @@ export const es = {
     invalidPhone: "Por favor, ingresa un teléfono válido",
     orderSent: "¡Pedido enviado con éxito!",
     emptyCart: "El carrito está vacío",
+    each: "c/u",
+    remove: "Eliminar",
+    orderGreeting: "¡Hola! Me gustaría hacer el siguiente pedido:",
+    orderProducts: "PRODUCTOS",
+    orderTotal: "TOTAL DEL PEDIDO",
+    orderCustomer: "DATOS DEL CLIENTE",
+    thanks: "¡Gracias!",
+    emailSubject: "Nuevo Pedido - Tibi's Market",
   },
 
-  // About
+  // About — editorial, conserva el contenido completo de la historia
   about: {
     title: "Sobre Mí - María Tibisay Gómez",
     subtitle: "Guardiana de un legado ancestral",
     badge: "Mi Historia",
+    kicker: "Sobre Mí",
     hero: {
       title: "Tibi's Market",
       subtitle: "Un legado que florece bajo el cielo de Miami",
@@ -205,36 +311,13 @@ export const es = {
       text: "Juntas, mi hija y yo transformamos nuestra receta familiar en un emprendimiento con alma: arepas andinas de trigo, hechas a mano, con ingredientes nobles y el espíritu de tres generaciones.",
     },
     section4: {
-      text: "No sabíamos de negocios. Aprendimos desde cero. Cometimos errores, los reímos, los corregimos. Participamos en ferias locales, vendimos en tiendas, tomamos pedidos por WhatsApp, entregamos en Miami, hicimos envíos a todo Estados Unidos. Cada paso fue una victoria.",
+      text: "No sabíamos de negocios. Aprendimos desde cero. Cometimos errores, nos reímos de ellos, los corregimos. Participamos en ferias locales, vendimos en tiendas, tomamos pedidos por WhatsApp, entregamos en Miami, hicimos envíos a todo Estados Unidos. Cada paso fue una victoria.",
     },
     section5: {
       title:
         "Y los clientes nos enseñaron que lo que vendemos va más allá de la comida.",
       quote: "Me transportó a la cocina de mi abuela",
       text: "Vendemos recuerdos. Vendemos hogar.",
-    },
-    products: {
-      title: "Hoy, Tibi's Market ofrece:",
-      list: [
-        {
-          name: "Arepas Tradicionales",
-          description: "Para desayunos o cenas con alma",
-        },
-        {
-          name: "Arepas Tipo Bocado",
-          description: "Perfectas para compartir",
-        },
-        {
-          name: "Mini Arepas",
-          description:
-            "Pensadas para los más pequeños… o los que aún creen en la magia",
-        },
-        {
-          name: "Are-Chips",
-          description:
-            "Crujientes, finas, modernas, pero con el sabor de siempre",
-        },
-      ],
     },
     section6: {
       text: "Y seguimos soñando: expandirnos, entrar a restaurantes, llegar a más hogares venezolanos y latinos, ser embajadoras de una tradición que no se olvida.",
@@ -247,13 +330,12 @@ export const es = {
     },
   },
 
-  // Contact
+  // Contact — editorial
   contact: {
     title: "Contacto",
     subtitle: "Estamos aquí para ti",
-    hero: {
-      tagline: "Contáctanos",
-    },
+    badge: "Contáctanos",
+    hero: { tagline: "Contáctanos" },
     intro: {
       title: "Hablemos",
       text: "Estamos aquí para responder tus preguntas, tomar tu pedido o simplemente compartir una historia sobre arepas.",
@@ -275,28 +357,30 @@ export const es = {
       facebook: "https://www.facebook.com/share/17dRWkPRFC/?mibextid=wwXIfr",
     },
     shipping: "Envíos a todo USA",
-    cta: {
-      title: "¿Listo para probar nuestras arepas?",
-      subtitle: "Haz tu pedido ahora y lleva el sabor de los Andes a tu mesa",
-      whatsapp: "Pedir por WhatsApp",
-      email: "Enviar Email",
-    },
   },
 
   // Footer
   footer: {
+    tagline:
+      "Arepas artesanales de trigo, hechas a mano con amor y tradición familiar desde 1943.",
     about: "Sobre Nosotros",
     aboutText:
       "Arepas artesanales de trigo, hechas a mano con amor y tradición familiar desde 1943.",
+    explore: "Explorar",
     quickLinks: "Enlaces Rápidos",
+    contact: "Contacto",
+    legal: "Legal",
+    newsletter: "Recibe nuestras novedades",
+    placeholder: "tu@correo.com",
+    subscribe: "Suscribirme",
     rights: "Todos los derechos reservados.",
     madeBy: "Desarrollado por",
     privacy: "Política de Privacidad",
     cookies: "Cookies",
     terms: "Aviso Legal",
+    city: "Miami, Florida · Estados Unidos",
   },
 
-  // Legal pages
   // Legal pages
   privacy: {
     title: "Política de Privacidad",
@@ -329,7 +413,7 @@ export const es = {
           "Si tiene preguntas sobre esta política de privacidad, puede contactarnos en tibismarket@gmail.com o al +1 (305) 898-3610.",
       },
     },
-    lastUpdate: "Última actualización: Noviembre 2024",
+    lastUpdate: "Última actualización: Mayo 2026",
   },
 
   cookies: {
@@ -365,7 +449,7 @@ export const es = {
           "Si tiene preguntas sobre nuestra política de cookies, contáctenos en tibismarket@gmail.com o al +1 (305) 898-3610.",
       },
     },
-    lastUpdate: "Última actualización: Noviembre 2024",
+    lastUpdate: "Última actualización: Mayo 2026",
   },
 
   terms: {
@@ -413,11 +497,11 @@ export const es = {
           "Para cualquier pregunta sobre estos términos legales, contáctenos en tibismarket@gmail.com o al +1 (305) 898-3610.",
       },
     },
-    lastUpdate: "Última actualización: Noviembre 2024",
+    lastUpdate: "Última actualización: Mayo 2026",
   },
 
   notFound: {
-    title: "¡Oops! Página no encontrada",
+    title: "¡Vaya! Página no encontrada",
     message:
       "La página que estás buscando no existe o ha sido movida. No te preocupes, te ayudamos a encontrar lo que necesitas.",
     homeButton: "Volver al Inicio",

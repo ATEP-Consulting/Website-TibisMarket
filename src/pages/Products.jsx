@@ -1,89 +1,244 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "../context/LanguageContext";
-import ProductCard from "../components/ProductCard";
+import Seo from "../components/Seo";
+import ProductsSection from "../components/sections/ProductsSection";
+import Reveal from "../components/Reveal";
 
 const Products = () => {
   const { t } = useLanguage();
 
+  const productSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    itemListElement: t.products.productsList.map((p, i) => {
+      const price = p.hasVariants ? p.variants[0].price : p.price;
+      return {
+        "@type": "ListItem",
+        position: i + 1,
+        item: {
+          "@type": "Product",
+          name: p.name,
+          description: p.description,
+          image: `https://www.tibismarket.com/images/${p.image}`,
+          brand: { "@type": "Brand", name: "Tibi's Market" },
+          offers: {
+            "@type": "Offer",
+            priceCurrency: "USD",
+            price: String(price),
+            availability: "https://schema.org/InStock",
+            url: "https://www.tibismarket.com/products",
+          },
+        },
+      };
+    }),
+  };
+
   return (
-    <div className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <section className="relative py-32 px-6 overflow-hidden bg-gradient-to-br from-dark/95 via-dark/90 to-primary/20">
-        <div className="absolute top-20 right-20 w-72 h-72 bg-primary/20 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 left-20 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
-
-        <div className="max-w-5xl mx-auto text-center relative z-10">
-          <div className="inline-block mb-6">
-            <span className="bg-primary/20 text-primary px-6 py-3 rounded-full text-sm font-semibold border border-primary/30">
-              {t.products.badge}
-            </span>
-          </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
-            {t.products.title}
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-300 font-light italic">
-            {t.products.subtitle}
-          </p>
-        </div>
-      </section>
-
-      {/* Products Grid */}
-      <section className="py-20 md:py-32 px-6 bg-gradient-to-b from-white via-secondary/10 to-white">
-        <div className="max-w-7xl mx-auto">
-          {/* Intro Text */}
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
+    <>
+      <Seo page="products" path="/products" />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+      />
+      <section
+        className="page-pad relative overflow-hidden"
+        style={{
+          background: "linear-gradient(180deg, #faf6f0 0%, #f3ece1 100%)",
+          padding: "180px 28px 100px",
+        }}
+      >
+        <div
+          aria-hidden
+          style={{
+            position: "absolute",
+            top: -120,
+            right: -120,
+            width: 480,
+            height: 480,
+            borderRadius: "50%",
+            background:
+              "radial-gradient(circle, rgba(255,145,77,.18), transparent 70%)",
+          }}
+        />
+        <div
+          style={{
+            maxWidth: 1280,
+            margin: "0 auto",
+            position: "relative",
+            textAlign: "center",
+          }}
+        >
+          <Reveal>
+            <div
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 12,
+                marginBottom: 24,
+              }}
+            >
+              <span style={{ width: 32, height: 1, background: "#ff914d" }} />
+              <span
+                style={{
+                  fontFamily: "var(--font-sans)",
+                  fontSize: 11,
+                  letterSpacing: 3,
+                  textTransform: "uppercase",
+                  color: "#8a7560",
+                }}
+              >
+                {t.products.kicker}
+              </span>
+              <span style={{ width: 32, height: 1, background: "#ff914d" }} />
+            </div>
+          </Reveal>
+          <Reveal delay={150}>
+            <h1
+              style={{
+                fontFamily: "var(--font-display)",
+                fontWeight: 500,
+                fontSize: "clamp(52px, 7vw, 104px)",
+                lineHeight: 1,
+                color: "#353a40",
+                letterSpacing: "-2.5px",
+                margin: 0,
+              }}
+            >
+              {t.products.title}
+            </h1>
+          </Reveal>
+          <Reveal delay={300}>
+            <p
+              style={{
+                fontFamily: "var(--font-display)",
+                fontStyle: "italic",
+                fontSize: "clamp(20px, 1.8vw, 26px)",
+                color: "#5a5248",
+                marginTop: 22,
+              }}
+            >
+              {t.products.subtitle}
+            </p>
+            <p
+              style={{
+                fontFamily: "var(--font-sans)",
+                fontSize: 16,
+                lineHeight: 1.7,
+                color: "#5a5248",
+                margin: "20px auto 0",
+                maxWidth: 640,
+              }}
+            >
               {t.products.intro}
             </p>
-          </div>
-
-          {/* Products Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8">
-            {t.products.productsList.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-          </div>
+          </Reveal>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 md:py-32 px-6 bg-gradient-to-br from-dark via-dark/98 to-primary/20 text-white relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+      <ProductsSection background="#faf6f0" showHeader={false} />
 
-        <div className="max-w-4xl mx-auto text-center relative z-10 space-y-8">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white">
-            {t.products.cta.title}
-          </h2>
-          <p className="text-xl text-gray-300">{t.products.cta.subtitle}</p>
-
-          <div className="pt-4">
+      <section
+        className="page-pad relative overflow-hidden"
+        style={{
+          background: "#353a40",
+          color: "#faf6f0",
+          padding: "120px 28px",
+        }}
+      >
+        <div
+          aria-hidden
+          style={{
+            position: "absolute",
+            top: -200,
+            right: -200,
+            width: 600,
+            height: 600,
+            borderRadius: "50%",
+            background:
+              "radial-gradient(circle, rgba(255,145,77,.18), transparent 65%)",
+          }}
+        />
+        <div
+          style={{
+            maxWidth: 880,
+            margin: "0 auto",
+            position: "relative",
+            textAlign: "center",
+          }}
+        >
+          <Reveal>
+            <h2
+              style={{
+                fontFamily: "var(--font-display)",
+                fontWeight: 500,
+                fontSize: "clamp(36px, 4.5vw, 56px)",
+                lineHeight: 1.1,
+                color: "#faf6f0",
+                letterSpacing: "-1px",
+                margin: 0,
+              }}
+            >
+              {t.products.cta.title}
+            </h2>
+            <p
+              style={{
+                fontFamily: "var(--font-sans)",
+                fontSize: 17,
+                lineHeight: 1.7,
+                color: "rgba(250,246,240,.78)",
+                marginTop: 18,
+              }}
+            >
+              {t.products.cta.subtitle}
+            </p>
             <Link
               to="/contact"
-              className="inline-flex items-center justify-center px-10 py-5 text-lg font-semibold text-white bg-primary rounded-xl shadow-2xl hover:shadow-primary/50 transition-all duration-300 hover:scale-105"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 12,
+                marginTop: 32,
+                background: "#ff914d",
+                color: "#fff",
+                padding: "16px 28px",
+                borderRadius: 999,
+                fontFamily: "var(--font-sans)",
+                fontSize: 14,
+                fontWeight: 500,
+                letterSpacing: 0.3,
+                textDecoration: "none",
+                transition: "all .3s ease",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = "translateY(-2px)";
+                e.currentTarget.style.boxShadow =
+                  "0 12px 24px -8px rgba(255,145,77,.5)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = "translateY(0)";
+                e.currentTarget.style.boxShadow = "none";
+              }}
             >
-              <span className="flex items-center gap-2">
-                {t.products.cta.button}
-                <svg
-                  className="w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M17 8l4 4m0 0l-4 4m4-4H3"
-                  />
-                </svg>
-              </span>
+              {t.products.cta.button}
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
             </Link>
-          </div>
+          </Reveal>
         </div>
       </section>
-    </div>
+    </>
   );
 };
 

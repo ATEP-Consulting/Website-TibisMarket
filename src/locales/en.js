@@ -1,80 +1,154 @@
 export const en = {
-  // Header
+  // SEO metadata per route
+  seo: {
+    home: {
+      title: "Tibi's Market — Artisan Wheat Arepas | Miami",
+      description:
+        "Handmade Andean wheat arepas in Miami. A family recipe over 200 years old, Venezuelan tradition since 1943. Shipping across the United States.",
+    },
+    products: {
+      title: "Products — Arepas, Are-Chips & Fillings | Tibi's Market",
+      description:
+        "Traditional, mini, bite-sized arepas, are-chips, shredded beef and cheese spread. Artisan, handmade in Miami. Shipping across USA.",
+    },
+    about: {
+      title: "About — The Tibi's Market Story | María Tibisay Gómez",
+      description:
+        "The legacy of María Tibisay Gómez: from Mucuchachí, Mérida to Miami. Three generations of women behind the most authentic wheat arepa.",
+    },
+    contact: {
+      title: "Contact — Orders & Shipping | Tibi's Market Miami",
+      description:
+        "Place your order via WhatsApp or email. Local delivery in Miami and shipping across the United States. Available 24/7.",
+    },
+    privacy: {
+      title: "Privacy Policy | Tibi's Market",
+      description:
+        "How we collect, use and protect your personal data at Tibi's Market.",
+    },
+    cookies: {
+      title: "Cookie Policy | Tibi's Market",
+      description:
+        "Information about cookie use and how to manage them at tibismarket.com.",
+    },
+    terms: {
+      title: "Legal Notice | Tibi's Market",
+      description: "Terms and conditions of use for the Tibi's Market website.",
+    },
+    notFound: {
+      title: "Page Not Found | Tibi's Market",
+      description:
+        "The page you're looking for doesn't exist. Return home or discover our artisan arepas.",
+    },
+  },
+
+  // Header / nav
   nav: {
     home: "Home",
+    story: "Story",
     products: "Products",
     about: "About Me",
     contact: "Contact",
     cart: "Cart",
   },
 
-  // Home
-  home: {
-    hero: {
-      title: "Whispers from the Venezuelan Andes",
-      subtitle: "Where tradition never dies… it transforms",
-      badge: "Since 1943",
-      description:
-        "Artisan wheat arepas, handmade in Miami with noble ingredients and the soul of three generations.",
-      cta: {
-        products: "View Products",
-        contact: "Contact Us",
-      },
-      badges: {
-        handmade: "Handmade",
-        artisan: "100% Artisan",
-        shipping: "Shipping across USA",
-      },
-      floatingCard: {
-        years: "+200 years",
-        tradition: "of family tradition",
-      },
+  // Common
+  common: {
+    addedToCart: "Added to cart",
+    since: "Where tradition never dies… it transforms",
+  },
+
+  // Hero (editorial)
+  hero: {
+    eyebrow: "Mucuchachí · Mérida · 1943",
+    title1: "Whispers",
+    title2: "from the Venezuelan",
+    title3: "Andes",
+    subtitle: "Where tradition never dies… it transforms.",
+    description:
+      "Artisan wheat arepas, handmade in Miami with noble ingredients and the soul of three generations.",
+    ctaProducts: "View Products",
+    ctaStory: "Our Story",
+    shippingTag: "Shipping in USA",
+    portraitLabel: "Mucuchachí — Mérida — Venezuela",
+    scrollLabel: "Scroll",
+    heritage: {
+      num: "+200",
+      label: "Years of heritage",
+      sublabel: "Family tradition",
     },
-    intro: {
-      text: "I was born in Mucuchachí, Mérida state – Venezuela, in 1943, when the mountain winds still carried echoes of a distant war and my mother wrapped me in tales of mist, wheat, and hope. This Andean town, founded in 1770 on ancestral lands of the Timotes and Mucuchíes, gave me more than a place: it gave me roots.",
-    },
-    identity: {
-      text: "My name is María Tibisay Gómez, daughter of Dominga, granddaughter of Cantalicia, great-granddaughter of a woman whose name is not written in any book, but who lives in every arepa my hands knead. In the Mérida Andes, where corn doesn't thrive in the cold and altitude, wheat found a home, brought by Augustinian friars in the 16th century. And with it, a new way to nourish the soul was born: the wheat arepa.",
-    },
-    learning: {
-      text: "I was six years old when my grandmother taught me how to make it. It was 1949, wheat arrived in worn sacks from Timotes or Lagunillas, and we ground it with stones that still hold the echo of time.",
-    },
-    quote: {
-      text: "My dear, the arepa cannot be rushed. It is kneaded with the heart, flattened with patience, and browned until it sings.",
-    },
-    legacy: {
-      text: "That lesson never left me. Nor did the dream of sharing this legacy with the world.",
-    },
-    meaning: {
-      text: "Because the wheat arepa is not just food: it is the voice of my grandmothers, the cold fought with the warmth of firewood, the bread that unites a town when words fail.",
-    },
-    tibisMarket: {
-      title: "Evolving tradition: how Tibi's Market was born",
-      text1:
-        "At 81 years old, far from the Andes and under the Miami sky, I decided to start a business, to honor. Thus Tibi's Market was born, a tribute to my roots and to cooking as a language of love, culture, and family.",
-      text2:
-        "Together with my daughter, we transformed our family recipe into an artisan product: Andean wheat arepas, handmade, with noble ingredients and the soul of three generations.",
-      text3:
-        "What began as nostalgia in the kitchen became a purposeful venture. We participate in fairs, local events, stores, and take direct orders with delivery in Miami and shipping throughout the United States.",
-    },
+    stat1: { num: "1943", label: "Year of birth" },
+    stat2: { num: "3", label: "Generations" },
+    stat3: { num: "81", label: "Years of wise hands" },
+    stat4: { num: "USA", label: "Shipping across" },
+    marquee:
+      "Handmade · 100% Artisan · Shipping across USA · Recipe of +200 years · Andean wheat · Three generations",
+  },
+
+  // Chapter I — Intro
+  intro: {
+    kicker: "Chapter I",
+    title: "A girl, a mountain, a grain of wheat.",
+    body: "I was born in Mucuchachí, in the state of Mérida – Venezuela, in 1943, when the mountain winds still carried echoes of a distant war and my mother wrapped me in tales of mist, wheat, and hope. This Andean town, founded in 1770 on ancestral lands of the Timotes and Mucuchíes, gave me more than a place: it gave me roots.",
+    plateLabel: "Plate 01 · Traditional",
+  },
+
+  // Chapter II — Identity
+  identity: {
+    kicker: "Chapter II",
+    title: "María Tibisay Gómez",
+    subtitle: "Daughter of Dominga. Granddaughter of Cantalicia.",
+    body: "My name is María Tibisay Gómez, daughter of Dominga, granddaughter of Cantalicia, great-granddaughter of a woman whose name is not written in any book, but who lives in every arepa my hands knead. In the Mérida Andes, where corn doesn't thrive in the cold and altitude, wheat found a home, brought by Augustinian friars in the 16th century. And with it, a new way to nourish the soul was born: the wheat arepa.",
+    label: "Mother & Daughter",
+  },
+
+  // Chapter III — Learning
+  learning: {
+    kicker: "Chapter III",
+    title: "I was six years old.",
+    body: "I was six years old when my grandmother taught me how to make it. It was 1949, wheat arrived in worn sacks from Timotes or Lagunillas, and we ground it with stones that still hold the echo of time.",
+  },
+
+  // Quote
+  quote: {
+    text: "My dear, the arepa cannot be rushed. It is kneaded with the heart, flattened with patience, and browned until it sings.",
+    author: "Grandmother Cantalicia",
+  },
+
+  // Legacy
+  legacy: {
+    line1: "That lesson never left me.",
+    line2: "Nor did the dream of sharing this legacy with the world.",
+    body: "Because the wheat arepa is not just food: it is the voice of my grandmothers, the cold fought with the warmth of firewood, the bread that unites a town when words fail.",
+  },
+
+  // Gallery
+  gallery: {
+    kicker: "Gallery",
+    title: "What hands tell.",
   },
 
   // Products
   products: {
+    kicker: "The Table",
     title: "Our Products",
     subtitle: "Artisan arepas made with love",
     badge: "Artisan · Handmade",
     intro:
       "Each product is made with my grandmother's ancestral recipe, using noble ingredients and the love of three generations.",
     addToCart: "Add to Cart",
+    from: "From",
+    quantity: "Quantity",
+    size: "Size",
+    selectSize: "Select size",
+    serving: "serving",
+    servings: "servings",
+    units: "units",
     cta: {
       title: "Can't find what you're looking for?",
       subtitle: "Contact us for special or custom orders",
       button: "Contact Us",
     },
-    selectSize: "Select size",
-    serving: "serving",
-    servings: "servings",
     productsList: [
       {
         id: 1,
@@ -104,7 +178,7 @@ export const en = {
         description:
           "Designed for the little ones… or those who still believe in magic.",
         price: 10,
-        image: "WhatsApp Image 2025-11-15 at 11.37.23 (3).webp",
+        image: "mini-arepas.webp",
         units: 30,
         weightPerUnit: 0.3,
         totalWeight: 8.8,
@@ -151,27 +225,49 @@ export const en = {
     ],
   },
 
-  // Cart
+  // Market / Chapter IV
+  market: {
+    kicker: "Chapter IV",
+    title: "Evolving tradition",
+    subtitle: "How Tibi's Market was born.",
+    p1: "At 81 years old, far from the Andes and under the Miami sky, I decided to start a business, to honor my roots. Thus Tibi's Market was born, a tribute to my origins and to cooking as a language of love, culture, and family.",
+    p2: "Together with my daughter, we transformed our family recipe into an artisan product: Andean wheat arepas, handmade, with noble ingredients and the soul of three generations.",
+    p3: "What began as nostalgia in the kitchen became a purposeful venture. We take part in fairs, local events, and stores, and we accept direct orders with delivery in Miami and shipping throughout the United States.",
+    cta: "Discover the table",
+    label: "Local fair · Miami",
+  },
+
+  // Final CTA + contact
+  cta: {
+    kicker: "Let's set the table",
+    title: "Ready to try our arepas?",
+    subtitle: "Order now and bring the taste of the Andes to your home.",
+    whatsapp: "Order via WhatsApp",
+    email: "Write to us",
+  },
+
+  // Cart (editorial drawer)
   cart: {
-    title: "Shopping Cart",
+    title: "Your Order",
     subtitle: "Review your order and complete your information",
-    hero: {
-      tagline: "Your order",
-    },
+    hero: { tagline: "Your order" },
     empty: "Your cart is empty",
+    emptyDesc: "Explore our artisan products and add your favorites",
     continueShopping: "Continue Shopping",
     orderSummary: "Order Summary",
-    quantity: "Quantity",
-    subtotal: "Subtotal",
-    total: "TOTAL",
+    itemsLabel: "Items",
+    clear: "Clear",
     clearCart: "Clear Cart",
+    total: "Total",
+    subtotal: "Subtotal",
+    quantity: "Quantity",
     customerData: "Customer Information",
     firstName: "First Name",
     lastName: "Last Name",
     phone: "Phone",
     email: "Email",
     address: "Delivery Address",
-    addressPlaceholder: "Street, number, floor, city, postal code",
+    addressPlaceholder: "Street, number, city, postal code",
     sendOrder: "Send Order",
     sendViaWhatsApp: "Send via WhatsApp",
     sendViaEmail: "Send via Email",
@@ -180,6 +276,14 @@ export const en = {
     invalidPhone: "Please enter a valid phone number",
     orderSent: "Order sent successfully!",
     emptyCart: "Cart is empty",
+    each: "ea.",
+    remove: "Remove",
+    orderGreeting: "Hello! I would like to place the following order:",
+    orderProducts: "PRODUCTS",
+    orderTotal: "ORDER TOTAL",
+    orderCustomer: "CUSTOMER INFORMATION",
+    thanks: "Thank you!",
+    emailSubject: "New Order - Tibi's Market",
   },
 
   // About
@@ -187,6 +291,7 @@ export const en = {
     title: "About Me - María Tibisay Gómez",
     subtitle: "Guardian of an ancestral legacy",
     badge: "My History",
+    kicker: "About Me",
     hero: {
       title: "Tibi's Market",
       subtitle: "A legacy that blooms under the Miami sky",
@@ -212,29 +317,6 @@ export const en = {
       quote: "It transported me to my grandmother's kitchen",
       text: "We sell memories. We sell home.",
     },
-    products: {
-      title: "Today, Tibi's Market offers:",
-      list: [
-        {
-          name: "Traditional Arepas",
-          description: "For soulful breakfasts or dinners",
-        },
-        {
-          name: "Bite-Sized Arepas",
-          description: "Perfect for sharing",
-        },
-        {
-          name: "Mini Arepas",
-          description:
-            "Designed for the little ones… or those who still believe in magic",
-        },
-        {
-          name: "Are-Chips",
-          description:
-            "Crispy, thin, modern, but with the same traditional flavor",
-        },
-      ],
-    },
     section6: {
       text: "And we keep dreaming: expanding, entering restaurants, reaching more Venezuelan and Latino homes, being ambassadors of a tradition that is not forgotten.",
     },
@@ -250,9 +332,8 @@ export const en = {
   contact: {
     title: "Contact",
     subtitle: "We are here for you",
-    hero: {
-      tagline: "Contact Us",
-    },
+    badge: "Contact Us",
+    hero: { tagline: "Contact Us" },
     intro: {
       title: "Let's Talk",
       text: "We are here to answer your questions, take your order, or simply share a story about arepas.",
@@ -274,28 +355,30 @@ export const en = {
       facebook: "https://www.facebook.com/share/17dRWkPRFC/?mibextid=wwXIfr",
     },
     shipping: "Shipping across USA",
-    cta: {
-      title: "Ready to try our arepas?",
-      subtitle: "Order now and bring the taste of the Andes to your table",
-      whatsapp: "Order via WhatsApp",
-      email: "Send Email",
-    },
   },
 
   // Footer
   footer: {
+    tagline:
+      "Handmade artisan wheat arepas, made with love and family tradition since 1943.",
     about: "About Us",
     aboutText:
       "Handmade artisan wheat arepas, made with love and family tradition since 1943.",
+    explore: "Explore",
     quickLinks: "Quick Links",
+    contact: "Contact",
+    legal: "Legal",
+    newsletter: "Get our updates",
+    placeholder: "you@email.com",
+    subscribe: "Subscribe",
     rights: "All rights reserved.",
     madeBy: "Developed by",
     privacy: "Privacy Policy",
     cookies: "Cookies",
     terms: "Legal Notice",
+    city: "Miami, Florida · United States",
   },
 
-  // Legal pages
   // Legal pages
   privacy: {
     title: "Privacy Policy",
@@ -328,7 +411,7 @@ export const en = {
           "If you have questions about this privacy policy, you can contact us at tibismarket@gmail.com or at +1 (305) 898-3610.",
       },
     },
-    lastUpdate: "Last updated: November 2024",
+    lastUpdate: "Last updated: May 2026",
   },
 
   cookies: {
@@ -364,7 +447,7 @@ export const en = {
           "If you have questions about our cookie policy, contact us at tibismarket@gmail.com or at +1 (305) 898-3610.",
       },
     },
-    lastUpdate: "Last updated: November 2024",
+    lastUpdate: "Last updated: May 2026",
   },
 
   terms: {
@@ -412,7 +495,7 @@ export const en = {
           "For any questions about these legal terms, contact us at tibismarket@gmail.com or at +1 (305) 898-3610.",
       },
     },
-    lastUpdate: "Last updated: November 2024",
+    lastUpdate: "Last updated: May 2026",
   },
 
   notFound: {

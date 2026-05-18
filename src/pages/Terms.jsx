@@ -1,81 +1,116 @@
 import React from "react";
 import { useLanguage } from "../context/LanguageContext";
+import Seo from "../components/Seo";
+
+const h2Style = {
+  fontFamily: "var(--font-display)",
+  fontWeight: 500,
+  fontSize: 28,
+  color: "#353a40",
+  margin: 0,
+  letterSpacing: "-0.3px",
+};
+
+const pStyle = {
+  fontFamily: "var(--font-sans)",
+  fontSize: 16,
+  lineHeight: 1.8,
+  color: "#5a5248",
+  marginTop: 14,
+};
+
+const strongStyle = { color: "#353a40", fontWeight: 600 };
 
 const Terms = () => {
   const { t } = useLanguage();
+  const simpleSections = [
+    t.terms.sections.usage,
+    t.terms.sections.products,
+    t.terms.sections.orders,
+    t.terms.sections.intellectual,
+    t.terms.sections.liability,
+    t.terms.sections.contact,
+  ];
 
   return (
-    <div className="min-h-screen bg-white py-16 px-4">
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl md:text-5xl font-bold text-dark mb-8 animate-fade-in">
+    <section
+      className="page-pad"
+      style={{
+        background: "#faf6f0",
+        padding: "180px 28px 100px",
+        minHeight: "100vh",
+      }}
+    >
+      <Seo page="terms" path="/terms" />
+      <div style={{ maxWidth: 880, margin: "0 auto" }}>
+        <h1
+          style={{
+            fontFamily: "var(--font-display)",
+            fontWeight: 500,
+            fontSize: "clamp(40px, 5.5vw, 72px)",
+            lineHeight: 1.05,
+            color: "#353a40",
+            letterSpacing: "-1.5px",
+            margin: 0,
+          }}
+        >
           {t.terms.title}
         </h1>
+        <p
+          style={{
+            fontFamily: "var(--font-sans)",
+            fontSize: 17,
+            lineHeight: 1.8,
+            color: "#5a5248",
+            marginTop: 32,
+          }}
+        >
+          {t.terms.intro}
+        </p>
 
-        <div className="prose prose-lg max-w-none animate-slide-up">
-          <p className="text-gray-700 leading-relaxed mb-6">{t.terms.intro}</p>
-
-          <h2 className="text-2xl font-bold text-dark mt-8 mb-4">
-            {t.terms.sections.company.title}
-          </h2>
-          <p className="text-gray-700 leading-relaxed mb-4">
-            <strong>{t.terms.sections.company.name}</strong>{" "}
+        <div style={{ marginTop: 48 }}>
+          <h2 style={h2Style}>{t.terms.sections.company.title}</h2>
+          <p style={pStyle}>
+            <strong style={strongStyle}>{t.terms.sections.company.name}</strong>{" "}
             {t.terms.sections.company.nameValue}
           </p>
-          <p className="text-gray-700 leading-relaxed mb-4">
-            <strong>{t.terms.sections.company.email}</strong>{" "}
+          <p style={pStyle}>
+            <strong style={strongStyle}>
+              {t.terms.sections.company.email}
+            </strong>{" "}
             {t.terms.sections.company.emailValue}
           </p>
-          <p className="text-gray-700 leading-relaxed mb-6">
-            <strong>{t.terms.sections.company.phone}</strong>{" "}
+          <p style={pStyle}>
+            <strong style={strongStyle}>
+              {t.terms.sections.company.phone}
+            </strong>{" "}
             {t.terms.sections.company.phoneValue}
           </p>
-
-          <h2 className="text-2xl font-bold text-dark mt-8 mb-4">
-            {t.terms.sections.usage.title}
-          </h2>
-          <p className="text-gray-700 leading-relaxed mb-6">
-            {t.terms.sections.usage.content}
-          </p>
-
-          <h2 className="text-2xl font-bold text-dark mt-8 mb-4">
-            {t.terms.sections.products.title}
-          </h2>
-          <p className="text-gray-700 leading-relaxed mb-6">
-            {t.terms.sections.products.content}
-          </p>
-
-          <h2 className="text-2xl font-bold text-dark mt-8 mb-4">
-            {t.terms.sections.orders.title}
-          </h2>
-          <p className="text-gray-700 leading-relaxed mb-6">
-            {t.terms.sections.orders.content}
-          </p>
-
-          <h2 className="text-2xl font-bold text-dark mt-8 mb-4">
-            {t.terms.sections.intellectual.title}
-          </h2>
-          <p className="text-gray-700 leading-relaxed mb-6">
-            {t.terms.sections.intellectual.content}
-          </p>
-
-          <h2 className="text-2xl font-bold text-dark mt-8 mb-4">
-            {t.terms.sections.liability.title}
-          </h2>
-          <p className="text-gray-700 leading-relaxed mb-6">
-            {t.terms.sections.liability.content}
-          </p>
-
-          <h2 className="text-2xl font-bold text-dark mt-8 mb-4">
-            {t.terms.sections.contact.title}
-          </h2>
-          <p className="text-gray-700 leading-relaxed mb-6">
-            {t.terms.sections.contact.content}
-          </p>
-
-          <p className="text-gray-600 text-sm mt-8">{t.terms.lastUpdate}</p>
         </div>
+
+        {simpleSections.map((s, i) => (
+          <div key={i} style={{ marginTop: 48 }}>
+            <h2 style={h2Style}>{s.title}</h2>
+            <p style={pStyle}>{s.content}</p>
+          </div>
+        ))}
+
+        <p
+          style={{
+            fontFamily: "var(--font-sans)",
+            fontSize: 12,
+            letterSpacing: 2,
+            textTransform: "uppercase",
+            color: "#8a7560",
+            marginTop: 64,
+            paddingTop: 32,
+            borderTop: "1px solid rgba(53,58,64,.12)",
+          }}
+        >
+          {t.terms.lastUpdate}
+        </p>
       </div>
-    </div>
+    </section>
   );
 };
 
