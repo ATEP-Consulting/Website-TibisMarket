@@ -50,17 +50,18 @@ const Header = () => {
   ];
 
   return (
-    <header
-      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
-      style={{
-        background: solid ? "rgba(250,246,240,.92)" : "rgba(250,246,240,0)",
-        backdropFilter: solid ? "saturate(140%) blur(14px)" : "none",
-        WebkitBackdropFilter: solid ? "saturate(140%) blur(14px)" : "none",
-        borderBottom: solid
-          ? "1px solid rgba(53,58,64,.08)"
-          : "1px solid transparent",
-      }}
-    >
+    <>
+      <header
+        className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+        style={{
+          background: solid ? "rgba(250,246,240,.92)" : "rgba(250,246,240,0)",
+          backdropFilter: solid ? "saturate(140%) blur(14px)" : "none",
+          WebkitBackdropFilter: solid ? "saturate(140%) blur(14px)" : "none",
+          borderBottom: solid
+            ? "1px solid rgba(53,58,64,.08)"
+            : "1px solid transparent",
+        }}
+      >
       <div
         className="header-pad mx-auto flex items-center justify-between gap-6"
         style={{
@@ -269,6 +270,7 @@ const Header = () => {
           </button>
         </div>
       </div>
+    </header>
 
       {isMenuOpen && (
         <div
@@ -410,7 +412,7 @@ const Header = () => {
           </Link>
         </div>
       )}
-    </header>
+    </>
   );
 };
 
