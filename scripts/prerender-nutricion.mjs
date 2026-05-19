@@ -257,7 +257,12 @@ async function main() {
       jsonLd: buildJsonLd(p, lang),
     });
 
-    const outFile = path.join(DIST, "n", `${p.slug}.html`);
+    // Output as `dist/n/<slug>/index.html` so Vercel serves it directly without
+    // needing cleanUrls. cleanUrls breaks the SPA fallback rewrite for paths
+    // that don't have a matching .html file (e.g. /products, /about).
+    const outDir = path.join(DIST, "n", p.slug);
+    await fs.mkdir(outDir, { recursive: true });
+    const outFile = path.join(outDir, "index.html");
     await fs.writeFile(outFile, html, "utf8");
     generated.push({ slug: p.slug, url, file: path.relative(ROOT, outFile) });
   }
@@ -285,7 +290,9 @@ async function main() {
         { lang: "x-default", url },
       ],
     });
-    const outFile = path.join(DIST, "nutricion.html");
+    const outDir = path.join(DIST, "nutricion");
+    await fs.mkdir(outDir, { recursive: true });
+    const outFile = path.join(outDir, "index.html");
     await fs.writeFile(outFile, html, "utf8");
     generated.push({
       slug: "(index)",
