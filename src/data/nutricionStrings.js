@@ -18,7 +18,13 @@ export const T = {
   alergenos: { es: "Contiene", en: "Contains" },
   nutricion: { es: "Información nutricional", en: "Nutrition Facts" },
   porcion: { es: "Tamaño de porción", en: "Serving size" },
-  vd: { es: "% VD*", en: "% DV*" },
+  porServing: { es: "Por porción", en: "Per Serving" },
+  porContainer: { es: "Por envase", en: "Per Container" },
+  porcionesVariadas: {
+    es: "Porciones variadas por envase",
+    en: "Varied servings per container",
+  },
+  vd: { es: "% Valor Diario*", en: "% Daily Value*" },
   vdNota: {
     es: "*Porcentaje de valores diarios basados en una dieta de 2 000 calorías.",
     en: "*Percent Daily Values are based on a 2,000 calorie diet.",

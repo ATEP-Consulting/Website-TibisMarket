@@ -208,7 +208,6 @@ export const es = {
         description:
           "Deliciosa carne mechada tradicional venezolana, perfecta para rellenar tus arepas.",
         image: "Carne-Mechada.webp",
-        slug: "carne-mechada",
         hasVariants: true,
         variants: [
           { size: "4 oz", servings: "1 porción", price: 8 },
@@ -222,7 +221,6 @@ export const es = {
         description:
           "Suave y cremosa, el complemento perfecto para tus arepas andinas.",
         image: "Crema-de-Queso.webp",
-        slug: "crema-de-queso",
         hasVariants: true,
         variants: [
           { size: "4 oz", servings: "1 porción", price: 6 },

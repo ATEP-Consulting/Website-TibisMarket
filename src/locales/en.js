@@ -207,7 +207,6 @@ export const en = {
         description:
           "Delicious traditional Venezuelan shredded beef, perfect for filling your arepas.",
         image: "Carne-Mechada.webp",
-        slug: "carne-mechada",
         hasVariants: true,
         variants: [
           { size: "4 oz", servings: "1 serving", price: 8 },
@@ -221,7 +220,6 @@ export const en = {
         description:
           "Smooth and creamy, the perfect complement to your Andean arepas.",
         image: "Crema-de-Queso.webp",
-        slug: "crema-de-queso",
         hasVariants: true,
         variants: [
           { size: "4 oz", servings: "1 serving", price: 6 },

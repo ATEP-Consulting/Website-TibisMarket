@@ -76,8 +76,12 @@ const Nutrition = () => {
       <DecoLine />
       <NutritionFacts porcion={producto.porcion} filas={producto.nutricion} />
       <DecoLine />
-      <PreparationTabs producto={producto} />
-      <DecoLine />
+      {Object.keys(producto.preparacion || {}).length > 0 && (
+        <>
+          <PreparationTabs producto={producto} />
+          <DecoLine />
+        </>
+      )}
       <FillingPills producto={producto} />
       <DecoLine />
       <IngredientsBlock

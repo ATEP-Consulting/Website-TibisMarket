@@ -10,7 +10,10 @@ import SectionHeading from "./SectionHeading";
 const FillingPills = ({ producto }) => {
   const { language } = useLanguage();
   const t = (obj) => obj[language];
-  const items = producto.sugerencias[language] || [];
+  const items = producto.sugerencias?.[language] || [];
+
+  // Sin sugerencias → omitimos la sección entera (ej. snacks como Are-Chips).
+  if (items.length === 0) return null;
 
   const heading = producto.tipo === "relleno" ? T.maridaCon : T.rellenosClasicos;
   const note = producto.tipo === "relleno" ? T.maridaConNota : T.rellenosNota;
