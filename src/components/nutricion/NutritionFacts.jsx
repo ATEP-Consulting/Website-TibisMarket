@@ -25,7 +25,7 @@ const ChevronIcon = ({ open }) => (
 const NutritionFacts = ({ porcion, filas }) => {
   const { language } = useLanguage();
   const t = (obj) => obj[language];
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
 
   return (
     <section style={{ padding: "0 24px 28px" }}>

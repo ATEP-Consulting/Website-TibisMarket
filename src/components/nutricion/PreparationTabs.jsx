@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useLanguage } from "../../context/LanguageContext";
 import { T } from "../../data/nutricionStrings";
 import StorageNote from "./StorageNote";
+import SectionHeading from "./SectionHeading";
 
 const ICON_STYLE = { width: 22, height: 22 };
 
@@ -128,20 +129,7 @@ const PreparationTabs = ({ producto }) => {
 
   return (
     <section style={{ padding: "28px 24px" }} aria-labelledby="prep-heading">
-      <h2
-        id="prep-heading"
-        style={{
-          fontFamily: "var(--font-display)",
-          fontSize: 11,
-          textTransform: "uppercase",
-          letterSpacing: "0.25em",
-          fontWeight: 600,
-          color: "#ff914d",
-          margin: "0 0 14px",
-        }}
-      >
-        ◆ {t(heading)}
-      </h2>
+      <SectionHeading id="prep-heading">{t(heading)}</SectionHeading>
 
       <div
         role="tablist"

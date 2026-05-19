@@ -1,6 +1,7 @@
 import React from "react";
 import { useLanguage } from "../../context/LanguageContext";
 import { T } from "../../data/nutricionStrings";
+import SectionHeading from "./SectionHeading";
 
 const IngredientsBlock = ({ ingredientes, alergenos }) => {
   const { language } = useLanguage();
@@ -12,20 +13,9 @@ const IngredientsBlock = ({ ingredientes, alergenos }) => {
       style={{ padding: "28px 24px" }}
       aria-labelledby="ingredients-heading"
     >
-      <h2
-        id="ingredients-heading"
-        style={{
-          fontFamily: "var(--font-display)",
-          fontSize: 11,
-          textTransform: "uppercase",
-          letterSpacing: "0.25em",
-          fontWeight: 600,
-          color: "#ff914d",
-          margin: "0 0 12px",
-        }}
-      >
-        ◆ {t(T.ingredientes)}
-      </h2>
+      <SectionHeading id="ingredients-heading">
+        {t(T.ingredientes)}
+      </SectionHeading>
       <p
         style={{
           fontSize: 15,

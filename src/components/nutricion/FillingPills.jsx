@@ -1,6 +1,7 @@
 import React from "react";
 import { useLanguage } from "../../context/LanguageContext";
 import { T } from "../../data/nutricionStrings";
+import SectionHeading from "./SectionHeading";
 
 /**
  * For arepas: shows "Rellenos clásicos" with filling suggestions.
@@ -16,20 +17,7 @@ const FillingPills = ({ producto }) => {
 
   return (
     <section style={{ padding: "28px 24px" }} aria-labelledby="fillings-heading">
-      <h2
-        id="fillings-heading"
-        style={{
-          fontFamily: "var(--font-display)",
-          fontSize: 11,
-          textTransform: "uppercase",
-          letterSpacing: "0.25em",
-          fontWeight: 600,
-          color: "#ff914d",
-          margin: "0 0 12px",
-        }}
-      >
-        ◆ {t(heading)}
-      </h2>
+      <SectionHeading id="fillings-heading">{t(heading)}</SectionHeading>
       <p
         style={{
           fontSize: 13,

@@ -74,6 +74,8 @@ const Nutrition = () => {
       <NutritionSeo producto={producto} />
       <ProductHero producto={producto} />
       <DecoLine />
+      <NutritionFacts porcion={producto.porcion} filas={producto.nutricion} />
+      <DecoLine />
       <PreparationTabs producto={producto} />
       <DecoLine />
       <FillingPills producto={producto} />
@@ -82,7 +84,6 @@ const Nutrition = () => {
         ingredientes={producto.ingredientes}
         alergenos={producto.alergenos}
       />
-      <NutritionFacts porcion={producto.porcion} filas={producto.nutricion} />
       <DecoLine />
       <RelatedProducts slugActual={producto.slug} />
       <ConversionCTAs producto={producto} />
