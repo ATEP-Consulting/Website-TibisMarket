@@ -29,8 +29,8 @@ export const T = {
   },
   ocultarNutricion: { es: "Ocultar información", en: "Hide information" },
   otrosSabores: {
-    es: "Otros sabores Tibi's",
-    en: "Other Tibi's flavors",
+    es: "Otros productos Tibi's",
+    en: "Other Tibi's products",
   },
   otrosSaboresSub: {
     es: "Búscalos en tu tienda de confianza",
