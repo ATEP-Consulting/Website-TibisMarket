@@ -137,6 +137,7 @@ export const en = {
     intro:
       "Each product is made with my grandmother's ancestral recipe, using noble ingredients and the love of three generations.",
     addToCart: "Add to Cart",
+    moreInfo: "More info",
     from: "From",
     quantity: "Quantity",
     size: "Size",
@@ -156,6 +157,7 @@ export const en = {
         description: "Perfect for breakfast, dinner, or sharing with family.",
         price: 10,
         image: "arepa_tradicional.webp",
+        slug: "arepas-tradicional",
         units: 4,
         weightPerUnit: 2.4,
         totalWeight: 9.6,
@@ -167,6 +169,7 @@ export const en = {
         description: "Ideal for parties, snacks, or nibbling among friends.",
         price: 10,
         image: "arepas-bocado.webp",
+        slug: "arepas-bocado",
         units: 14,
         weightPerUnit: 0.6,
         totalWeight: 8.9,
@@ -179,6 +182,7 @@ export const en = {
           "Designed for the little ones… or those who still believe in magic.",
         price: 10,
         image: "mini-arepas.webp",
+        slug: "mini-arepas",
         units: 30,
         weightPerUnit: 0.3,
         totalWeight: 8.8,
@@ -191,6 +195,7 @@ export const en = {
           "Crispy, thin, and golden, with the classic flavor in a new format.",
         price: 5.5,
         image: "are-chips.webp",
+        slug: "are-chips",
         units: null,
         weightPerUnit: null,
         totalWeight: 2.4,
@@ -202,6 +207,7 @@ export const en = {
         description:
           "Delicious traditional Venezuelan shredded beef, perfect for filling your arepas.",
         image: "Carne-Mechada.webp",
+        slug: "carne-mechada",
         hasVariants: true,
         variants: [
           { size: "4 oz", servings: "1 serving", price: 8 },
@@ -215,6 +221,7 @@ export const en = {
         description:
           "Smooth and creamy, the perfect complement to your Andean arepas.",
         image: "Crema-de-Queso.webp",
+        slug: "crema-de-queso",
         hasVariants: true,
         variants: [
           { size: "4 oz", servings: "1 serving", price: 6 },

@@ -138,6 +138,7 @@ export const es = {
     intro:
       "Cada producto está hecho con la receta ancestral de mi abuela, usando ingredientes nobles y el amor de tres generaciones.",
     addToCart: "Añadir al Carrito",
+    moreInfo: "Más información",
     from: "Desde",
     quantity: "Cantidad",
     size: "Tamaño",
@@ -157,6 +158,7 @@ export const es = {
         description: "Perfecta para desayunos, cenas o compartir en familia.",
         price: 10,
         image: "arepa_tradicional.webp",
+        slug: "arepas-tradicional",
         units: 4,
         weightPerUnit: 2.4,
         totalWeight: 9.6,
@@ -168,6 +170,7 @@ export const es = {
         description: "Ideal para fiestas, meriendas o picar entre amigos.",
         price: 10,
         image: "arepas-bocado.webp",
+        slug: "arepas-bocado",
         units: 14,
         weightPerUnit: 0.6,
         totalWeight: 8.9,
@@ -180,6 +183,7 @@ export const es = {
           "Pensadas para los más pequeños… y los que aún creen en la magia.",
         price: 10,
         image: "mini-arepas.webp",
+        slug: "mini-arepas",
         units: 30,
         weightPerUnit: 0.3,
         totalWeight: 8.8,
@@ -192,6 +196,7 @@ export const es = {
           "Crujientes, delgadas y doradas, con el sabor de siempre en un nuevo formato.",
         price: 5.5,
         image: "are-chips.webp",
+        slug: "are-chips",
         units: null,
         weightPerUnit: null,
         totalWeight: 2.4,
@@ -203,6 +208,7 @@ export const es = {
         description:
           "Deliciosa carne mechada tradicional venezolana, perfecta para rellenar tus arepas.",
         image: "Carne-Mechada.webp",
+        slug: "carne-mechada",
         hasVariants: true,
         variants: [
           { size: "4 oz", servings: "1 porción", price: 8 },
@@ -216,6 +222,7 @@ export const es = {
         description:
           "Suave y cremosa, el complemento perfecto para tus arepas andinas.",
         image: "Crema-de-Queso.webp",
+        slug: "crema-de-queso",
         hasVariants: true,
         variants: [
           { size: "4 oz", servings: "1 porción", price: 6 },

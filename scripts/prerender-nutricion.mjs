@@ -177,6 +177,17 @@ function injectMeta(html, meta) {
     out = out.replace(heroPreloadRe, "");
   }
 
+  // Swap the 98 KB JPEG favicon for tiny webp variants. Same image, fraction of
+  // the bytes. Only affects prerendered /n/ pages; the main site keeps the JPEG.
+  out = out.replace(
+    /<link\s+rel="icon"[^>]*>/i,
+    '<link rel="icon" type="image/webp" href="/logo-icon-32.webp" />',
+  );
+  out = out.replace(
+    /<link\s+rel="apple-touch-icon"[^>]*>/i,
+    '<link rel="apple-touch-icon" href="/logo-icon-180.webp" />',
+  );
+
   // Make the Google Fonts stylesheet non-render-blocking. The main site keeps the
   // blocking version (this transformation only affects prerendered /n/ pages).
   out = out.replace(

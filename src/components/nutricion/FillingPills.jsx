@@ -2,10 +2,17 @@ import React from "react";
 import { useLanguage } from "../../context/LanguageContext";
 import { T } from "../../data/nutricionStrings";
 
-const FillingPills = ({ sugerencias }) => {
+/**
+ * For arepas: shows "Rellenos clásicos" with filling suggestions.
+ * For rellenos: shows "Marida con" with pairing arepas.
+ */
+const FillingPills = ({ producto }) => {
   const { language } = useLanguage();
   const t = (obj) => obj[language];
-  const items = sugerencias[language] || [];
+  const items = producto.sugerencias[language] || [];
+
+  const heading = producto.tipo === "relleno" ? T.maridaCon : T.rellenosClasicos;
+  const note = producto.tipo === "relleno" ? T.maridaConNota : T.rellenosNota;
 
   return (
     <section style={{ padding: "28px 24px" }} aria-labelledby="fillings-heading">
@@ -21,17 +28,17 @@ const FillingPills = ({ sugerencias }) => {
           margin: "0 0 12px",
         }}
       >
-        ◆ {t(T.rellenosClasicos)}
+        ◆ {t(heading)}
       </h2>
       <p
         style={{
           fontSize: 13,
-          color: "#8a7560",
+          color: "#5a5248",
           margin: "0 0 16px",
           fontStyle: "italic",
         }}
       >
-        {t(T.rellenosNota)}
+        {t(note)}
       </p>
       <ul
         style={{

@@ -76,7 +76,7 @@ const Nutrition = () => {
       <DecoLine />
       <PreparationTabs producto={producto} />
       <DecoLine />
-      <FillingPills sugerencias={producto.sugerencias} />
+      <FillingPills producto={producto} />
       <DecoLine />
       <IngredientsBlock
         ingredientes={producto.ingredientes}

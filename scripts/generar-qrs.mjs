@@ -59,6 +59,8 @@ async function generatePng(targetUrl, outFile) {
 }
 
 async function main() {
+  // Limpia el directorio para evitar dejar QRs huérfanos con slugs antiguos.
+  await fs.rm(OUT_DIR, { recursive: true, force: true });
   await fs.mkdir(OUT_DIR, { recursive: true });
   const productos = await loadProductos();
 

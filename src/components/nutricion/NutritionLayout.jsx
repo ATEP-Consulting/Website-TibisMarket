@@ -67,10 +67,10 @@ const NutritionLayout = () => {
             }}
           >
             <img
-              src="/images/logo.jpeg"
+              src="/images/logo-80.webp"
               alt=""
-              width="40"
-              height="40"
+              width="80"
+              height="80"
               decoding="async"
               style={{
                 width: 40,

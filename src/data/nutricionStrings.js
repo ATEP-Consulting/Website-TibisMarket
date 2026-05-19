@@ -1,12 +1,18 @@
 /** Etiquetas i18n específicas de las páginas /n/:slug y /nutricion. */
 export const T = {
   comoPreparar: { es: "Cómo preparar", en: "How to prepare" },
+  comoServir: { es: "Cómo servir", en: "How to serve" },
   tiempo: { es: "Tiempo", en: "Time" },
   conservacion: { es: "Conservación", en: "Storage" },
   rellenosClasicos: { es: "Rellenos clásicos", en: "Classic fillings" },
   rellenosNota: {
     es: "Inspiración de los Andes para tu próxima comida.",
     en: "Andean inspiration for your next meal.",
+  },
+  maridaCon: { es: "Marida con", en: "Pairs with" },
+  maridaConNota: {
+    es: "Acompáñalo con tu arepa favorita.",
+    en: "Pair it with your favorite arepa.",
   },
   ingredientes: { es: "Ingredientes", en: "Ingredients" },
   alergenos: { es: "Contiene", en: "Contains" },

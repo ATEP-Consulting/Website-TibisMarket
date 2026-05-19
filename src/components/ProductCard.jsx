@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 import { useLanguage } from "../context/LanguageContext";
 import { useReveal } from "../hooks/useReveal";
@@ -180,6 +181,49 @@ const ProductCard = ({ product, index = 0 }) => {
         >
           {buildMeta()}
         </div>
+
+        {product.slug && (
+          <Link
+            to={`/n/${product.slug}`}
+            aria-label={`${t.products.moreInfo} — ${product.name}`}
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 6,
+              marginTop: 14,
+              fontFamily: "var(--font-sans)",
+              fontSize: 13,
+              fontWeight: 500,
+              color: "#353a40",
+              textDecoration: "none",
+              letterSpacing: 0.2,
+              borderBottom: "1px solid rgba(53,58,64,0.2)",
+              paddingBottom: 2,
+              width: "fit-content",
+              transition: "color .2s ease, border-color .2s ease",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.color = "#ff914d";
+              e.currentTarget.style.borderColor = "#ff914d";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.color = "#353a40";
+              e.currentTarget.style.borderColor = "rgba(53,58,64,0.2)";
+            }}
+          >
+            {t.products.moreInfo}
+            <span
+              aria-hidden
+              style={{
+                fontSize: 14,
+                lineHeight: 1,
+                transform: "translateY(-1px)",
+              }}
+            >
+              →
+            </span>
+          </Link>
+        )}
 
         {hasVariants && (
           <div style={{ marginTop: 18 }}>
